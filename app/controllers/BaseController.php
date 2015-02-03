@@ -16,16 +16,25 @@ class BaseController extends Controller {
 	}
 
 
-	protected function myDataTable($class,$with,$skip=0,$take=10){
+	protected function myDataTable($class,$with,$skip=0,$take=10,$filter=[]){
 		$skip = $skip-1;
-		$list = $class::with($with)->take($take)->skip($skip)->get();
+		$query = $class::with($with);
+
+
+		foreach($filter as $key => $value){
+			$query->orWhere($key,'=~',"(?i).*$value.*");
+		}
+
+		$total = $query->count();
+
+		$list = $query->skip($skip)->take($take)->get();
 
 		$data = [
 			"data" => $list,
 			"skip" => $skip,
 			"take" => $take,
 			"count" => $list->count(),
-			"total" => $class::all()->count()
+			"total" => $total
 		];
 
 		return $data;

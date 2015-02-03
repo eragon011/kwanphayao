@@ -7,7 +7,7 @@
         <div class="pull-right">
             <form class="form-inline">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for..."/>
+                    <input type="text" ng-change="filterChange()" ng-model="filterWord" class="form-control" placeholder="Search for..."/>
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" type="button">Go!</button>
                             </span>
@@ -48,7 +48,13 @@
         <div class="col-sm-12">
 
             <div class="pull-left">
-                Showing {{dt.skip * dt.take + 1}} to {{dt.skip * dt.take + dt.count}} of {{dt.total}} entries
+                <span ng-if="dt.count >0">
+                    Showing {{ dt.skip * dt.take + 1}} to {{dt.skip * dt.take + dt.count}} of {{dt.total}} entries
+                </span>
+
+                <span ng-if="dt.count <=0">
+                    Showing 0 to 0 of {{dt.total}} entries
+                </span>
             </div>
 
             <div class="pull-right">

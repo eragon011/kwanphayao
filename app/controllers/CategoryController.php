@@ -9,8 +9,26 @@ class CategoryController extends \BaseController {
 	 */
 	public function index()
 	{
-		$page = Input::get('page');
-		$datatable = $this->myDataTable('Category',[],$page,1);
+		if (Input::has('page')){
+			$page = Input::get('page');
+		}else {
+			$page=1;
+		}
+
+
+		if (Input::has('filter')){
+			$filter = Input::get('filter');
+
+			$datafilter = [
+				"name" => $filter,
+				"type" => $filter
+			];
+
+		}else {
+			$datafilter = [];
+		}
+
+		$datatable = $this->myDataTable('Category',[],$page,20,$datafilter);
 		return $datatable;
 	}
 

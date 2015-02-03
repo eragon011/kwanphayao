@@ -53,16 +53,23 @@
             $scope.dt = categories.data;
             $scope.categories = categories.data.data;
             console.log($scope.dt);
+
             $scope.currentPage;
+            $scope.filterWord= "";
+
             $scope.pageChange = function () {
                 $http({
                     method : 'get',
-                    url : '/admin/api/v1/category?page=' + $scope.currentPage
+                    url : '/admin/api/v1/category?page=' + $scope.currentPage + "&filter="+ $scope.filterWord
                 }).success(function(response){
                     $scope.categories = response.data;
                     $scope.dt = response;
                 })
+            }
 
+            $scope.filterChange = function(){
+                $scope.currentPage = 1;
+                $scope.pageChange();
             }
 
 
