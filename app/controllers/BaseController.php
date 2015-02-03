@@ -16,8 +16,8 @@ class BaseController extends Controller {
 	}
 
 
-	protected function myDataTable($class,$with,$skip,$take){
-
+	protected function myDataTable($class,$with,$skip=0,$take=10){
+		$skip = $skip-1;
 		$list = $class::with($with)->take($take)->skip($skip)->get();
 
 		$data = [

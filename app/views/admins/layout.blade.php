@@ -52,6 +52,10 @@
 <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <script src="/components/angular/angular.js"></script>
+<script src="/components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="/components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="/components/angular-resource/angular-resource.min.js"></script>
+<script src="/components/angular-ui-router/release/angular-ui-router.min.js"></script>
 @yield('javascript')
 
 </body>
