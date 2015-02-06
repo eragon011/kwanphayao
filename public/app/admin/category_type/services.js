@@ -19,10 +19,18 @@ app.factory('CategoryTypeService', function ($http) {
             })
         },
         edit : function($id){
-            console.log($id);
+
             return $http({
                 url : '/admin/api/v1/category-type/edit/'+$id,
                 method : 'get'
+            })
+        },
+        delete : function($categoryType){
+            return $http({
+                url : '/admin/api/v1/category-type/delete',
+                method : 'post',
+                header : 'application/json',
+                data : $categoryType
             })
         }
     }
