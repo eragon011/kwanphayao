@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e8e4303-d37f-4f73-982a-fb0b798d331f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/CategoryType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/CategoryTypeController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/admin/category_type/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/admins/category_type.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/admin/category/controllers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/admin/category_type/controllers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/admin/category/form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/admin/category_type/form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/admin/category_type/list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/admin/category/services.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/admin/category_type/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="$PROJECT_DIR$/app/controllers/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Category.php" afterPath="$PROJECT_DIR$/app/models/Category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/CategoryController.php" afterPath="$PROJECT_DIR$/app/controllers/CategoryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/category/app.js" afterPath="$PROJECT_DIR$/public/app/admin/category/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admins/category.blade.php" afterPath="$PROJECT_DIR$/app/views/admins/category.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admins/layout.blade.php" afterPath="$PROJECT_DIR$/app/views/admins/layout.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/category/list.html" afterPath="$PROJECT_DIR$/public/app/admin/category/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/CategoryTypeController.php" afterPath="$PROJECT_DIR$/app/controllers/CategoryTypeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/category_type/app.js" afterPath="$PROJECT_DIR$/public/app/admin/category_type/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/category_type/controllers.js" afterPath="$PROJECT_DIR$/public/app/admin/category_type/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/category_type/list.html" afterPath="$PROJECT_DIR$/public/app/admin/category_type/list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/admin/category_type/services.js" afterPath="$PROJECT_DIR$/public/app/admin/category_type/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kwanphayao.iws" />
@@ -69,8 +54,8 @@
             <file leaf-file-name="CategoryTypeController.php" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/app/controllers/CategoryTypeController.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="-0.04708098" vertical-offset="55" max-vertical-offset="1305">
-                    <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+                  <state vertical-scroll-proportion="0.4915254" vertical-offset="129" max-vertical-offset="1500">
+                    <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
                     <folding />
                   </state>
                 </provider>
@@ -90,18 +75,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/services.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-              <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+              <caret line="36" column="28" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -140,8 +115,18 @@
       <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.708333" vertical-offset="235" max-vertical-offset="1155">
-              <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+            <state vertical-scroll-proportion="-8.333333" vertical-offset="385" max-vertical-offset="1155">
+              <caret line="39" column="69" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/services.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -150,8 +135,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18489985" vertical-offset="0" max-vertical-offset="690">
-              <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.6009245" vertical-offset="0" max-vertical-offset="690">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -216,13 +201,13 @@
         <option value="$PROJECT_DIR$/app/views/admins/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/models/Category.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/controllers/CategoryTypeController.php" />
         <option value="$PROJECT_DIR$/app/models/CategoryType.php" />
-        <option value="$PROJECT_DIR$/public/app/admin/category_type/services.js" />
         <option value="$PROJECT_DIR$/public/app/admin/category_type/form.html" />
-        <option value="$PROJECT_DIR$/public/app/admin/category_type/list.html" />
         <option value="$PROJECT_DIR$/public/app/admin/category_type/app.js" />
+        <option value="$PROJECT_DIR$/public/app/admin/category_type/services.js" />
+        <option value="$PROJECT_DIR$/public/app/admin/category_type/list.html" />
         <option value="$PROJECT_DIR$/public/app/admin/category_type/controllers.js" />
+        <option value="$PROJECT_DIR$/app/controllers/CategoryTypeController.php" />
       </list>
     </option>
   </component>
@@ -923,14 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="435">
@@ -939,34 +916,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CategoryTypeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.04708098" vertical-offset="55" max-vertical-offset="1305">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.708333" vertical-offset="235" max-vertical-offset="1155">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        <state vertical-scroll-proportion="-8.333333" vertical-offset="385" max-vertical-offset="1155">
+          <caret line="39" column="69" selection-start-line="39" selection-start-column="69" selection-end-line="39" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/CategoryTypeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4915254" vertical-offset="129" max-vertical-offset="1500">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/admin/category_type/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18489985" vertical-offset="0" max-vertical-offset="690">
-          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.6009245" vertical-offset="0" max-vertical-offset="690">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>

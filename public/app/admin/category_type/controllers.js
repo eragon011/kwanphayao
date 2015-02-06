@@ -25,14 +25,14 @@ app.controller('ListCtrl', function ($scope, categoryTypes,CategoryTypeService) 
 })
 
 
-app.controller('FormCtrl',function($scope,$state,categoryTypes,CategoryTypeService){
+app.controller('FormCtrl',function($scope,$state,categoryType,CategoryTypeService){
 
-    $scope.categoryType = categoryTypes.data;
+    $scope.categoryType = categoryType.data;
 
     $scope.save = function(){
-        console.log($scope.categoryType);
 
         CategoryTypeService.save($scope.categoryType).success(function (response) {
+            console.log(response);
             $state.go('list');
         })
     }

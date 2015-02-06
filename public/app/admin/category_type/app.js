@@ -29,6 +29,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        .state('edit',{
+            url : "/edit/:id",
+            templateUrl : "/app/admin/category_type/form.html",
+            controller : "FormCtrl",
+            resolve : {
+                categoryType : function(CategoryTypeService,$stateParams){
+                    return CategoryTypeService.edit($stateParams.id) ;
+                }
+            }
+        })
+
 
     $urlRouterProvider.otherwise("/list");
 

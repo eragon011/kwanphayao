@@ -17,6 +17,13 @@ app.factory('CategoryTypeService', function ($http) {
                 header : 'application/json',
                 data : $categoryType
             })
+        },
+        edit : function($id){
+            console.log($id);
+            return $http({
+                url : '/admin/api/v1/category-type/edit/'+$id,
+                method : 'get'
+            })
         }
     }
 })

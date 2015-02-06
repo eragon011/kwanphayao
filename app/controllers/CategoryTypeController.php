@@ -24,7 +24,7 @@ class CategoryTypeController extends \BaseController {
 
 			$dataFilter = [
 				"name" => $filter,
-				"type" => $filter
+				"description" => $filter
 			];
 
 		}else {
@@ -64,16 +64,29 @@ class CategoryTypeController extends \BaseController {
 	}
 
 	public function getView($id){
-
 		$category = CategoryType::find($id);
 		return $category;
+	}
 
+	public function getEdit($id){
+		return $this->getView($id);
 	}
 
 	public function postSave(){
 
-		$category = CategoryType::updateOrCreate(Input::except([]));
-		return $category;
+		if(Input::has('id')){
+			$id = Input::get('id');
+			$cateogry = CategoryType::find($id);
+			$cateogry->update(Input::except([]));
+			$cateogry->save();
+
+			return $cateogry;
+		}else {
+			$cateogry = CategoryType::firstOrNew(Input::all([]));
+			$cateogry->save();
+
+			return $cateogry;
+		}
 
 	}
 
