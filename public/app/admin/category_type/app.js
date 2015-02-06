@@ -1,7 +1,7 @@
 /**
  * Created by chaow on 2/3/2015 AD.
  */
-var app = angular.module('CategoryApp', ['ui.router', 'ngResource', 'ui.bootstrap']);
+var app = angular.module('CategoryTypeApp', ['ui.router', 'ngResource', 'ui.bootstrap']);
 app.config(function ($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1
@@ -9,21 +9,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('list', {
             url: "/list",
-            templateUrl: "/app/admin/category/list.html",
+            templateUrl: "/app/admin/category_type/list.html",
             controller: "ListCtrl",
             resolve: {
-                categories: function (CategoryService, $stateParams) {
-                    return CategoryService.list(1,"");
+                categoryTypes: function (CategoryTypeService, $stateParams) {
+                    return CategoryTypeService.list(1,"");
                 }
             }
         })
 
         .state('create',{
             url : "/create",
-            templateUrl : "/app/admin/category/form.html",
+            templateUrl : "/app/admin/category_type/form.html",
             controller : "FormCtrl",
             resolve : {
-                category : function(CategoryService,$stateParams){
+                categoryType : function(CategoryTypeService,$stateParams){
                     return { data : {} };
                 }
             }

@@ -16,7 +16,7 @@ class BaseController extends Controller {
 	}
 
 
-	protected function myDataTable($class,$with,$skip=0,$take=10,$filter=[]){
+	protected function myDataTable($class,$with,$skip=0,$take=10,$filter=[],$order = []){
 		$skip = $skip-1;
 		$query = $class::with($with);
 
@@ -26,7 +26,9 @@ class BaseController extends Controller {
 		}
 
 		$total = $query->count();
-
+		foreach($order as $key =>$value){
+			$query->orderBy($key,$value);
+		}
 		$list = $query->skip($skip)->take($take)->get();
 
 		$data = [
