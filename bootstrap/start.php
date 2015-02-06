@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('10.0.0.4'),
+	'local' => array('10.0.0.4','Wiz'),
 
 ));
 

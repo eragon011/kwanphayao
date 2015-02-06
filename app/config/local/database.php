@@ -31,16 +31,13 @@ return array(
 			'prefix'    => '',
 		),
 
-		'neo4j' => array(
-			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'homestead',
-			'username' => 'homestead',
-			'password' => 'secret',
-			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
-		),
+		'neo4j' => [
+			'driver' => 'neo4j',
+			'host'   => 'localhost',
+			'port'   => '7474',
+			'username' => null,
+			'password' => null
+		]
 
 	),
 
