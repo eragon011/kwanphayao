@@ -12,4 +12,9 @@ class Category extends NeoEloquent {
 
     protected $fillable = ['name','type'];
 
+
+    public function categoryType(){
+        return $this->hasOne('CategoryType',"HasType");
+    }
+
 }

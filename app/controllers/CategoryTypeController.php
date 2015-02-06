@@ -1,6 +1,6 @@
 <?php
 
-class CategoryController extends \BaseController {
+class CategoryTypeController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -24,7 +24,7 @@ class CategoryController extends \BaseController {
 
 			$dataFilter = [
 				"name" => $filter,
-				"type" => $filter
+				"description" => $filter
 			];
 
 		}else {
@@ -59,21 +59,34 @@ class CategoryController extends \BaseController {
 		$dataFilter = $this->getDataFilter();
 		$orderFilter = $this->getOrderByFilter();
 
-		$datatable = $this->myDataTable('Category',[],$page,20,$dataFilter,$orderFilter);
+		$datatable = $this->myDataTable('CategoryType',[],$page,20,$dataFilter,$orderFilter);
 		return $datatable;
 	}
 
 	public function getView($id){
-
-		$category = Category::find($id);
+		$category = CategoryType::find($id);
 		return $category;
+	}
 
+	public function getEdit($id){
+		return $this->getView($id);
 	}
 
 	public function postSave(){
 
-		$category = Category::updateOrCreate(Input::except([]));
-		return $category;
+		if(Input::has('id')){
+			$id = Input::get('id');
+			$cateogry = CategoryType::find($id);
+			$cateogry->update(Input::except([]));
+			$cateogry->save();
+
+			return $cateogry;
+		}else {
+			$cateogry = CategoryType::firstOrNew(Input::all([]));
+			$cateogry->save();
+
+			return $cateogry;
+		}
 
 	}
 
