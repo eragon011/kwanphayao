@@ -90,5 +90,16 @@ class CategoryTypeController extends \BaseController {
 
 	}
 
+	public function postDelete(){
+		if(Input::has('id')){
+			$id = Input::get('id');
+			$categoryType = CategoryType::find($id);
+			$categoryType->delete();
+			return [true];
+		}else {
+			return [false];
+		}
+	}
+
 
 }

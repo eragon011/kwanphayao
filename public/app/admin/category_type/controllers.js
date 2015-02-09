@@ -22,6 +22,16 @@ app.controller('ListCtrl', function ($scope, categoryTypes,CategoryTypeService) 
         $scope.currentPage = 1;
         $scope.pageChange();
     }
+
+    $scope.delete = function(categoryType){
+        confirm_string = "Do you want to delete this CategoryType id:"+categoryType.id+" ?";
+        if(confirm(confirm_string)){
+            CategoryTypeService.delete(categoryType).success(function(){
+                index = $scope.categoryTypes.indexOf(categoryType);
+                $scope.categoryTypes.splice(index,1);
+            });
+        }
+    }
 })
 
 
