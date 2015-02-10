@@ -53,6 +53,13 @@ class CategoryTypeController extends \BaseController {
 		return $orderFilter;
 	}
 
+	public function getAll(){
+
+		$categoryType = CategoryType::all();
+		return $categoryType;
+
+	}
+
 	public function getIndex()
 	{
 		$page = $this->getPage();

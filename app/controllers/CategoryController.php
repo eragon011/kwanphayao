@@ -72,8 +72,10 @@ class CategoryController extends \BaseController {
 
 	public function postSave(){
 
-		$category = Category::updateOrCreate(Input::except([]));
-		return $category;
+//		$category = Category::updateOrCreate(Input::except([]));
+//		return $category;
+
+		return Input::get('categoryType');
 
 	}
 

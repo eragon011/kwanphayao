@@ -4,6 +4,13 @@
 
 app.factory('CategoryTypeService', function ($http) {
     return {
+        all : function(){
+            return $http({
+                method: 'get',
+                url: '/admin/api/v1/category-type/all',
+                header : 'application/json'
+            })
+        },
         list: function ($page, $filter) {
             return $http({
                 method: 'get',
