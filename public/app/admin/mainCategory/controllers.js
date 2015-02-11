@@ -12,7 +12,7 @@ app.controller('ListCtrl', function ($scope, mainCategories,MainCategoryService)
     $scope.filterWord= "";
 
     $scope.pageChange = function () {
-        CategoryTypeService.list($scope.currentPage,$scope.filterWord).success(function(response){
+        MainCategoryService.list($scope.currentPage,$scope.filterWord).success(function(response){
             $scope.mainCategories = response.data;
             $scope.dt = response;
         })
@@ -26,7 +26,7 @@ app.controller('ListCtrl', function ($scope, mainCategories,MainCategoryService)
     $scope.delete = function(mainCategory){
         confirm_string = "Do you want to delete this CategoryType id:"+mainCategory.id+" ?";
         if(confirm(confirm_string)){
-            CategoryTypeService.delete(mainCategory).success(function(){
+            MainCategoryService.delete(mainCategory).success(function(){
                 index = $scope.mainCategories.indexOf(mainCategory);
                 $scope.mainCategories.splice(index,1);
             });
@@ -35,9 +35,9 @@ app.controller('ListCtrl', function ($scope, mainCategories,MainCategoryService)
 })
 
 
-app.controller('FormCtrl',function($scope,$state,mainCategory,MainCategoryService){
+app.controller('FormCtrl',function($scope,$state,mainCategories,MainCategoryService){
 
-    $scope.mainCategory = mainCategory.data;
+    $scope.mainCategories = mainCategories.data;
 
     $scope.save = function(){
 

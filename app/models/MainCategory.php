@@ -10,8 +10,7 @@ class MainCategory extends NeoEloquent {
 
     protected $connection = 'neo4j';
 
-
-    protected $label = ['Classification','MainCategory'];
+    protected $label = ['MainCategory','Classification'];
 
     protected $fillable = ['name','description'];
 

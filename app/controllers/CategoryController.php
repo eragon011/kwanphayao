@@ -59,7 +59,7 @@ class CategoryController extends \BaseController {
 		$dataFilter = $this->getDataFilter();
 		$orderFilter = $this->getOrderByFilter();
 
-		$datatable = $this->myDataTable('Category',[],$page,20,$dataFilter,$orderFilter);
+		$datatable = $this->myDataTable('Category',['parent'],$page,20,$dataFilter,$orderFilter);
 		return $datatable;
 	}
 
@@ -72,11 +72,23 @@ class CategoryController extends \BaseController {
 
 	public function postSave(){
 
-//		$category = Category::updateOrCreate(Input::except([]));
-//		return $category;
+		$category = Category::updateOrCreate(Input::except(['parent']));
+		$mainCategoryId = Input::get('mainCategory.id');
+		$mainCategory = MainCategory::find($mainCategoryId);
+		$category->parent()->associate($mainCategory)->save();
 
-		return Input::get('categoryType');
+		return $category;
+	}
 
+	public function postDelete(){
+		if(Input::has('id')){
+			$id = Input::get('id');
+			$category = Category::find($id);
+			$category->delete();
+			return $category;
+		}else {
+			return [false];
+		}
 	}
 
 

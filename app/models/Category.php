@@ -10,13 +10,13 @@ class Category extends NeoEloquent {
 
     protected $connection = 'neo4j';
 
-    protected $label = ['Classification','Category'];
+    protected $label = ['Category','Classification'];
 
+    protected $guared = ['mainCategory'];
 
-    protected $fillable = ['name','type'];
+    protected $fillable = ['name','description'];
 
-
-    public function categoryType(){
+    public function parent(){
         return $this->belongsTo('MainCategory','HAS_CATEGORY');
     }
 

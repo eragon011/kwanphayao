@@ -26,7 +26,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 category : function(CategoryService,$stateParams){
                     return { data : {} };
                 },
-                categoryTypes : function(MainCategoryService){
+                mainCategories : function(MainCategoryService){
                     return MainCategoryService.all();
                 }
 
