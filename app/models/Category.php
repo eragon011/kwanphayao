@@ -10,11 +10,14 @@ class Category extends NeoEloquent {
 
     protected $connection = 'neo4j';
 
+    protected $label = ['Classification','Category'];
+
+
     protected $fillable = ['name','type'];
 
 
     public function categoryType(){
-        return $this->hasOne('CategoryType',"HasType");
+        return $this->belongsTo('MainCategory','HAS_CATEGORY');
     }
 
 }

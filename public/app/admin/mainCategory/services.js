@@ -2,25 +2,25 @@
  * Created by chaow on 2/4/2015 AD.
  */
 
-app.factory('CategoryTypeService', function ($http) {
+app.factory('MainCategoryService', function ($http) {
     return {
         all : function(){
             return $http({
                 method: 'get',
-                url: '/admin/api/v1/category-type/all',
+                url: '/admin/api/v1/main-category/all',
                 header : 'application/json'
             })
         },
         list: function ($page, $filter) {
             return $http({
                 method: 'get',
-                url: '/admin/api/v1/category-type?page=' + $page + "&filter=" + $filter
+                url: '/admin/api/v1/main-category?page=' + $page + "&filter=" + $filter
             })
         },
         save : function ($categoryType){
             return $http({
                 method: 'post',
-                url: '/admin/api/v1/category-type/save',
+                url: '/admin/api/v1/main-category/save',
                 header : 'application/json',
                 data : $categoryType
             })
@@ -28,13 +28,13 @@ app.factory('CategoryTypeService', function ($http) {
         edit : function($id){
 
             return $http({
-                url : '/admin/api/v1/category-type/edit/'+$id,
+                url : '/admin/api/v1/main-category/edit/'+$id,
                 method : 'get'
             })
         },
         delete : function($categoryType){
             return $http({
-                url : '/admin/api/v1/category-type/delete',
+                url : '/admin/api/v1/main-category/delete',
                 method : 'post',
                 header : 'application/json',
                 data : $categoryType

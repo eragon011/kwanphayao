@@ -6,14 +6,17 @@
  * Time: 9:22 AM
  */
 
-class CategoryType extends NeoEloquent {
+class MainCategory extends NeoEloquent {
 
     protected $connection = 'neo4j';
+
+
+    protected $label = ['Classification','MainCategory'];
 
     protected $fillable = ['name','description'];
 
     public function categories(){
-        return $this->belongsToMany("Category","HasType");
+        return $this->hasMany("Category","HAS_CATEGORY");
     }
 
 }

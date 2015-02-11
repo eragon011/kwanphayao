@@ -20,7 +20,7 @@ Route::get('/', function()
 Route::group([],function(){
 
 	Route::controller('/admin/api/v1/category','CategoryController');
-	Route::controller('/admin/api/v1/category-type','CategoryTypeController');
+	Route::controller('/admin/api/v1/main-category','MainCategoryController');
 
 });
 

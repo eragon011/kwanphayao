@@ -1,6 +1,6 @@
 <?php
 
-class CategoryTypeController extends \BaseController {
+class MainCategoryController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -55,7 +55,7 @@ class CategoryTypeController extends \BaseController {
 
 	public function getAll(){
 
-		$categoryType = CategoryType::all();
+		$categoryType = MainCategory::all();
 		return $categoryType;
 
 	}
@@ -66,12 +66,12 @@ class CategoryTypeController extends \BaseController {
 		$dataFilter = $this->getDataFilter();
 		$orderFilter = $this->getOrderByFilter();
 
-		$datatable = $this->myDataTable('CategoryType',[],$page,20,$dataFilter,$orderFilter);
+		$datatable = $this->myDataTable('MainCategory',[],$page,20,$dataFilter,$orderFilter);
 		return $datatable;
 	}
 
 	public function getView($id){
-		$category = CategoryType::find($id);
+		$category = MainCategory::find($id);
 		return $category;
 	}
 
@@ -83,13 +83,13 @@ class CategoryTypeController extends \BaseController {
 
 		if(Input::has('id')){
 			$id = Input::get('id');
-			$cateogry = CategoryType::find($id);
+			$cateogry = MainCategory::find($id);
 			$cateogry->update(Input::except([]));
 			$cateogry->save();
 
 			return $cateogry;
 		}else {
-			$cateogry = CategoryType::firstOrNew(Input::all([]));
+			$cateogry = MainCategory::firstOrNew(Input::all([]));
 			$cateogry->save();
 
 			return $cateogry;
@@ -100,7 +100,7 @@ class CategoryTypeController extends \BaseController {
 	public function postDelete(){
 		if(Input::has('id')){
 			$id = Input::get('id');
-			$categoryType = CategoryType::find($id);
+			$categoryType = MainCategory::find($id);
 			$categoryType->delete();
 			return [true];
 		}else {
