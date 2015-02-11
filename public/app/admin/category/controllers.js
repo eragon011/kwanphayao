@@ -26,9 +26,20 @@ app.controller('ListCtrl', function ($scope, categories,CategoryService) {
 })
 
 
-app.controller('FormCtrl',function($scope,$state,category,CategoryService){
+app.controller('FormCtrl',function($scope,$state,category,mainCategories,CategoryService){
 
-    $scope.category = category.data;
+    function init(){
+        $scope.category = category.data;
+        $scope.mainCategories = mainCategories.data;
+
+        $scope.category.parent = $scope.mainCategories[0];
+    }
+
+    init();
+
+    $scope.selMainCategoryChanged = function(){
+        console.log($scope.category.parent);
+    }
 
     $scope.save = function(){
         console.log($scope.category);
