@@ -24,7 +24,7 @@ app.controller('ListCtrl', function ($scope, mainCategories,MainCategoryService)
     }
 
     $scope.delete = function(mainCategory){
-        confirm_string = "Do you want to delete this CategoryType id:"+mainCategory.id+" ?";
+        confirm_string = "Do you want to delete this Main Category id:"+mainCategory.id+" ?";
         if(confirm(confirm_string)){
             MainCategoryService.delete(mainCategory).success(function(){
                 index = $scope.mainCategories.indexOf(mainCategory);
@@ -35,9 +35,9 @@ app.controller('ListCtrl', function ($scope, mainCategories,MainCategoryService)
 })
 
 
-app.controller('FormCtrl',function($scope,$state,mainCategories,MainCategoryService){
+app.controller('FormCtrl',function($scope,$state,mainCategory,MainCategoryService){
 
-    $scope.mainCategories = mainCategories.data;
+    $scope.mainCategory = mainCategory.data;
 
     $scope.save = function(){
 

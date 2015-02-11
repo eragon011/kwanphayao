@@ -12,7 +12,7 @@ class Category extends NeoEloquent {
 
     protected $label = ['Category','Classification'];
 
-    protected $guared = ['mainCategory'];
+    protected $guared = ['parent'];
 
     protected $fillable = ['name','description'];
 

@@ -24,6 +24,20 @@ app.factory('CategoryService', function ($http) {
                 header : 'application/json',
                 data : $category
             })
+        },
+        edit : function($id){
+            return $http({
+                url : '/admin/api/v1/category/edit/'+$id,
+                method : 'get'
+            })
+        },
+        delete : function($categoryType){
+            return $http({
+                url : '/admin/api/v1/category/delete',
+                method : 'post',
+                header : 'application/json',
+                data : $categoryType
+            })
         }
     }
 })
