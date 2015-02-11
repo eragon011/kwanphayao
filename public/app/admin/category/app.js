@@ -29,8 +29,20 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 mainCategories : function(MainCategoryService){
                     return MainCategoryService.all();
                 }
+            }
+        })
 
-
+        .state('edit',{
+            url : "/edit/:id",
+            templateUrl : "/app/admin/category/form.html",
+            controller : "FormCtrl",
+            resolve : {
+                category : function(CategoryService,$stateParams){
+                    return CategoryService.edit($stateParams.id);
+                },
+                mainCategories : function(MainCategoryService){
+                    return MainCategoryService.all();
+                }
             }
         })
 

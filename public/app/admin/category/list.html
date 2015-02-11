@@ -37,8 +37,8 @@
                 <td>{{c.parent.name}}</td>
                 <td>
                     <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" class="btn">Edit</button>
-                        <button type="button" class="btn">Delete</button>
+                        <button type="button" ui-sref="edit({id:c.id})" class="btn">Edit</button>
+                        <button type="button" class="btn btn-danger" ng-click="delete(c)">Delete</button>
                     </div>
                 </td>
             </tr>
