@@ -44,7 +44,8 @@
         </ul>
 
         <ul class="nav nav-sidebar">
-            <li class="{{Request::path() == 'admin/user' ? 'active' : ''}}"><a href="/admin/user">User</a> </li>
+            <li class="{{Request::path() == 'admin/user' ? 'active' : '';}}"><a href="/admin/user">User</a></li>
+            <li class="{{Request::path() == 'admin/role' ? 'active' : '';}}"><a href="/admin/role">Role</a></li>
         </ul>
 
     </div>
