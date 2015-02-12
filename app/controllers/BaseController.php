@@ -15,31 +15,49 @@ class BaseController extends Controller {
 		}
 	}
 
-
-	protected function myDataTable($class,$with,$skip=0,$take=10,$filter=[],$order = []){
-		$skip = $skip-1;
-		$query = $class::with($with);
-
-
-		foreach($filter as $key => $value){
-			$query->orWhere($key,'=~',"(?i).*$value.*");
+	protected  function  getPage(){
+		if (Input::has('page')){
+			$page = Input::get('page');
+		}else {
+			$page=1;
 		}
 
-		$total = $query->count();
-		foreach($order as $key =>$value){
-			$query->orderBy($key,$value);
+		return $page;
+	}
+
+	protected function getDataFilter(){
+		if (Input::has('filter')){
+			$filter = Input::get('filter');
+
+			$dataFilter = [
+				"name" => $filter,
+				"type" => $filter
+			];
+
+		}else {
+			$dataFilter = [];
 		}
-		$list = $query->skip($skip)->take($take)->get();
 
-		$data = [
-			"data" => $list,
-			"skip" => $skip,
-			"take" => $take,
-			"count" => $list->count(),
-			"total" => $total
-		];
+		return $dataFilter;
+	}
 
-		return $data;
+	protected function getOrderByFilter(){
+		if(Input::has('orderby')){
+			$orderBy = Input::get('orderby');
+			if(Input::has('orderType')){
+				$orderType = Input::get('orderType');
+			}else {
+				$orderType = "asc";
+			}
+
+			$orderFilter = [
+				$orderBy => $orderType
+			];
+		}else {
+			$orderFilter = [];
+		}
+
+		return $orderFilter;
 	}
 
 }

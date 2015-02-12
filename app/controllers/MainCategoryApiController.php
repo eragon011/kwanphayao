@@ -3,64 +3,13 @@
 class MainCategoryApiController extends \BaseController
 {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-
-    private function  getPage()
-    {
-        if (Input::has('page')) {
-            $page = Input::get('page');
-        } else {
-            $page = 1;
-        }
-
-        return $page;
-    }
-
-    private function getDataFilter()
-    {
-        if (Input::has('filter')) {
-            $filter = Input::get('filter');
-
-            $dataFilter = [
-                "name" => $filter,
-                "description" => $filter
-            ];
-
-        } else {
-            $dataFilter = [];
-        }
-
-        return $dataFilter;
-    }
-
-    private function getOrderByFilter()
-    {
-        if (Input::has('orderby')) {
-            $orderBy = Input::get('orderby');
-            if (Input::has('orderType')) {
-                $orderType = Input::get('orderType');
-            } else {
-                $orderType = "asc";
-            }
-
-            $orderFilter = [
-                $orderBy => $orderType
-            ];
-        } else {
-            $orderFilter = [];
-        }
-
-        return $orderFilter;
+    public function __construct(MainCategoryService $mainCategoryService){
+        $this->mainCategoryService = $mainCategoryService;
     }
 
     public function getAll()
     {
-
-        $categoryType = MainCategory::all();
+        $categoryType = $this->mainCategoryService->all();
         return $categoryType;
 
     }
@@ -70,21 +19,21 @@ class MainCategoryApiController extends \BaseController
         $page = $this->getPage();
         $dataFilter = $this->getDataFilter();
         $orderFilter = $this->getOrderByFilter();
+        $with = [];
 
-        $datatable = $this->myDataTable('MainCategory', [], $page, 20, $dataFilter, $orderFilter);
+
+        $datatable = $this->mainCategoryService->getPagination($page,10,$with,$dataFilter,$orderFilter);
         return $datatable;
     }
 
     public function getView($id)
     {
-        $category = MainCategory::find($id);
-        return $category;
+        return $this->mainCategoryService->getById($id);
     }
 
     public function getEdit($id)
     {
-        return $this->getView($id);
-    }
+        return $this->mainCategoryService->getById($id);    }
 
     public function postSave()
     {
@@ -102,14 +51,14 @@ class MainCategoryApiController extends \BaseController
                 $id = Input::get('id');
                 $cateogry = MainCategory::find($id);
                 $cateogry->update(Input::except([]));
-                $cateogry->save();
 
-                return $cateogry;
+
+                return $this->mainCategoryService->save($cateogry);
             } else {
                 $cateogry = MainCategory::firstOrNew(Input::all([]));
                 $cateogry->save();
 
-                return $cateogry;
+                return $this->mainCategoryService->save($cateogry);
             }
         }
 
@@ -120,8 +69,8 @@ class MainCategoryApiController extends \BaseController
     {
         if (Input::has('id')) {
             $id = Input::get('id');
-            $categoryType = MainCategory::find($id);
-            $categoryType->delete();
+            $mainCategory = MainCategory::find($id);
+            $this->mainCategoryService->delete($mainCategory);
             return [true];
         } else {
             return [false];
