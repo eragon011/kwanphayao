@@ -26,13 +26,13 @@ class Content extends Eloquent {
 
 	// --DEFINE RELATIONSHIPS--
 	/**
-	 * a Role model "has many" users.
+	 * a Content model "belongs to" category.
 	 *
 	 * @var array
 	 * @return object
 	 */
-	public function users() {
-		return $this->hasMany('User');
+	public function category() {
+		return $this->belongsTo('Category');
 	}
 
 }
