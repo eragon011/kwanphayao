@@ -21,6 +21,7 @@ Route::group([],function(){
 
 	Route::controller('/admin/api/v1/category','CategoryApiController');
 	Route::controller('/admin/api/v1/main-category','MainCategoryApiController');
+	Route::controller('/admin/api/v1/user','UserApiController');
 
 });
 

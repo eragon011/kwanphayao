@@ -14,7 +14,7 @@ class Role extends Eloquent {
 	 *
 	 * @var string
 	 */
-	protected $connection = 'mysql';
+	protected $connection = 'neo4j';
 
 	// --MASS ASSIGNMENT--
 	/**
