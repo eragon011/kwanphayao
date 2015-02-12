@@ -1,6 +1,6 @@
 <?php
 
-class Role extends Eloquent {
+class Role extends NeoEloquent {
 
 	/**
 	 * The database table used by the model.
