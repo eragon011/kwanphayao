@@ -52,6 +52,7 @@ class MainCategoryApiController extends \BaseController
                 $cateogry = MainCategory::find($id);
                 $cateogry->update(Input::except([]));
 
+
                 return $this->mainCategoryService->save($cateogry);
             } else {
                 $cateogry = MainCategory::firstOrNew(Input::all([]));
