@@ -19,8 +19,8 @@ Route::get('/', function()
 
 Route::group([],function(){
 
-	Route::controller('/admin/api/v1/category','CategoryController');
-	Route::controller('/admin/api/v1/main-category','MainCategoryController');
+	Route::controller('/admin/api/v1/category','CategoryApiController');
+	Route::controller('/admin/api/v1/main-category','MainCategoryApiController');
 
 });
 

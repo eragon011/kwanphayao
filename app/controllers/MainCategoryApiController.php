@@ -1,6 +1,6 @@
 <?php
 
-class MainCategoryController extends \BaseController
+class MainCategoryApiController extends \BaseController
 {
 
     /**

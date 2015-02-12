@@ -1,6 +1,6 @@
 <?php
 
-class CategoryController extends \BaseController {
+class CategoryApiController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
