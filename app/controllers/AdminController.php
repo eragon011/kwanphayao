@@ -23,8 +23,8 @@ class AdminController extends BaseController {
 		return View::make('admins.category');
 	}
 
-	public function getCategoryType(){
-		return View::make('admins.category_type');
+	public function getMainCategory(){
+		return View::make('admins.main-category');
 	}
 
 }

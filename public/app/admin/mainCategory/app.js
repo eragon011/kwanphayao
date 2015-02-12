@@ -1,7 +1,7 @@
 /**
  * Created by chaow on 2/3/2015 AD.
  */
-var app = angular.module('CategoryTypeApp', ['ui.router', 'ngResource', 'ui.bootstrap']);
+var app = angular.module('MainCategoryApp', ['ui.router', 'ngResource', 'ui.bootstrap']);
 app.config(function ($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1
@@ -9,21 +9,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('list', {
             url: "/list",
-            templateUrl: "/app/admin/category_type/list.html",
+            templateUrl: "/app/admin/mainCategory/list.html",
             controller: "ListCtrl",
             resolve: {
-                categoryTypes: function (CategoryTypeService, $stateParams) {
-                    return CategoryTypeService.list(1,"");
+                mainCategories: function (MainCategoryService, $stateParams) {
+                    return MainCategoryService.list(1,"");
                 }
             }
         })
 
         .state('create',{
             url : "/create",
-            templateUrl : "/app/admin/category_type/form.html",
+            templateUrl : "/app/admin/mainCategory/form.html",
             controller : "FormCtrl",
             resolve : {
-                categoryType : function(CategoryTypeService,$stateParams){
+                mainCategory : function(MainCategoryService,$stateParams){
                     return { data : {} };
                 }
             }
@@ -31,11 +31,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('edit',{
             url : "/edit/:id",
-            templateUrl : "/app/admin/category_type/form.html",
+            templateUrl : "/app/admin/mainCategory/form.html",
             controller : "FormCtrl",
             resolve : {
-                categoryType : function(CategoryTypeService,$stateParams){
-                    return CategoryTypeService.edit($stateParams.id) ;
+                mainCategory : function(MainCategoryService,$stateParams){
+                    return MainCategoryService.edit($stateParams.id) ;
                 }
             }
         })

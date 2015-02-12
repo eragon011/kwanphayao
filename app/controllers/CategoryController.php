@@ -59,7 +59,7 @@ class CategoryController extends \BaseController {
 		$dataFilter = $this->getDataFilter();
 		$orderFilter = $this->getOrderByFilter();
 
-		$datatable = $this->myDataTable('Category',[],$page,20,$dataFilter,$orderFilter);
+		$datatable = $this->myDataTable('Category',['parent'],$page,20,$dataFilter,$orderFilter);
 		return $datatable;
 	}
 
@@ -70,11 +70,62 @@ class CategoryController extends \BaseController {
 
 	}
 
+	public function getEdit($id){
+		return $this->getView($id);
+	}
+
 	public function postSave(){
 
-		$category = Category::updateOrCreate(Input::except([]));
-		return $category;
+		if (Input::has('id')) {
 
+			$id = Input::get('id');
+			$category = Category::find($id);
+			$category->update(Input::except(['parent']));
+			$category->save();
+
+			$mainCategoryId = Input::get('parent.id');
+			$mainCategory = MainCategory::find($mainCategoryId);
+
+			$category->parent()->associate($mainCategory)->save();
+
+
+			return $category;
+		}else{
+
+			$category = Category::updateOrCreate(Input::except(['parent']));
+			$mainCategoryId = Input::get('parent.id');
+			return [$mainCategoryId];
+			$mainCategory = MainCategory::find($mainCategoryId);
+			$category->parent()->associate($mainCategory)->save();
+
+			return $category;
+		}
+
+
+
+
+	}
+
+	public function postDelete(){
+		if(Input::has('id')){
+			$id = Input::get('id');
+			$cat = Category::find($id);
+
+			$mid = $cat->parent()->first();
+			if($mid != null){
+				$mmid = $mid->id;
+				$mainCat = MainCategory::find($mmid);
+				$mainCat->categories()->detach($id);
+			}
+			$cat->delete();
+
+			return [true];
+
+		}else {
+
+			return [false];
+
+		}
 	}
 
 

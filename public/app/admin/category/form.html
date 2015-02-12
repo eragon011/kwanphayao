@@ -16,7 +16,14 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-default">Submit</button>
+                <label>Main Category :</label>
+                <select class="form-control" ng-model="category.parent" ng-change="selMainCategoryChanged()" ng-options="opt as opt.name for opt in mainCategories">
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" ui-sref="list" class="btn btn-default">Cancel</button>
             </div>
         </form>
     </div>
