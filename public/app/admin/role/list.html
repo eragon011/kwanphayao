@@ -1,0 +1,48 @@
+<div>
+    <div class="row">
+        <div class="pull-left">
+            <button ui-sref="add" type="button" class="btn btn-primary">Add User Role</button>
+        </div>
+        <div class="pull-right">
+            <form class="form-inline">
+                <div class="input-group">
+                    <form ng-submit="filterChange()">
+                        <input type="text" ng-model="filterWord" class="form-control" placeholder="Search for..."/>
+                        <span class="input-group-btn">
+                            <button ng-click="filterChange()" class="btn btn-primary" type="submit">Go!</button>
+                        </span>
+                    </form>
+                </div> <!-- /input-group -->
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="r in roles">
+                <td>{{r.id}}</td>
+                <td>{{r.name}}</td>
+                <td>{{r.description}}</td>
+                <td>
+                    <div class="btn-group btn-group-sm" role="group">
+                        <button type="button" ui-sref="edit({id:r.id}) class=btn">Edit</button>
+                        <button type="button" class=btn btn-danger" ng-click="delete(c)">Edit</button>
+
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!--next-->
+</div>

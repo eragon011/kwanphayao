@@ -3,7 +3,7 @@ app.factory('RoleService', function($http) {
         all : function() {
             return $http({
                 method : 'get',
-                url : '/admin/api/vi/role/all',
+                url : '/admin/api/v1/role/all',
                 header : 'application/json'
             })
         },
@@ -24,8 +24,16 @@ app.factory('RoleService', function($http) {
         edit : function($id) {
             return $http({
                 method : 'get',
-                url : '/admin/api/v1/role'
+                url : '/admin/api/v1/role/edit/'+$id
+            })
+        },
+        delete : function($role) {
+            return $http({
+                method : 'post',
+                url : '/admin/api/v1/role/delete',
+                header : 'application/json',
+                data : $role
             })
         }
     }
-})
+});

@@ -30,7 +30,7 @@ app.factory('UserService', function($http) {
        delete : function($user) {
            return $http({
                method : 'post',
-               url : '/admin/api/vi/user/delete',
+               url : '/admin/api/v1/user/delete',
                header : 'application/json',
                data : $user
            })

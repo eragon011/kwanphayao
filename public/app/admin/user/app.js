@@ -16,7 +16,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         .state('add', {
-            url: "/create",
+            url: "/add",
             templateUrl: "/app/admin/user/form.html",
             controller : "FormCtrl",
             resolve : {
@@ -34,8 +34,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl : "/app/admin/user/form.html",
             controller : "FormCtrl",
             resolve : {
-                user : function(userService, $stateParams) {
-                    return userService.edit($stateParams.id);
+                user : function(UserService, $stateParams) {
+                    return UserService.edit($stateParams.id);
                 },
                 role : function(RoleService) {
                     return RoleService.all();
