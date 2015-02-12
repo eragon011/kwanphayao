@@ -2,64 +2,21 @@
 
 class CategoryApiController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 
-	private  function  getPage(){
-		if (Input::has('page')){
-			$page = Input::get('page');
-		}else {
-			$page=1;
-		}
-
-		return $page;
-	}
-
-	private function getDataFilter(){
-		if (Input::has('filter')){
-			$filter = Input::get('filter');
-
-			$dataFilter = [
-				"name" => $filter,
-				"type" => $filter
-			];
-
-		}else {
-			$dataFilter = [];
-		}
-
-		return $dataFilter;
-	}
-
-	private function getOrderByFilter(){
-		if(Input::has('orderby')){
-			$orderBy = Input::get('orderby');
-			if(Input::has('orderType')){
-				$orderType = Input::get('orderType');
-			}else {
-				$orderType = "asc";
-			}
-
-			$orderFilter = [
-				$orderBy => $orderType
-			];
-		}else {
-			$orderFilter = [];
-		}
-
-		return $orderFilter;
+	public function __construct(CategoryService $categoryService){
+		$this->categoryService = $categoryService;
 	}
 
 	public function getIndex()
 	{
+
 		$page = $this->getPage();
 		$dataFilter = $this->getDataFilter();
 		$orderFilter = $this->getOrderByFilter();
+		$with = ['parent'];
 
-		$datatable = $this->myDataTable('Category',['parent'],$page,20,$dataFilter,$orderFilter);
+
+		$datatable = $this->categoryService->getPagination($page,20,['parent'],$dataFilter,$orderFilter);
 		return $datatable;
 	}
 
@@ -111,13 +68,7 @@ class CategoryApiController extends \BaseController {
 			$id = Input::get('id');
 			$cat = Category::find($id);
 
-			$mid = $cat->parent()->first();
-			if($mid != null){
-				$mmid = $mid->id;
-				$mainCat = MainCategory::find($mmid);
-				$mainCat->categories()->detach($id);
-			}
-			$cat->delete();
+			$this->categoryService->delete($cat);
 
 			return [true];
 
