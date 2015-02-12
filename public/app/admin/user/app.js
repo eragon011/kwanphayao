@@ -9,13 +9,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "/app/admin/user/list.html",
             controller: "ListCtrl",
             resolve: {
-                users: function (UserService, $stateParams) {
+                user: function (UserService, $stateParams) {
                     return UserService.list(1,"");
                 }
             }
         })
 
-        .state('create', {
+        .state('add', {
             url: "/create",
             templateUrl: "/app/admin/user/form.html",
             controller : "FormCtrl",

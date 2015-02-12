@@ -34,12 +34,13 @@
                 <tr ng-repeat="u in users">
                     <td>{{u.id}}</td>
                     <td>{{u.username}}</td>
-                    <td>{{u.title}}{{u.firstname}}  {{u.lastname}}</td>
+                    <!--<td>{{u.title}}{{u.firstname}} {{u.lastname}}</td>-->
+                    <td>{{u.firstname}}</td>
                     <td>{{u.role.name}}</td>
                     <td>{{u.email}}</td>
                     <td>
                         <div class="btn-group btn-group-sm" role="group">
-                            <button type="button" ui-sref="edit{{id:u.id}}" class="btn">Edit</button>
+                            <button type="button" ui-sref="edit({id:u.id})" class="btn">Edit</button>
                             <button type="button" class="btn btn-danger" ng-click="delete(u)">Delete</button>
                         </div>
                     </td>

@@ -9,35 +9,35 @@ class UserApiController extends \BaseController {
     public function getIndex() {
         $page = $this->getPage();
         $dataFilter = $this->getDataFilter();
-        $orderFilter = $this->getOrderByFiler();
+        $orderFilter = $this->getOrderByFilter();
         $with = ['role'];
 
-        $datatable = $this->userService->getPagination($page,20,['parent'],$dataFilter,$orderFilter);
+        $datatable = $this->userService->getPagination($page,20,['role'],$dataFilter,$orderFilter);
 
         return $datatable;
 
     }
 
-//    public function getDataFilter() {
-//        if (Input::has('filter')) {
-//            $filter = Input::get('filter');
-//
-//            $dataFilter = [
-//                "username" => $filter,
-//                "avatar" => $filter,
-//                "email" => $filter,
-//                "title" => $filter,
-//                "firstname" => $filter,
-//                "lastname" => $filter,
-//                "organization" => $filter
-//            ];
-//
-//        } else {
-//            $dataFilter = [];
-//        }
-//
-//        return $dataFilter;
-//    }
+    public function getDataFilter() {
+        if (Input::has('filter')) {
+            $filter = Input::get('filter');
+
+            $dataFilter = [
+                "username" => $filter,
+                "avatar" => $filter,
+                "email" => $filter,
+                "title" => $filter,
+                "firstname" => $filter,
+                "lastname" => $filter,
+                "organization" => $filter
+            ];
+
+        } else {
+            $dataFilter = [];
+        }
+
+        return $dataFilter;
+    }
 
     public function getView($id) {
         $user = User::find($id);
