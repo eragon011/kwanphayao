@@ -14,7 +14,7 @@ class UserService extends BaseService {
 
     public function getPagination($page=0,$take=10,$with=[],$filter=[],$order = []){
 
-        return $datatable = $this->myDataTable('User', $page, $take,$with, $filter, $order);
+        return $datatable = $this->myDataTable('User', $page, $take, $with, $filter, $order);
 
     }
 

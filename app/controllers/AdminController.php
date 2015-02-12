@@ -27,4 +27,12 @@ class AdminController extends BaseController {
 		return View::make('admins.main-category');
 	}
 
+	public function getUser() {
+		return View::make('admins.user');
+	}
+
+	public function getRole() {
+		return View::make('admins.role');
+	}
+
 }
