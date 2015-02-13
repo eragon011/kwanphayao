@@ -25,9 +25,12 @@ class BaseService {
 
         }
 
-        foreach($filter as $key => $value){
-            $query->orWhere($key,'=~',"(?i).*$value.*");
+        if($filter != null){
+            foreach($filter as $key => $value){
+                $query->orWhere($key,'=~',"(?i).*$value.*");
+            }
         }
+
 
         $total = $query->count();
         foreach($order as $key =>$value){
@@ -66,7 +69,7 @@ class BaseService {
         return $orderFilter;
     }
 
-    public function getPagination($model,$input,$with=null){
+    public function getPagination($model,$input,$colFilter=null,$relateColFilter=null,$with=null){
 
         if(isset($input['page'])){
             $page = $input['page'];
@@ -79,10 +82,11 @@ class BaseService {
             $take = 20;
         }
         if(isset($input['filter'])){
-            $filter = $model::getDataFilter($input['filter']);
-            $relateFilter = $model::getRelationFilter($input['filter']);
+            $filter = $model::getDataFilter($colFilter,$input['filter']);
+            $relateFilter = $model::getRelationFilter($relateColFilter,$input['filter']);
         }else {
             $filter = null;
+            $relateFilter = null;
         }
 
         $order = $this->getOrderByArray($input);

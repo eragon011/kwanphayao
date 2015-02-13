@@ -6,7 +6,7 @@
  * Date: 1/31/2015 AD
  * Time: 9:22 AM
  */
-class MainCategory extends NeoEloquent implements IModel
+class MainCategory extends AbstrctIModel
 {
 
     protected $connection = 'neo4j';
@@ -19,28 +19,5 @@ class MainCategory extends NeoEloquent implements IModel
     {
         return $this->hasMany("Category", "HAS_CATEGORY");
     }
-
-    static function getDataFilter($filterString = null)
-    {
-        if ($filterString != null) {
-            $filter = $filterString;
-
-            $dataFilter = [
-                "name" => $filter,
-                "description" => $filter,
-            ];
-
-        } else {
-            $dataFilter = [];
-        }
-
-        return $dataFilter;
-    }
-
-    static function getRelationFilter($filterString = null)
-    {
-        return null;
-    }
-
 
 }

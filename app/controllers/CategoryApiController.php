@@ -11,7 +11,17 @@ class CategoryApiController extends \BaseController {
 	{
 		$with = ['parent'];
 
-		return  $this->categoryService->getPagination("Category",Input::all(),$with);
+		$colFilter = [
+			'name',
+		];
+
+		$relateColFilter = [
+			'parent' => [
+				'name'
+			]
+		];
+
+		return  $this->categoryService->getPagination("Category",Input::all(),$colFilter,$relateColFilter,$with);
 
 	}
 

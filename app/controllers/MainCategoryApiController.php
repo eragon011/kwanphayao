@@ -17,7 +17,15 @@ class MainCategoryApiController extends \BaseController
     public function getIndex()
     {
         $with = [];
-        return $this->mainCategoryService->getPagination("MainCategory",Input::all(),$with);
+
+        $colFilter = [
+            'name',
+            'description',
+        ];
+
+        $relateColFilter = [];
+
+        return $this->mainCategoryService->getPagination("MainCategory",Input::all(),$colFilter,$relateColFilter,$with);
     }
 
     public function getView($id)

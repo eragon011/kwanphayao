@@ -7,6 +7,6 @@
  */
 
 interface IModel {
-    static function getDataFilter($filterString = null);
-    static function getRelationFilter($filterString = null);
+    static function getDataFilter($colFilter,$filterString = null);
+    static function getRelationFilter($relateColFilter,$filterString = null);
 }
