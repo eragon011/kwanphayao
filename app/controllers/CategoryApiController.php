@@ -38,50 +38,13 @@ class CategoryApiController extends \BaseController {
 
 	public function postSave(){
 
-		if (Input::has('id')) {
-
-			$id = Input::get('id');
-			$category = Category::find($id);
-			$category->update(Input::except(['parent']));
-			$category->save();
-
-			$mainCategoryId = Input::get('parent.id');
-			$mainCategory = MainCategory::find($mainCategoryId);
-
-			$category->parent()->associate($mainCategory)->save();
-
-
-			return $category;
-		}else{
-
-			$category = Category::updateOrCreate(Input::except(['parent']));
-			$mainCategoryId = Input::get('parent.id');
-			return [$mainCategoryId];
-			$mainCategory = MainCategory::find($mainCategoryId);
-			$category->parent()->associate($mainCategory)->save();
-
-			return $category;
-		}
-
-
-
+		return $this->categoryService->save(Input::all());
 
 	}
 
 	public function postDelete(){
-		if(Input::has('id')){
-			$id = Input::get('id');
-			$cat = Category::find($id);
 
-			$this->categoryService->delete($cat);
-
-			return [true];
-
-		}else {
-
-			return [false];
-
-		}
+		return $this->categoryService->delete(Input::all());
 	}
 
 

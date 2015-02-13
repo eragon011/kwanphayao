@@ -13,19 +13,43 @@ class CategoryService extends BaseService {
     }
 
 
-
     public function getById($id){
         return Category::find($id);
     }
 
-    public function save(Category $category){
+    public function save(array $input){
+        if(isset($input['id'])){
+            $id = $input['id'];
+            $category = Category::find($id);
+            $category->update($input);
+            $category->save();
 
-        $category->save();
-        return $category;
+            $mainCategoryId = $input['parent']['id'];
+            $mainCategory = MainCategory::find($mainCategoryId);
 
+            $category->parent()->associate($mainCategory)->save();
+
+
+            return $category;
+        }else {
+
+            $parent = $input['parent'];
+
+            $category = Category::firstOrNew(array_except($input,['parent']));
+            $category->save();
+            $mainCategoryId = $parent['id'];
+
+            $mainCategory = MainCategory::find($mainCategoryId);
+            $category->parent()->associate($mainCategory)->save();
+
+            return $category;
+
+        }
     }
 
-    public function delete(Category $category){
+    public function delete(array $input){
+
+        $category = Category::find($input['id']);
 
         $mid = $category->parent()->first();
         if($mid != null){

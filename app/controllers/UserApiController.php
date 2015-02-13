@@ -39,26 +39,6 @@ class UserApiController extends \BaseController {
 
     }
 
-    public function getDataFilter() {
-        if (Input::has('filter')) {
-            $filter = Input::get('filter');
-
-            $dataFilter = [
-                "username" => $filter,
-                "avatar" => $filter,
-                "email" => $filter,
-                "title" => $filter,
-                "firstname" => $filter,
-                "lastname" => $filter,
-                "organization" => $filter
-            ];
-
-        } else {
-            $dataFilter = [];
-        }
-
-        return $dataFilter;
-    }
 
     public function getView($id) {
         $user = User::find($id);
@@ -70,41 +50,13 @@ class UserApiController extends \BaseController {
     }
 
     public function postSave() {
-        if (Input::has('id')) {
-            $id = Input::get('id');
-            $user = User::find($id);
-            $user->update(Input::except(['role']));
-            $user->save();
 
-            $roleId = Input::get('role.id');
-            $role = Role::find($roleId);
-
-            $user->role()->associate($role)->save();
-
-            return $user;
-        } else {
-            $user = User::updateOrCreate(Input::except(['role']));
-            $roleId = Input::get('role.id');
-            return [$roleId];
-
-            $role = Role::find($roleId);
-            $user->role()->associate($role)->save();
-
-            return $user;
-        }
+        return $this->userService->save(Input::all());
     }
 
     public function postDelete() {
-        if(Input::has('id')) {
-            $id = Input::get('id');
-            $user = User::find($id);
+        return $this->userService->delete(Input::all());
 
-            $this->userService->delete($user);
-
-            return [true];
-        } else {
-            return [false];
-        }
     }
 
 }
