@@ -27,7 +27,7 @@ class MainCategory extends NeoEloquent implements IModel
 
             $dataFilter = [
                 "name" => $filter,
-                "type" => $filter,
+                "description" => $filter,
             ];
 
         } else {

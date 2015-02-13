@@ -12,12 +12,6 @@ class MainCategoryService extends BaseService {
         return MainCategory::all();
     }
 
-    public function getPagination($page=0,$take=10,$with=[],$filter=[],$order = []){
-
-        return $datatable = $this->myDataTable('MainCategory', $page, $take,$with, $filter, $order);
-
-    }
-
     public function getById($id){
         return MainCategory::find($id);
     }
