@@ -1,6 +1,6 @@
 <?php
 
-class Role extends NeoEloquent implements  IModel{
+class Role extends AbstrctIModel{
 
 	/**
 	 * The database table used by the model.
@@ -36,28 +36,4 @@ class Role extends NeoEloquent implements  IModel{
 	public function users() {
 		return $this->hasMany('User');
 	}
-
-	static function getDataFilter($filterString = null)
-	{
-		if ($filterString != null) {
-			$filter = $filterString;
-
-			$dataFilter = [
-				"name" => $filter,
-				"description" => $filter,
-			];
-
-		} else {
-			$dataFilter = [];
-		}
-
-		return $dataFilter;
-	}
-
-	static function getRelationFilter($filterString = null)
-	{
-		return null;
-	}
-
-
 }

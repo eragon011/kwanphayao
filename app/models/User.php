@@ -5,7 +5,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends NeoEloquent implements UserInterface, RemindableInterface, IModel {
+class User extends AbstrctIModel implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
@@ -55,44 +55,6 @@ class User extends NeoEloquent implements UserInterface, RemindableInterface, IM
 	 *
 	 * @var array
 	 */
-	static function getDataFilter($filterString = null)
-	{
-		if ($filterString != null) {
-			$filter = $filterString;
-
-			$dataFilter = [
-                "username" => $filter,
-                "avatar" => $filter,
-                "email" => $filter,
-                "title" => $filter,
-                "firstname" => $filter,
-                "lastname" => $filter,
-                "organization" => $filter
-			];
-
-		} else {
-			$dataFilter = [];
-		}
-
-		return $dataFilter;
-	}
-
-    public static function getRelationFilter($filterString = null){
-        if ($filterString != null){
-            $filter = $filterString;
-
-            $dataFilter = [
-                "role" => [
-                    "name" => $filter
-                ]
-            ];
-
-        }else {
-            $dataFilter = [];
-        }
-
-        return $dataFilter;
-    }
 
 
 }

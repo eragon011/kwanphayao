@@ -11,28 +11,16 @@ class RoleApiController extends \BaseController {
     }
 
     public function getIndex() {
-        $page = $this->getPage();
-        $dataFilter = $this->getDataFilter();
-        $orderFilter = $this->getOrderByFilter();
         $with = [];
 
-        $datatable = $this->roleService->getPagination($page,10,$with,$dataFilter,$orderFilter);
-        return $datatable;
-    }
+        $colFilter = [
+            'name',
+            'description',
+        ];
 
-    public function getDataFilter() {
-        if (Input::has('filter')) {
-            $filter = Input::get('filter');
+        $relateColFilter = [];
 
-            $dataFilter = [
-                "name" => $filter,
-                "description" => $filter
-            ];
-        } else {
-            $dataFilter = [];
-        }
-
-        return $dataFilter;
+        return $this->roleService->getPagination("Role",Input::all(),$colFilter,$relateColFilter,$with);
     }
 
     public function getView($id) {
