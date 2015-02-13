@@ -6,6 +6,10 @@ class RoleApiController extends \BaseController {
         $this->roleService = $roleService;
     }
 
+    public function getAll(){
+        return $this->roleService->all();
+    }
+
     public function getIndex() {
         $page = $this->getPage();
         $dataFilter = $this->getDataFilter();

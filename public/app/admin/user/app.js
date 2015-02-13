@@ -15,8 +15,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
-        .state('add', {
-            url: "/add",
+        .state('create', {
+            url: "/create",
             templateUrl: "/app/admin/user/form.html",
             controller : "FormCtrl",
             resolve : {
