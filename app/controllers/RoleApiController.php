@@ -32,6 +32,8 @@ class RoleApiController extends \BaseController {
     }
 
     public function postSave() {
+
+
         $validator = Validator::make(
             Input::all(),
             array('name' => 'required')
@@ -40,28 +42,12 @@ class RoleApiController extends \BaseController {
         if ($validator->fails()) {
             return null;
         } else {
-            if (Input::has('id')) {
-                $id = Input::get('id');
-                $role = Role::find($id);
-                $role->update(Input::except([]));
-
-                return $this->roleService->save($role);
-            } else {
-                $role = Role::findOrNew(Input::all([]));
-                return $this->roleService->save($role);
-            }
+            return $this->roleService->save(Input::all());
         }
     }
 
     public function postDelete() {
-        if (Input::has('id')) {
-            $id = Input::get('id');
-            $role = Role::find('id');
-            $this->roleService->delete($role);
-            return [true];
-        } else {
-            return [false];
-        }
+        return $this->roleService->delete(Input::all());
     }
 
 }

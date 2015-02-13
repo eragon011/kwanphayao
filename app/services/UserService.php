@@ -16,24 +16,51 @@ class UserService extends BaseService {
         return User::find($id);
     }
 
-    public function save(User $user){
+    public function save(array $input){
 
-        $user->save();
-        return $user;
+        if (isset($input['id'])) {
+            $id = $input['id'];
+            $user = User::find($id);
+            $user->update(array_except($input,['role']));
+            $user->save();
+
+            $roleId = $input['role']['id'];
+            $role = Role::find($roleId);
+
+            $user->role()->associate($role)->save();
+
+            return $user;
+        } else {
+            $user = User::updateOrCreate(array_except($input,['role']));
+            $roleId = $input['role']['id'];
+
+            $role = Role::find($roleId);
+            $user->role()->associate($role)->save();
+
+            return $user;
+        }
 
     }
 
-    public function delete(User $user){
+    public function delete(array $input){
 
-        $role = $user->role()->first();
-        if($role != null){
-            $role_id = $role->id;
-            $role = Role::find($role_id);
-            $role->users()->detach($user->id);
+        if(isset($input['id'])) {
+            $id = $input['id'];
+            $user = User::find($id);
+
+            $role = $user->role()->first();
+
+            if($role != null){
+                $role_id = $role->id;
+                $role = Role::find($role_id);
+                $role->users()->detach($user->id);
+            }
+            $user->delete();
+
+            return [true];
+        } else {
+            return [false];
         }
-        $user->delete();
-
-        return $user;
     }
 
 }

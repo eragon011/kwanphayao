@@ -22,19 +22,34 @@ class RoleService extends BaseService {
         return Role::find($id);
     }
 
-    public function save(Role $role){
+    public function save(array $input){
 
-        $role->save();
-        return $role;
+
+        if (isset($input['id'])) {
+            $id = $input['id'];
+            $role = Role::find($id);
+            $role->update($input);
+            $role->save();
+
+            return $role;
+        } else {
+            $role = Role::findOrNew($input);
+            $role->save();
+            return $role;
+        }
 
     }
 
-    public function delete(Role $role){
+    public function delete(array $input){
 
-        $role->users()->sync([],true);
-        $role->delete();
-
-        return $role;
+        if (isset($input['id'])) {
+            $id = $input['id'];
+            $role = Role::find($id);
+            $role->delete();
+            return [true];
+        } else {
+            return [false];
+        }
     }
 
 }
