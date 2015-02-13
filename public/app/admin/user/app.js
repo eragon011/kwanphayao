@@ -23,7 +23,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 user : function(UserService, $stateParams) {
                     return {data : {} };
                 },
-                role : function(RoleService) {
+                roles : function(RoleService) {
                     return RoleService.all();
                 }
             }
