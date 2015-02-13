@@ -16,17 +16,34 @@ class MainCategoryService extends BaseService {
         return MainCategory::find($id);
     }
 
-    public function save(MainCategory $mainCategory){
+    public function save(array $input){
 
-        $mainCategory->save();
-        return $mainCategory;
+        if (isset($input['id'])) {
+            $id = $input['id'];
+            $cateogry = MainCategory::find($id);
+            $cateogry->update($input);
+
+            $cateogry->save();
+
+            return $cateogry;
+        } else {
+            $cateogry = MainCategory::firstOrNew($input);
+            $cateogry->save();
+
+            return $cateogry;
+        }
 
     }
-
-    public function delete(MainCategory $mainCategory){
-        $mainCategory->categories()->sync([],true);
-        $mainCategory->delete();
-        return $mainCategory;
+    public function delete(array $input){
+        if (Input::has('id')) {
+            $id = Input::get('id');
+            $mainCategory = MainCategory::find($id);
+            $this->mainCategoryService->delete($mainCategory);
+            return [true];
+        } else {
+            return [false];
+        }
     }
+
 
 }

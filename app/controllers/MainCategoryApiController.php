@@ -49,34 +49,15 @@ class MainCategoryApiController extends \BaseController
         if ($validator->fails()) {
             return null;
         } else {
-            if (Input::has('id')) {
-                $id = Input::get('id');
-                $cateogry = MainCategory::find($id);
-                $cateogry->update(Input::except([]));
-
-
-                return $this->mainCategoryService->save($cateogry);
-            } else {
-                $cateogry = MainCategory::firstOrNew(Input::all([]));
-                $cateogry->save();
-
-                return $this->mainCategoryService->save($cateogry);
-            }
+            return $this->mainCategoryService->save(Input::all());
         }
 
 
     }
 
-    public function postDelete()
+    public function postDelete($input)
     {
-        if (Input::has('id')) {
-            $id = Input::get('id');
-            $mainCategory = MainCategory::find($id);
-            $this->mainCategoryService->delete($mainCategory);
-            return [true];
-        } else {
-            return [false];
-        }
+        return $this->mainCategoryService->delete(Input::all());
     }
 
 
