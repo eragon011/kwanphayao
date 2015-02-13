@@ -7,14 +7,35 @@ class UserApiController extends \BaseController {
     }
 
     public function getIndex() {
-        $page = $this->getPage();
-        $dataFilter = $this->getDataFilter();
-        $orderFilter = $this->getOrderByFilter();
-        $with = ['role'];
+//        $page = $this->getPage();
+//        $dataFilter = $this->getDataFilter();
+//        $orderFilter = $this->getOrderByFilter();
+//        $with = ['role'];
+//
+//        $datatable = $this->userService->getPagination($page,20,['role'],$dataFilter,$orderFilter);
+//
+//        return $datatable;
 
-        $datatable = $this->userService->getPagination($page,20,['role'],$dataFilter,$orderFilter);
+        $with = ['parent'];
 
-        return $datatable;
+        $colFilter = [
+            "username",
+            "avatar",
+            "email",
+            "title",
+            "firstname",
+            "lastname" ,
+            "organization"
+        ];
+
+        $relateColFilter = [
+            'role' => [
+                'name'
+            ]
+        ];
+
+        return  $this->userService->getPagination("User",Input::all(),$colFilter,$relateColFilter,$with);
+
 
     }
 

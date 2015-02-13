@@ -1,6 +1,6 @@
 <?php
 
-class Role extends NeoEloquent {
+class Role extends AbstrctIModel{
 
 	/**
 	 * The database table used by the model.
@@ -36,5 +36,4 @@ class Role extends NeoEloquent {
 	public function users() {
 		return $this->hasMany('User');
 	}
-
 }

@@ -9,15 +9,20 @@ class CategoryApiController extends \BaseController {
 
 	public function getIndex()
 	{
-
-		$page = $this->getPage();
-		$dataFilter = $this->getDataFilter();
-		$orderFilter = $this->getOrderByFilter();
 		$with = ['parent'];
 
+		$colFilter = [
+			'name',
+		];
 
-		$datatable = $this->categoryService->getPagination($page,20,['parent'],$dataFilter,$orderFilter);
-		return $datatable;
+		$relateColFilter = [
+			'parent' => [
+				'name'
+			]
+		];
+
+		return  $this->categoryService->getPagination("Category",Input::all(),$colFilter,$relateColFilter,$with);
+
 	}
 
 	public function getView($id){

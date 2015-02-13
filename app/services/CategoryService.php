@@ -12,11 +12,7 @@ class CategoryService extends BaseService {
         return Category::all();
     }
 
-    public function getPagination($page=0,$take=10,$with=[],$filter=[],$order = []){
 
-        return $datatable = $this->myDataTable('Category', $page, $take,$with, $filter, $order);
-
-    }
 
     public function getById($id){
         return Category::find($id);

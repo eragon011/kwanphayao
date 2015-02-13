@@ -8,20 +8,35 @@
 
 class BaseService {
 
-    protected function myDataTable($class,$page=1,$take=10,$with=[],$filter=[],$order = []){
+    protected function myDataTable($class,$page=1,$take=10,$with=[],$filter=[],$relateFilter=[],$order = []){
 
         $skip = $page-1;
         $query = $class::with($with);
 
 
-        foreach($filter as $key => $value){
-            $query->orWhere($key,'=~',"(?i).*$value.*");
+        if($relateFilter != null){
+            foreach($relateFilter as $key=>$value){
+                $query->orWhereHas($key,function($q) use ($value){
+                    foreach($value as $k => $v){
+                        $q->orWhere($k,'=~',"(?i).*$v.*");
+                    }
+                });
+            }
+
         }
+
+        if($filter != null){
+            foreach($filter as $key => $value){
+                $query->orWhere($key,'=~',"(?i).*$value.*");
+            }
+        }
+
 
         $total = $query->count();
         foreach($order as $key =>$value){
             $query->orderBy($key,$value);
         }
+
         $list = $query->skip($skip)->take($take)->get();
 
         $data = [
@@ -34,5 +49,51 @@ class BaseService {
 
         return $data;
     }
+
+    protected function getOrderByArray($input){
+        if(isset($input['orderby'])){
+            $orderBy = $input['orderby'];
+            if(isset($input['orderType'])){
+                $orderType = $input['orderType'];
+            }else {
+                $orderType = "asc";
+            }
+
+            $orderFilter = [
+                $orderBy => $orderType
+            ];
+        }else {
+            $orderFilter = [];
+        }
+
+        return $orderFilter;
+    }
+
+    public function getPagination($model,$input,$colFilter=null,$relateColFilter=null,$with=null){
+
+        if(isset($input['page'])){
+            $page = $input['page'];
+        }else {
+            $page = 1;
+        }
+        if(isset($input['take'])){
+            $take = $input['take'];
+        }else {
+            $take = 20;
+        }
+        if(isset($input['filter'])){
+            $filter = $model::getDataFilter($colFilter,$input['filter']);
+            $relateFilter = $model::getRelationFilter($relateColFilter,$input['filter']);
+        }else {
+            $filter = null;
+            $relateFilter = null;
+        }
+
+        $order = $this->getOrderByArray($input);
+
+        return $datatable = $this->myDataTable($model, $page, $take,$with, $filter,$relateFilter, $order);
+
+    }
+
 
 }
