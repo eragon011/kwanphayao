@@ -12,12 +12,6 @@ class UserService extends BaseService {
         return User::all();
     }
 
-    public function getPagination($page=0,$take=10,$with=[],$filter=[],$order = []){
-
-        return $datatable = $this->myDataTable('User', $page, $take, $with, $filter, $order);
-
-    }
-
     public function getById($id){
         return User::find($id);
     }

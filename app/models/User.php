@@ -5,7 +5,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends NeoEloquent implements UserInterface, RemindableInterface {
+class User extends AbstrctIModel implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
@@ -55,5 +55,6 @@ class User extends NeoEloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */
+
 
 }

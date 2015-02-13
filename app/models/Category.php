@@ -6,7 +6,7 @@
  * Time: 9:22 AM
  */
 
-class Category extends NeoEloquent {
+class Category extends AbstrctIModel {
 
     protected $connection = 'neo4j';
 
@@ -19,5 +19,6 @@ class Category extends NeoEloquent {
     public function parent(){
         return $this->belongsTo('MainCategory','HAS_CATEGORY');
     }
+
 
 }

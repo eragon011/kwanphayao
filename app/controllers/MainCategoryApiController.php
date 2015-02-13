@@ -16,14 +16,16 @@ class MainCategoryApiController extends \BaseController
 
     public function getIndex()
     {
-        $page = $this->getPage();
-        $dataFilter = $this->getDataFilter();
-        $orderFilter = $this->getOrderByFilter();
         $with = [];
 
+        $colFilter = [
+            'name',
+            'description',
+        ];
 
-        $datatable = $this->mainCategoryService->getPagination($page,10,$with,$dataFilter,$orderFilter);
-        return $datatable;
+        $relateColFilter = [];
+
+        return $this->mainCategoryService->getPagination("MainCategory",Input::all(),$colFilter,$relateColFilter,$with);
     }
 
     public function getView($id)
