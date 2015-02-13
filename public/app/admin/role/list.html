@@ -1,7 +1,7 @@
 <div>
     <div class="row">
         <div class="pull-left">
-            <button ui-sref="add" type="button" class="btn btn-primary">Add User Role</button>
+            <button ui-sref="create" type="button" class="btn btn-primary">Create User Role</button>
         </div>
         <div class="pull-right">
             <form class="form-inline">
@@ -44,5 +44,25 @@
         </table>
     </div>
     
-    <!--next-->
+    <div class="row">
+        <div>
+            <div class="pull-left">
+                <span ng-if="dt.count > 0">
+                    Showing {{dt.skip * dt.take + 1}} to {{dt.skip * dt.take + dt.count}} of {{dt.total}} entries
+                </span>
+
+                <span ng-if="dt.count <= 0">
+                    Showing 0 to 0 of {{dt.total}} entries
+                </span>
+            </div>
+
+            <div class="pull-right">
+                <pagination ng-change="pageChange()" total-items="dt.total" item-per-page="dt.take"
+                            ng-model="currentPage" class="pagination-sm" boundary-links="true"
+                            rotate="false"></pagination>
+            </div>
+        </div>
+
+    </div>
+
 </div>

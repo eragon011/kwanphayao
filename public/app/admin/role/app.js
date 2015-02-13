@@ -9,14 +9,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl : "/app/admin/role/list.html",
             controller : "ListCtrl",
             resolve : {
-                roles : function(RoleService, $tateParams) {
+                roles : function(RoleService, $stateParams) {
                     return RoleService.list(1,"");
                 }
             }
         })
 
-        .state('add', {
-            url : "/add",
+        .state('create', {
+            url : "/create",
             templateUrl : "/app/admin/role/form.html",
             controller : "FormCtrl",
             resolve : {
