@@ -1,12 +1,32 @@
 /*
  * Base structure
  */
+@font-face {
+    font-family: 'KunlasatriBold';
+    src: url('/fonts/KunlasatriBold.eot');
+    src: url('/fonts/KunlasatriBold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/KunlasatriBold.woff2') format('woff2'),
+    url('/fonts/KunlasatriBold.woff') format('woff'),
+    url('/fonts/KunlasatriBold.svg#KunlasatriBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'supermarketregular';
+    src: url('/fonts/supermarket.eot');
+    src: url('/fonts/supermarket.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/supermarket.woff2') format('woff2'),
+    url('/fonts/supermarket.woff') format('woff'),
+    url('/fonts/supermarket.svg#supermarketregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
 }
-
 
 /*
  * Global add-ons
@@ -106,4 +126,18 @@ body {
 
 .pagination {
     margin :0px !important;
+}
+
+/*
+ * Button
+ */
+.btn {
+    font-family: KunlasatriBold;
+}
+
+/*
+ * Header
+ */
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'supermarketregular';
 }
