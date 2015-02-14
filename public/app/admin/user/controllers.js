@@ -32,12 +32,12 @@ app.controller('ListCtrl', function($scope, user, UserService) {
 
 });
 
-app.controller('FormCtrl', function($scope, $state, user, Roles, UserService) {
+app.controller('FormCtrl', function($scope, $state, user, roles, UserService) {
 
     function init() {
         $scope.user = user.data;
-        $scope.Roles = Role.data;
-        $scope.user.role = $scope.Roles[0];
+        $scope.roles = roles.data;
+        $scope.user.role = $scope.roles[0];
     }
 
     init();
