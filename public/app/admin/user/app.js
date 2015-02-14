@@ -1,4 +1,4 @@
-var app = angular.module('UserApp', ['ui.router', 'ngResource', 'ui.bootstrap']);
+var app = angular.module('UserApp', ['ui.router', 'ngResource', 'ngMessages', 'ui.bootstrap']);
 app.config(function ($stateProvider, $urlRouterProvider) {
 
     // For any unmatched url, redirect to /state1
@@ -46,3 +46,46 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/list");
 
 });
+
+var UserController = function() {
+    var model = this;
+
+    model.message = "";
+
+    model.user = {
+        username: "",
+        password: "",
+        repassword: ""
+    };
+
+    model.submit = function(isValid) {
+        console.log("h");
+        if (isValid) {
+            model.message = "Submitted " + model.user.username;
+        } else {
+            model.message = "There are still invalid fields below";
+        }
+    };
+
+};
+
+var compareTo = function() {
+    return {
+        require : "ngModel",
+        scope : {
+            otherModelValue : "=compareTo"
+        },
+        link : function(scope, element, attributes, ngModel) {
+            ngModel.$validators.compareTo = function(modelValue) {
+                return modelValue == scope.otherModelValue;
+            };
+
+            scope.$watch("otherModelValue", function() {
+                ngModel.$validate();
+            });
+        }
+    };
+};
+
+app.directive("compareTo", compareTo);
+app.controller("UserController", UserController);
