@@ -33,7 +33,7 @@ class UserApiController extends \BaseController {
 
 
     public function getView($id) {
-        $user = User::find($id);
+        $user = $this->userService->getById($id);
         return $user;
     }
 

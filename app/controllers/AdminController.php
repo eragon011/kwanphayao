@@ -35,4 +35,10 @@ class AdminController extends BaseController {
 		return View::make('admins.role');
 	}
 
+
+	// normal unspecific content's category (content type).
+	public function getContent(){
+		return View::make('admins.content');
+	}
+
 }
