@@ -11,12 +11,7 @@ class RoleService extends BaseService {
     public function all(){
         return Role::all();
     }
-
-    public function getPagination($page=0,$take=10,$with=[],$filter=[],$order = []){
-
-        return $datatable = $this->myDataTable('Role', $page, $take,$with, $filter, $order);
-
-    }
+    
 
     public function getById($id){
         return Role::find($id);
@@ -33,7 +28,7 @@ class RoleService extends BaseService {
 
             return $role;
         } else {
-            $role = Role::findOrNew($input);
+            $role = Role::firstOrNew($input);
             $role->save();
             return $role;
         }
