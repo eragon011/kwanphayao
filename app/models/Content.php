@@ -1,6 +1,6 @@
 <?php
 
-class Content extends Eloquent {
+class Content extends NeoEloquent {
 
 	/**
 	 * The database table used by the model.
