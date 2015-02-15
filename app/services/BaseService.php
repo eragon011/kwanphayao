@@ -22,7 +22,6 @@ class BaseService {
                     }
                 });
             }
-
         }
 
         if($filter != null){
