@@ -7,7 +7,7 @@ class UserApiController extends \BaseController {
     }
 
     public function getIndex() {
-        
+
         $with = ['role'];
 
         $colFilter = [
