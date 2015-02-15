@@ -7,16 +7,8 @@ class UserApiController extends \BaseController {
     }
 
     public function getIndex() {
-//        $page = $this->getPage();
-//        $dataFilter = $this->getDataFilter();
-//        $orderFilter = $this->getOrderByFilter();
-//        $with = ['role'];
-//
-//        $datatable = $this->userService->getPagination($page,20,['role'],$dataFilter,$orderFilter);
-//
-//        return $datatable;
 
-        $with = ['parent'];
+        $with = ['role'];
 
         $colFilter = [
             "username",

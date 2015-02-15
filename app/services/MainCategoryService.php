@@ -20,12 +20,12 @@ class MainCategoryService extends BaseService {
 
         if (isset($input['id'])) {
             $id = $input['id'];
-            $cateogry = MainCategory::find($id);
-            $cateogry->update($input);
+            $category = MainCategory::find($id);
+            $category->update($input);
 
-            $cateogry->save();
+            $category->save();
 
-            return $cateogry;
+            return $category;
         } else {
             $cateogry = MainCategory::firstOrNew($input);
             $cateogry->save();
