@@ -9,7 +9,7 @@
     <!-- Bootstrap -->
     <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css" charset="utf-8">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -65,6 +65,7 @@
 <script src="/components/angular-bootstrap/ui-bootstrap.min.js"></script>
 <script src="/components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <script src="/components/angular-resource/angular-resource.min.js"></script>
+<script src="/components/angular-messages/angular-messages.min.js"></script>
 <script src="/components/angular-ui-router/release/angular-ui-router.min.js"></script>
 @yield('javascript')
 
