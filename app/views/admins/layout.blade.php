@@ -38,6 +38,7 @@
         <ul class="nav nav-sidebar">
             <li class="{{Request::path() == 'admin/main-category' ? 'active' : '';}}"><a href="/admin/main-category">Main Category</a></li>
             <li class="{{Request::path() == 'admin/category' ? 'active' : '';}}"><a href="/admin/category">Category</a></li>
+            <li class="{{Request::path() == 'admin/content' ? 'active' : '';}}"><a href="/admin/content">Content</a></li>
 
         </ul>
 

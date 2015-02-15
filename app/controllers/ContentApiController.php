@@ -8,7 +8,7 @@ class ContentApiController extends \BaseController {
 
     public function getIndex() {
 
-        $with = ['category'];
+        $with = [];
 
         $colFilter = [
             "title",
@@ -42,5 +42,10 @@ class ContentApiController extends \BaseController {
         return $this->contentService->delete(Input::all());
 
     }
+
+
+
+    // specific content data loader
+
 
 }

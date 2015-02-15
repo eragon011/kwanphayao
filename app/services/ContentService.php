@@ -6,7 +6,7 @@
  * Time: 12:21 PM
  */
 
-class UserService extends BaseService {
+class ContentService extends BaseService {
 
     public function all(){
         return Content::all();
