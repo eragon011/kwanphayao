@@ -33,8 +33,6 @@
 
         <ul class="nav nav-sidebar">
             <li class="{{Request::path() == 'admin' ? 'active' : '';}}"><a href="/admin">Overview</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
         </ul>
 
         <ul class="nav nav-sidebar">
