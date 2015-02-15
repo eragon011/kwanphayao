@@ -37,7 +37,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 user : function(UserService, $stateParams) {
                     return UserService.edit($stateParams.id);
                 },
-                role : function(RoleService) {
+                roles : function(RoleService) {
                     return RoleService.all();
                 }
             }
