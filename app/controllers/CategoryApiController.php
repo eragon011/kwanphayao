@@ -27,8 +27,7 @@ class CategoryApiController extends \BaseController {
 
 	public function getView($id){
 
-		$category = Category::find($id);
-		return $category;
+		return $this->categoryService->getById($id);
 
 	}
 

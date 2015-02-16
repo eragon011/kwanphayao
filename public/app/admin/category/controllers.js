@@ -42,7 +42,19 @@ app.controller('FormCtrl',function($scope,$state,category,mainCategories,Categor
         $scope.category = category.data;
         $scope.mainCategories = mainCategories.data;
 
-        $scope.category.parent = $scope.mainCategories[0];
+        if ($scope.category.parent==null){
+            $scope.category.parent = $scope.mainCategories[0];
+        }else {
+            // do nothing
+            var index;
+            $scope.mainCategories.forEach(function(el,idx){
+                if (el.id == $scope.category.parent.id){
+                    index = idx;
+                }
+            })
+            $scope.category.parent = $scope.mainCategories[index];
+        }
+
     }
 
     init();
