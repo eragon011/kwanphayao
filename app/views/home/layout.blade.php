@@ -8,7 +8,7 @@
     <title><?php echo trans('text.encyclopaedia') ?> :: ยินดีต้อนรับ</title>
 
     <!-- Bootstrap -->
-    <!-- <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="/app/home/stylesheets/app.css" rel="stylesheet">
 
