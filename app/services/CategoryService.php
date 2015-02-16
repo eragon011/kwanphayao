@@ -14,7 +14,7 @@ class CategoryService extends BaseService {
 
 
     public function getById($id){
-        return Category::find($id);
+        return Category::with('parent')->find($id);
     }
 
     public function save(array $input){
