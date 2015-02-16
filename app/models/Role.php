@@ -24,7 +24,7 @@ class Role extends AbstrctIModel{
      *
      * @var array
      */
-    protected $fillable = array('name', 'description');
+    protected $fillable = ['name', 'description'];
 
     // --DEFINE RELATIONSHIPS--
     /**

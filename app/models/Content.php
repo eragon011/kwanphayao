@@ -22,13 +22,12 @@ class Content extends NeoEloquent {
 	 *
 	 * @var array
 	 */
-	protected $fillable = array('title', 'content');
+	protected $fillable = ['title', 'content'];
 
 	// --DEFINE RELATIONSHIPS--
 	/**
 	 * a Content model "belongs to" category.
 	 *
-	 * @var array
 	 * @return object
 	 */
 	public function category() {
