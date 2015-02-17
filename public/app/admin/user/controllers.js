@@ -29,7 +29,6 @@ app.controller('ListCtrl', function($scope, user, UserService) {
             });
         }
     }
-
 });
 
 app.controller('FormCtrl', function($scope, $state, user, roles, UserService) {
@@ -37,7 +36,19 @@ app.controller('FormCtrl', function($scope, $state, user, roles, UserService) {
     function init() {
         $scope.user = user.data;
         $scope.roles = roles.data;
-        $scope.user.role = $scope.roles[0];
+        
+        if($scope.user.role==null) {
+            $scope.user.role = $scope.roles[0];
+        } else {
+            var index;
+            $scope.roles.forEach(function(e1,idx) {
+                if(e1.id == $scope.user.role.id) {
+                    index = idx;
+                }
+            });
+            $scope.user.role = $scope.roles[index];
+        }
+            
     }
 
     init();
