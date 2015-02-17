@@ -1,14 +1,20 @@
 <div>
 
     <div class="row">
-        <h3>Main Category</h3>
+        <h3>
+            <span style="cursor:pointer;" ui-sref="list" class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            Main Category : {{mainCategory.name}}
+        </h3>
     </div>
+
     <div class="row">
         <div class="pull-left">
-            <button ui-sref="create" type="button" class="btn btn-primary">Create Main Category</button>
+            <button ui-sref="category-create({id:mainCategory.id})" type="button" class="btn btn-primary">Add New
+                Category
+            </button>
         </div>
         <div class="pull-right">
-            <form class="form-inline">
+            <!--form class="form-inline">
                 <div class="input-group">
                     <form ng-submit="filterChange()">
                     <input type="text" ng-model="filterWord" class="form-control" placeholder="Search for..."/>
@@ -17,8 +23,7 @@
                             </span>
                     </form>
                 </div>
-                <!-- /input-group -->
-            </form>
+            </form-->
         </div>
     </div>
 
@@ -29,19 +34,16 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Description</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="c in mainCategories">
+            <tr ng-repeat="c in categories">
                 <td>{{c.id}}</td>
                 <td>{{c.name}}</td>
-                <td>{{c.description}}</td>
                 <td>
                     <div class="btn-group btn-group-sm" role="group">
-                        <button type="button" ui-sref="category-list({id:c.id})" class="btn btn-info">View</button>
-                        <button type="button" ui-sref="edit({id:c.id})" class="btn">Edit</button>
+                        <button type="button" ui-sref="category-edit({id:mainCategory.id,cid:c.id})" class="btn">Edit</button>
                         <button type="button" class="btn btn-danger" ng-click="delete(c)">Delete</button>
                     </div>
                 </td>
@@ -50,7 +52,7 @@
             </tbody>
         </table>
     </div>
-    <div class="row">
+    <!---div class="row">
         <div class="">
 
             <div class="pull-left">
@@ -70,6 +72,6 @@
             </div>
         </div>
 
-    </div>
+    </div-->
 
 </div>
