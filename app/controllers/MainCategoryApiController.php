@@ -60,5 +60,10 @@ class MainCategoryApiController extends \BaseController
         return $this->mainCategoryService->delete(Input::all());
     }
 
+    public function getCategories($id){
+        return $this->mainCategoryService->getCategories($id);
+
+    }
+
 
 }

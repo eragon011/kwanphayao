@@ -13,7 +13,7 @@ class ContentService extends BaseService {
     }
 
     public function getById($id){
-        return Content::find($id);
+        return Content::with(['category','category.parent'])->find($id);
     }
 
     public function save(array $input){
@@ -47,18 +47,17 @@ class ContentService extends BaseService {
 
         if(isset($input['id'])) {
             $id = $input['id'];
-            $content = User::find($id);
+            $content = Content::find($id);
 
             $category = $content->category()->first();
 
             if($category != null){
                 $category_id = $category->id;
-                $category = Role::find($category_id);
-                $category->users()->detach($content->id);
+                $category = Category::find($category_id);
+                $category->contents()->detach($content->id);
             }
-            $content->delete();
 
-            return [true];
+            return [$content->delete()];
         } else {
             return [false];
         }

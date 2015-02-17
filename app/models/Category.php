@@ -20,5 +20,9 @@ class Category extends AbstrctIModel {
         return $this->belongsTo('MainCategory','HAS_CATEGORY');
     }
 
+    public function contents(){
+        return $this->hasMany("Content","HAS");
+    }
+
 
 }

@@ -7,6 +7,10 @@ class CategoryApiController extends \BaseController {
 		$this->categoryService = $categoryService;
 	}
 
+	public function getAll(){
+		return $this->categoryService->all();
+	}
+
 	public function getIndex()
 	{
 		$with = ['parent'];
@@ -45,6 +49,7 @@ class CategoryApiController extends \BaseController {
 
 		return $this->categoryService->delete(Input::all());
 	}
+	
 
 
 }
