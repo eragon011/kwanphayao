@@ -13,7 +13,7 @@ class UserService extends BaseService {
     }
 
     public function getById($id){
-        return User::find($id);
+        return User::with('role')->find($id);
     }
 
     public function save(array $input){
