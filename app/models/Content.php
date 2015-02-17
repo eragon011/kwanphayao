@@ -1,13 +1,7 @@
 <?php
 
-class Content extends NeoEloquent {
+class Content extends AbstrctIModel {
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'contents';
 
 	/**
 	 * The database connection used by the model.
@@ -24,14 +18,8 @@ class Content extends NeoEloquent {
 	 */
 	protected $fillable = ['title', 'content'];
 
-	// --DEFINE RELATIONSHIPS--
-	/**
-	 * a Content model "belongs to" category.
-	 *
-	 * @return object
-	 */
 	public function category() {
-		return $this->belongsTo('Category');
+		return $this->belongsTo("Category","HAS");
 	}
 
 }

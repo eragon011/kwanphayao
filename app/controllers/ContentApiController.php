@@ -8,7 +8,7 @@ class ContentApiController extends \BaseController {
 
     public function getIndex() {
 
-        $with = [];
+        $with = ['category'];
 
         $colFilter = [
             "title",
