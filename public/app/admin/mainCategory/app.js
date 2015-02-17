@@ -13,32 +13,78 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: "ListCtrl",
             resolve: {
                 mainCategories: function (MainCategoryService, $stateParams) {
-                    return MainCategoryService.list(1,"");
+                    return MainCategoryService.list(1, "");
                 }
             }
         })
 
-        .state('create',{
-            url : "/create",
-            templateUrl : "/app/admin/mainCategory/form.html",
-            controller : "FormCtrl",
-            resolve : {
-                mainCategory : function(MainCategoryService,$stateParams){
-                    return { data : {} };
+        .state('create', {
+            url: "/create",
+            templateUrl: "/app/admin/mainCategory/form.html",
+            controller: "FormCtrl",
+            resolve: {
+                mainCategory: function (MainCategoryService, $stateParams) {
+                    return {data: {}};
                 }
             }
         })
 
-        .state('edit',{
-            url : "/edit/:id",
-            templateUrl : "/app/admin/mainCategory/form.html",
-            controller : "FormCtrl",
-            resolve : {
-                mainCategory : function(MainCategoryService,$stateParams){
-                    return MainCategoryService.edit($stateParams.id) ;
+        .state('edit', {
+            url: "/edit/:id",
+            templateUrl: "/app/admin/mainCategory/form.html",
+            controller: "FormCtrl",
+            resolve: {
+                mainCategory: function (MainCategoryService, $stateParams) {
+                    return MainCategoryService.edit($stateParams.id);
                 }
             }
         })
+
+        .state('category-edit',{
+            url: "/view/:id/edit/:cid",
+            templateUrl: "/app/admin/mainCategory/category_form.html",
+            controller : "CategoryFormCtrl",
+            resolve : {
+                mainCategory: function (MainCategoryService, $stateParams) {
+                    return MainCategoryService.edit($stateParams.id);
+                },
+                category : function(CategoryService,$stateParams){
+                    return CategoryService.edit($stateParams.cid);
+                }
+            }
+        })
+
+
+        .state('category-create',{
+            url: "/view/:id/create",
+            templateUrl: "/app/admin/mainCategory/category_form.html",
+            controller : "CategoryFormCtrl",
+            resolve : {
+                mainCategory: function (MainCategoryService, $stateParams) {
+                    return MainCategoryService.edit($stateParams.id);
+                },
+                category : function(){
+                    return { data : { }}
+                }
+            }
+        })
+
+
+        .state('category-list', {
+            url: "/view/:id",
+            templateUrl: "/app/admin/mainCategory/category_list.html",
+            controller: "CategoryListCtrl",
+            resolve: {
+                mainCategory: function (MainCategoryService, $stateParams) {
+                    return MainCategoryService.edit($stateParams.id);
+                },
+                categories: function (MainCategoryService, $stateParams){
+                    return MainCategoryService.categories($stateParams.id);
+                }
+            }
+        })
+
+
 
 
     $urlRouterProvider.otherwise("/list");

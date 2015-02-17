@@ -67,7 +67,10 @@ app.controller('FormCtrl',function($scope,$state,content,mainCategories,MainCate
     }
 
     function initMainCategory() {
-        $scope.content.mainCategory = $scope.content.category.parent;
+        if ($scope.content.category){
+            $scope.content.mainCategory = $scope.content.category.parent;
+        }
+
         if ($scope.content.mainCategory == null) {
             $scope.content.mainCategory = $scope.mainCategories[0];
 

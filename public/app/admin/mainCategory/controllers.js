@@ -48,3 +48,35 @@ app.controller('FormCtrl',function($scope,$state,mainCategory,MainCategoryServic
     }
 
 });
+
+app.controller('CategoryListCtrl',function($scope,$state,mainCategory,categories,MainCategoryService,CategoryService){
+
+    $scope.mainCategory = mainCategory.data;
+
+    $scope.categories = categories.data;
+
+    $scope.delete = function (category) {
+        confirm_string = "Do you want to delete this Category id:" + category.id + " ?";
+        if (confirm(confirm_string)) {
+            CategoryService.delete(category).success(function () {
+                index = $scope.categories.indexOf(category);
+                $scope.categories.splice(index, 1);
+            });
+        }
+    }
+
+});
+
+app.controller('CategoryFormCtrl',function($scope,$state,mainCategory,category,MainCategoryService){
+
+    $scope.mainCategory = mainCategory.data;
+
+    $scope.category = category.data;
+
+    $scope.save = function(){
+        MainCategoryService.saveCategory($scope.mainCategory.id,$scope.category).success(function (response) {
+            $state.go('category-list',{id:$scope.mainCategory.id});
+        })
+    }
+
+});

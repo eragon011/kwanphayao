@@ -3,8 +3,9 @@
 class MainCategoryApiController extends \BaseController
 {
 
-    public function __construct(MainCategoryService $mainCategoryService){
+    public function __construct(MainCategoryService $mainCategoryService, CategoryService $categoryService){
         $this->mainCategoryService = $mainCategoryService;
+        $this->categoryService = $categoryService;
     }
 
     public function getAll()
@@ -63,6 +64,14 @@ class MainCategoryApiController extends \BaseController
     public function getCategories($id){
         return $this->mainCategoryService->getCategories($id);
 
+    }
+
+    public function postCreateCategory($id){
+
+        $input = Input::all();
+        $input['parent'] = MainCategory::find($id)->toArray();
+
+        $this->categoryService->save($input);
     }
 
 
