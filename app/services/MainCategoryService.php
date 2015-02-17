@@ -1,22 +1,26 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: chaow
  * Date: 2/12/2015 AD
  * Time: 12:21 PM
  */
+class MainCategoryService extends BaseService
+{
 
-class MainCategoryService extends BaseService {
-
-    public function all(){
+    public function all()
+    {
         return MainCategory::all();
     }
 
-    public function getById($id){
+    public function getById($id)
+    {
         return MainCategory::find($id);
     }
 
-    public function save(array $input){
+    public function save(array $input)
+    {
 
         if (isset($input['id'])) {
             $id = $input['id'];
@@ -34,7 +38,9 @@ class MainCategoryService extends BaseService {
         }
 
     }
-    public function delete(array $input){
+
+    public function delete(array $input)
+    {
         if (Input::has('id')) {
             $id = Input::get('id');
             $mainCategory = MainCategory::find($id);
@@ -43,6 +49,12 @@ class MainCategoryService extends BaseService {
         } else {
             return [false];
         }
+    }
+
+    public function getCategories($id)
+    {
+        return MainCategory::find($id)->categories()->get();
+
     }
 
 

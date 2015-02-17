@@ -21,10 +21,16 @@ Route::controller('/home',"HomeController");
 Route::group([],function(){
 
 	Route::controller('/admin/api/v1/category','CategoryApiController');
-	Route::controller('/admin/api/v1/main-category','MainCategoryApiController');
+
 	Route::controller('/admin/api/v1/user','UserApiController');
 	Route::controller('/admin/api/v1/role','RoleApiController');
 	Route::controller('/admin/api/v1/content','ContentApiController');
+
+	Route::group([],function(){
+		Route::get('/admin/api/v1/main-category/{id}/categories','MainCategoryApiController@getCategories');
+		Route::controller('/admin/api/v1/main-category','MainCategoryApiController');
+	});
+
 
 });
 

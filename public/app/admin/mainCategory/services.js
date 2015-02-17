@@ -39,6 +39,13 @@ app.factory('MainCategoryService', function ($http) {
                 header : 'application/json',
                 data : $categoryType
             })
+        },
+        categories : function($id){
+            return $http({
+                method: 'get',
+                url: '/admin/api/v1/main-category/'+$id+'/categories',
+                header : 'application/json'
+            })
         }
     }
 })

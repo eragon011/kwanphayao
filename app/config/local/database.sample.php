@@ -34,7 +34,7 @@ return array(
 		'neo4j' => [
 			'driver' => 'neo4j',
 			'host'   => 'localhost',
-			'port'   => '7474',
+			'port'   => '7475',
 			'username' => null,
 			'password' => null
 		]
