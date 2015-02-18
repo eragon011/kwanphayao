@@ -24,20 +24,22 @@
 
     <div class="row">
 
-        <table class="table table-striped">
+        <table class="table table-striped table-hover">
             <thead>
             <tr>
+                <th></th>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Action</th>
             </tr>
             </thead>
-            <tbody>
-            <tr ng-repeat="c in mainCategories">
-                <td>{{c.id}}</td>
-                <td>{{c.name}}</td>
-                <td>{{c.description}}</td>
+            <tbody ui-sortable="sortableOptions" ng-model="mainCategories">
+            <tr style="cursor: pointer" ng-repeat="c in mainCategories">
+                <th><span class="glyphicon glyphicon-move"></span></th>
+                <td ui-sref="category-list({id:c.id})">{{c.id}}</td>
+                <td ui-sref="category-list({id:c.id})">{{c.name}}</td>
+                <td ui-sref="category-list({id:c.id})">{{c.description}}</td>
                 <td>
                     <div class="btn-group btn-group-sm" role="group">
                         <button type="button" ui-sref="category-list({id:c.id})" class="btn btn-info">View</button>
@@ -50,7 +52,7 @@
             </tbody>
         </table>
     </div>
-    <div class="row">
+    <!--div class="row">
         <div class="">
 
             <div class="pull-left">
@@ -70,6 +72,7 @@
             </div>
         </div>
 
-    </div>
+    </div-->
+
 
 </div>

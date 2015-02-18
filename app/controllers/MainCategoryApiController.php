@@ -17,6 +17,7 @@ class MainCategoryApiController extends \BaseController
 
     public function getIndex()
     {
+
         $with = [];
 
         $colFilter = [
@@ -26,7 +27,13 @@ class MainCategoryApiController extends \BaseController
 
         $relateColFilter = [];
 
-        return $this->mainCategoryService->getPagination("MainCategory",Input::all(),$colFilter,$relateColFilter,$with);
+        $input = Input::all();
+        $input['take'] = -1;
+        $input['orderBy'] = 'order';
+        $input['orderType'] = 'ASC';
+
+
+        return $this->mainCategoryService->getPagination("MainCategory",$input,$colFilter,$relateColFilter,$with,0);
     }
 
     public function getView($id)
@@ -73,6 +80,14 @@ class MainCategoryApiController extends \BaseController
 
         $this->categoryService->save($input);
     }
+
+    public function postSaveOrder(){
+        $input = Input::all();
+
+        return $this->mainCategoryService->updateOrder($input);
+    }
+
+
 
 
 }

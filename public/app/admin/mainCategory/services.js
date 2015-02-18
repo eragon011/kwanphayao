@@ -54,6 +54,14 @@ app.factory('MainCategoryService', function ($http) {
                 header : 'application/json',
                 data : $category
             })
+        },
+        saveOrder : function($order){
+            return $http({
+                url : '/admin/api/v1/main-category/save-order',
+                method : 'post',
+                header : 'application/json',
+                data : $order
+            })
         }
     }
 })
