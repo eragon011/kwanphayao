@@ -1,7 +1,7 @@
 /**
  * Created by chaow on 2/3/2015 AD.
  */
-var app = angular.module('MainCategoryApp', ['ui.router', 'ngResource', 'ui.bootstrap']);
+var app = angular.module('MainCategoryApp', ['ui.router', 'ngResource', 'ui.bootstrap','ui.sortable']);
 app.config(function ($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1

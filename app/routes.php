@@ -27,6 +27,7 @@ Route::group([],function(){
 	Route::controller('/admin/api/v1/content','ContentApiController');
 
 	Route::group([],function(){
+
 		Route::post('/admin/api/v1/main-category/{id}/categories/save','MainCategoryApiController@postCreateCategory');
 		Route::get('/admin/api/v1/main-category/{id}/categories','MainCategoryApiController@getCategories');
 

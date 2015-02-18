@@ -57,6 +57,8 @@
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="/components/jquery/dist/jquery.min.js"></script>
+<script src="/components/jquery-ui/jquery-ui.min.js"></script>
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -66,6 +68,7 @@
 <script src="/components/angular-resource/angular-resource.min.js"></script>
 <script src="/components/angular-messages/angular-messages.min.js"></script>
 <script src="/components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/components/angular-ui-sortable/sortable.min.js"></script>
 @yield('javascript')
 
 </body>

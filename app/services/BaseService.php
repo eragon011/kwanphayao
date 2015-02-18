@@ -30,13 +30,18 @@ class BaseService {
             }
         }
 
-
         $total = $query->count();
-        foreach($order as $key =>$value){
+         foreach($order as $key =>$value){
             $query->orderBy($key,$value);
         }
 
-        $list = $query->skip($skip)->take($take)->get();
+        if($take == -1){
+            $list = $query->get();
+        }else {
+            $list = $query->skip($skip)->take($take)->get();
+        }
+
+
 
         $data = [
             "data" => $list,
@@ -50,12 +55,12 @@ class BaseService {
     }
 
     protected function getOrderByArray($input){
-        if(isset($input['orderby'])){
-            $orderBy = $input['orderby'];
+        if(isset($input['orderBy'])){
+            $orderBy = $input['orderBy'];
             if(isset($input['orderType'])){
                 $orderType = $input['orderType'];
             }else {
-                $orderType = "asc";
+                $orderType = "ASC";
             }
 
             $orderFilter = [
