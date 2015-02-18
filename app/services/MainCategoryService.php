@@ -11,7 +11,7 @@ class MainCategoryService extends BaseService
 
     public function all()
     {
-        return MainCategory::orderBy('order')->all();
+        return MainCategory::orderBy('order')->get();
     }
 
     public function getById($id)
