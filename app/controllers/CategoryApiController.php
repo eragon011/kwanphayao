@@ -41,15 +41,20 @@ class CategoryApiController extends \BaseController {
 
 	public function postSave(){
 
-		return $this->categoryService->save(Input::all());
+		return $this->categoryService->saveCategory(Input::all());
 
 	}
 
 	public function postDelete(){
 
-		return $this->categoryService->delete(Input::all());
+		return $this->categoryService->deleteCategory(Input::all());
 	}
-	
+
+
+	public function postSaveOrder(){
+		$input = Input::all();
+		return $this->categoryService->updateOrder($input);
+	}
 
 
 }
