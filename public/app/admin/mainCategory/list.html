@@ -36,7 +36,7 @@
             </thead>
             <tbody ui-sortable="sortableOptions" ng-model="mainCategories">
             <tr style="cursor: pointer" ng-repeat="c in mainCategories">
-                <th><span class="glyphicon glyphicon-move"></span></th>
+                <td><span class="glyphicon glyphicon-move"></span></td>
                 <td ui-sref="category-list({id:c.id})">{{c.id}}</td>
                 <td ui-sref="category-list({id:c.id})">{{c.name}}</td>
                 <td ui-sref="category-list({id:c.id})">{{c.description}}</td>

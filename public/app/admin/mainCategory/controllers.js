@@ -93,6 +93,33 @@ app.controller('CategoryListCtrl', function ($scope, $state, mainCategory, categ
         }
     }
 
+    $scope.sortableOptions = {
+        stop: function (e, ui) {
+            saveOrder();
+
+        },
+        axis: 'y'
+    };
+
+    function saveOrder() {
+
+        order = [];
+
+        $scope.categories.forEach(function (item, index) {
+                a = {
+                    id: item.id,
+                    order: index
+                };
+                order.push(a);
+            }
+        )
+
+        console.log(order);
+
+        CategoryService.saveOrder(order);
+
+    }
+
 });
 
 app.controller('CategoryFormCtrl', function ($scope, $state, mainCategory, category, MainCategoryService) {

@@ -54,7 +54,7 @@ class MainCategoryService extends BaseService
 
     public function getCategories($id)
     {
-        return MainCategory::find($id)->categories()->get();
+        return MainCategory::find($id)->categories()->orderBy('order','asc')->get();
 
     }
 

@@ -32,13 +32,15 @@
         <table class="table table-striped">
             <thead>
             <tr>
+                <th></th>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Action</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody ui-sortable="sortableOptions" ng-model="categories">
             <tr ng-repeat="c in categories">
+                <td><span class="glyphicon glyphicon-move"></span></td>
                 <td>{{c.id}}</td>
                 <td>{{c.name}}</td>
                 <td>

@@ -62,4 +62,18 @@ class CategoryService extends BaseService {
         return $category;
     }
 
+
+    public function updateOrder(array $input){
+        foreach($input as $c){
+            $id = $c['id'];
+            $order = $c['order'];
+            $category = Category::find($id);
+            $category->order = $order;
+            $category->save();
+        }
+
+        return [true];
+    }
+
+
 }
