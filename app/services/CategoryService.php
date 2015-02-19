@@ -20,6 +20,7 @@ class CategoryService extends BaseService {
     public function save(array $input){
         if(isset($input['id'])){
             $id = $input['id'];
+            /* @var $category Category */
             $category = Category::find($id);
             $category->update($input);
             $category->save();
@@ -49,6 +50,7 @@ class CategoryService extends BaseService {
 
     public function delete(array $input){
 
+        /* @var $category Category */
         $category = Category::find($input['id']);
 
         $mid = $category->parent()->first();
@@ -67,6 +69,7 @@ class CategoryService extends BaseService {
         foreach($input as $c){
             $id = $c['id'];
             $order = $c['order'];
+            /* @var $category Category */
             $category = Category::find($id);
             $category->order = $order;
             $category->save();

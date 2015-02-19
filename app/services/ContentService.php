@@ -22,6 +22,7 @@ class ContentService extends BaseService {
             $id = $input['id'];
             $content = Content::find($id);
             $content->update(array_except($input,['category']));
+            /* @var $content Content */
             $content->save();
 
             $categoryId = $input['category']['id'];
@@ -47,6 +48,8 @@ class ContentService extends BaseService {
 
         if(isset($input['id'])) {
             $id = $input['id'];
+
+            /* @var $content Content */
             $content = Content::find($id);
 
             $category = $content->category()->first();

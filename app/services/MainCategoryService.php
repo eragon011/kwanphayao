@@ -19,11 +19,14 @@ class MainCategoryService extends BaseService
         return MainCategory::find($id);
     }
 
+
     public function save(array $input)
     {
 
         if (isset($input['id'])) {
             $id = $input['id'];
+
+            /* @var $category MainCategory */
             $category = MainCategory::find($id);
             $category->update($input);
 
@@ -62,6 +65,8 @@ class MainCategoryService extends BaseService
         foreach($input as $c){
             $id = $c['id'];
             $order = $c['order'];
+
+            /* @var $category MainCategory */
             $category = MainCategory::find($id);
             $category->order = $order;
             $category->save();
