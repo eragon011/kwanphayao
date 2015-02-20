@@ -11,7 +11,7 @@ class MainCategoryService extends BaseService
 
     public function all()
     {
-        return MainCategory::all();
+        return MainCategory::orderBy('order')->get();
     }
 
     public function getById($id)
@@ -19,11 +19,14 @@ class MainCategoryService extends BaseService
         return MainCategory::find($id);
     }
 
+
     public function save(array $input)
     {
 
         if (isset($input['id'])) {
             $id = $input['id'];
+
+            /* @var $category MainCategory */
             $category = MainCategory::find($id);
             $category->update($input);
 
@@ -31,10 +34,11 @@ class MainCategoryService extends BaseService
 
             return $category;
         } else {
-            $cateogry = MainCategory::firstOrNew($input);
-            $cateogry->save();
+            $category = MainCategory::firstOrNew($input);
+            $category->order = 99999;
+            $category->save();
 
-            return $cateogry;
+            return $category;
         }
 
     }
@@ -53,8 +57,22 @@ class MainCategoryService extends BaseService
 
     public function getCategories($id)
     {
-        return MainCategory::find($id)->categories()->get();
+        return MainCategory::find($id)->categories()->orderBy('order','asc')->get();
 
+    }
+
+    public function updateOrder(array $input){
+        foreach($input as $c){
+            $id = $c['id'];
+            $order = $c['order'];
+
+            /* @var $category MainCategory */
+            $category = MainCategory::find($id);
+            $category->order = $order;
+            $category->save();
+        }
+
+        return [true];
     }
 
 

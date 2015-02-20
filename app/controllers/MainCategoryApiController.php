@@ -3,8 +3,9 @@
 class MainCategoryApiController extends \BaseController
 {
 
-    public function __construct(MainCategoryService $mainCategoryService){
+    public function __construct(MainCategoryService $mainCategoryService, CategoryService $categoryService){
         $this->mainCategoryService = $mainCategoryService;
+        $this->categoryService = $categoryService;
     }
 
     public function getAll()
@@ -16,6 +17,7 @@ class MainCategoryApiController extends \BaseController
 
     public function getIndex()
     {
+
         $with = [];
 
         $colFilter = [
@@ -25,7 +27,13 @@ class MainCategoryApiController extends \BaseController
 
         $relateColFilter = [];
 
-        return $this->mainCategoryService->getPagination("MainCategory",Input::all(),$colFilter,$relateColFilter,$with);
+        $input = Input::all();
+        $input['take'] = -1;
+        $input['orderBy'] = 'order';
+        $input['orderType'] = 'ASC';
+
+
+        return $this->mainCategoryService->getPagination("MainCategory",$input,$colFilter,$relateColFilter,$with,0);
     }
 
     public function getView($id)
@@ -64,6 +72,22 @@ class MainCategoryApiController extends \BaseController
         return $this->mainCategoryService->getCategories($id);
 
     }
+
+    public function postCreateCategory($id){
+
+        $input = Input::all();
+        $input['parent'] = MainCategory::find($id)->toArray();
+
+        $this->categoryService->save($input);
+    }
+
+    public function postSaveOrder(){
+        $input = Input::all();
+
+        return $this->mainCategoryService->updateOrder($input);
+    }
+
+
 
 
 }
