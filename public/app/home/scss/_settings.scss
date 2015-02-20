@@ -94,7 +94,7 @@ $include-html-global-classes: $include-html-classes;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
-// $font-weight-normal: normal;
+$font-weight-normal: normal;
 // $font-weight-bold: bold;
 
 // $white       : #FFFFFF;
@@ -280,6 +280,10 @@ $include-html-global-classes: $include-html-classes;
 // $definition-list-header-weight: $font-weight-bold;
 // $definition-list-header-margin-bottom: .3rem;
 // $definition-list-margin-bottom: rem-calc(12);
+
+$definition-list-header-weight: $font-weight-normal;
+$definition-list-header-margin-bottom: 0;
+$definition-list-margin-bottom: rem-calc(0);
 
 // We use these to style blockquotes
 // $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
@@ -792,7 +796,8 @@ $block-grid-media-queries: true;
 // 16. Labels
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-label-classes: $include-html-classes;
+//$include-html-label-classes: $include-html-classes;
+//$include-html-label-classes: false;
 
 // We use these to style the labels
 // $label-padding: rem-calc(4 8 4);

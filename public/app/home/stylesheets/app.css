@@ -88,7 +88,6 @@ body {
   color: #222;
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1.5;
@@ -125,11 +124,6 @@ img {
 /* line 446, ../../../components/foundation/scss/foundation/components/_global.scss */
 .left {
   float: left !important;
-}
-
-/* line 447, ../../../components/foundation/scss/foundation/components/_global.scss */
-.right {
-  float: right !important;
 }
 
 /* line 172, ../../../components/foundation/scss/foundation/components/_global.scss */
@@ -175,69 +169,6 @@ select {
   width: 100%;
 }
 
-/* line 232, ../../../components/foundation/scss/foundation/components/_grid.scss */
-.row {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 62.5rem;
-}
-/* line 172, ../../../components/foundation/scss/foundation/components/_global.scss */
-.row:before, .row:after {
-  content: " ";
-  display: table;
-}
-/* line 173, ../../../components/foundation/scss/foundation/components/_global.scss */
-.row:after {
-  clear: both;
-}
-/* line 236, ../../../components/foundation/scss/foundation/components/_grid.scss */
-.row.collapse > .column,
-.row.collapse > .columns {
-  padding-left: 0;
-  padding-right: 0;
-}
-/* line 239, ../../../components/foundation/scss/foundation/components/_grid.scss */
-.row.collapse .row {
-  margin-left: 0;
-  margin-right: 0;
-}
-/* line 242, ../../../components/foundation/scss/foundation/components/_grid.scss */
-.row .row {
-  width: auto;
-  margin-left: -0.9375rem;
-  margin-right: -0.9375rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: none;
-}
-/* line 172, ../../../components/foundation/scss/foundation/components/_global.scss */
-.row .row:before, .row .row:after {
-  content: " ";
-  display: table;
-}
-/* line 173, ../../../components/foundation/scss/foundation/components/_global.scss */
-.row .row:after {
-  clear: both;
-}
-/* line 243, ../../../components/foundation/scss/foundation/components/_grid.scss */
-.row .row.collapse {
-  width: auto;
-  margin: 0;
-  max-width: none;
-}
-/* line 172, ../../../components/foundation/scss/foundation/components/_global.scss */
-.row .row.collapse:before, .row .row.collapse:after {
-  content: " ";
-  display: table;
-}
-/* line 173, ../../../components/foundation/scss/foundation/components/_global.scss */
-.row .row.collapse:after {
-  clear: both;
-}
-
 /* line 247, ../../../components/foundation/scss/foundation/components/_grid.scss */
 .column,
 .columns {
@@ -245,11 +176,6 @@ select {
   padding-right: 0.9375rem;
   width: 100%;
   float: left;
-}
-
-/* line 250, ../../../components/foundation/scss/foundation/components/_grid.scss */
-[class*="column"] + [class*="column"]:last-child {
-  float: right;
 }
 
 /* line 251, ../../../components/foundation/scss/foundation/components/_grid.scss */
@@ -7588,9 +7514,6 @@ meta.foundation-mq-topbar {
 /* Typography resets */
 /* line 193, ../../../components/foundation/scss/foundation/components/_type.scss */
 div,
-dl,
-dt,
-dd,
 ul,
 ol,
 li,
@@ -7822,12 +7745,12 @@ ol li ol {
 /* Definition Lists */
 /* line 376, ../../../components/foundation/scss/foundation/components/_type.scss */
 dl dt {
-  margin-bottom: 0.3rem;
-  font-weight: bold;
+  margin-bottom: 0;
+  font-weight: normal;
 }
 /* line 380, ../../../components/foundation/scss/foundation/components/_type.scss */
 dl dd {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
 }
 
 /* Abbreviations */
@@ -9171,160 +9094,235 @@ th.hide-for-touch {
   font-weight: normal;
   font-style: normal;
 }
-/*
- * Button
- */
-/* line 26, ../scss/_mindset.scss */
+/* line 24, ../scss/_mindset.scss */
+.supermarket-font {
+  font-family: supermarketregular;
+}
+
+/* line 34, ../scss/_mindset.scss */
+.verydarkgray {
+  color: #343434;
+}
+
+/* line 38, ../scss/_mindset.scss */
+.strongcyan {
+  color: #009696;
+}
+
+/* line 42, ../scss/_mindset.scss */
+.mediumgray {
+  color: #B4B4B4;
+}
+
+/* line 51, ../scss/_mindset.scss */
+#logo-search-profile-category {
+  padding-top: 1rem;
+}
+
+/* line 55, ../scss/_mindset.scss */
+#search-profile-category {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 60, ../scss/_mindset.scss */
+#profile-frame {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 65, ../scss/_mindset.scss */
+.right-fix {
+  float: right;
+  order: 1;
+  display: flex;
+  flex: 1 1 auto;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  vertical-align: middle;
+  justify-content: flex-end;
+}
+
+/* line 83, ../scss/_mindset.scss */
+#profile-icon {
+  text-align: right;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 89, ../scss/_mindset.scss */
+.profile-shelf {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  white-space: nowrap;
+  display: flex;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+/* line 100, ../scss/_mindset.scss */
+.profile-book-first {
+  display: inline-block;
+  padding: 0 0 0 15px;
+  vertical-align: middle;
+  line-height: normal;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left;
+}
+
+/* line 111, ../scss/_mindset.scss */
+.profile-book-last {
+  flex: 0 1 auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  white-space: nowrap;
+  padding-left: 1rem;
+}
+
+/* line 121, ../scss/_mindset.scss */
+.profilename {
+  flex: 0 1 auto;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  white-space: nowrap;
+  display: flex;
+  line-height: normal;
+  padding-right: 15px;
+}
+
+/* line 131, ../scss/_mindset.scss */
+#profile {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1rem;
+  padding-right: 0;
+}
+
+/* line 138, ../scss/_mindset.scss */
+#profile-setting {
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+/* line 143, ../scss/_mindset.scss */
+#main-content {
+  padding: 1rem 0;
+}
+
+/* line 147, ../scss/_mindset.scss */
+#main-category-header {
+  background-color: #009696 !important;
+  border-color: #343434 !important;
+}
+
+/* line 152, ../scss/_mindset.scss */
+#relate-content-header {
+  background-color: #009696;
+}
+
+/* line 156, ../scss/_mindset.scss */
+p + p {
+  text-indent: 1.5em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 167, ../scss/_mindset.scss */
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* line 173, ../scss/_mindset.scss */
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1919px) {
+  /* line 179, ../scss/_mindset.scss */
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  /* line 185, ../scss/_mindset.scss */
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+/* line 190, ../scss/_mindset.scss */
+footer {
+  background-color: #343434;
+  padding: 1rem 2rem;
+}
+
+/* line 196, ../scss/_mindset.scss */
 .btn {
   font-family: KunlasatriBold;
 }
 
-/*
- * Header
- */
-/* line 33, ../scss/_mindset.scss */
+/* line 201, ../scss/_mindset.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: supermarketregular;
+  font-family: supermarketregular !important;
 }
 
-/* line 486, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.left-submenu {
-  -webkit-backface-visibility: hidden;
-  width: 15.625rem;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: #333333;
-  z-index: 1002;
-  box-sizing: content-box;
-  -webkit-overflow-scrolling: touch;
-  -ms-transform: translate(-100%, 0);
-  -webkit-transform: translate3d(-100%, 0, 0);
-  -moz-transform: translate3d(-100%, 0, 0);
-  -ms-transform: translate3d(-100%, 0, 0);
-  -o-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
-  left: 0;
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -ms-transition: -ms-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
-  transition: transform 500ms ease;
-}
-/* line 399, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.left-submenu * {
-  -webkit-backface-visibility: hidden;
-}
-/* line 426, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.left-submenu .back > a {
-  padding: 0.3rem 0.9375rem;
-  color: #999999;
-  text-transform: uppercase;
-  font-weight: bold;
-  background: #444;
-  border-top: 1px solid #5e5e5e;
-  border-bottom: none;
-  margin: 0;
-}
-/* line 434, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.left-submenu .back > a:hover {
-  background: #303030;
-  border-top: 1px solid #5e5e5e;
-  border-bottom: none;
-}
-/* line 457, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.left-submenu .back > a:before {
-  content: "\AB";
-  margin-right: 0.5rem;
-  display: inline;
-}
-/* line 488, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.left-submenu.move-right, .left-submenu.offcanvas-overlap-right, .left-submenu.offcanvas-overlap {
-  -ms-transform: translate(0%, 0);
-  -webkit-transform: translate3d(0%, 0, 0);
-  -moz-transform: translate3d(0%, 0, 0);
-  -ms-transform: translate3d(0%, 0, 0);
-  -o-transform: translate3d(0%, 0, 0);
-  transform: translate3d(0%, 0, 0);
+/* line 206, ../scss/_mindset.scss */
+.modal-header {
+  background-color: #009696;
+  padding: 7px 7px 7px 15px;
 }
 
-/* line 493, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.right-submenu {
-  -webkit-backface-visibility: hidden;
-  width: 15.625rem;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: #333333;
-  z-index: 1002;
-  box-sizing: content-box;
-  -webkit-overflow-scrolling: touch;
-  -ms-transform: translate(100%, 0);
-  -webkit-transform: translate3d(100%, 0, 0);
-  -moz-transform: translate3d(100%, 0, 0);
-  -ms-transform: translate3d(100%, 0, 0);
-  -o-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
-  right: 0;
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -ms-transition: -ms-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
-  transition: transform 500ms ease;
-}
-/* line 399, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.right-submenu * {
-  -webkit-backface-visibility: hidden;
-}
-/* line 426, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.right-submenu .back > a {
-  padding: 0.3rem 0.9375rem;
-  color: #999999;
-  text-transform: uppercase;
-  font-weight: bold;
-  background: #444;
-  border-top: 1px solid #5e5e5e;
-  border-bottom: none;
-  margin: 0;
-}
-/* line 434, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.right-submenu .back > a:hover {
-  background: #303030;
-  border-top: 1px solid #5e5e5e;
-  border-bottom: none;
-}
-/* line 446, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.right-submenu .back > a:after {
-  content: "\BB";
-  margin-left: 0.5rem;
-  display: inline;
-}
-/* line 495, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.right-submenu.move-left, .right-submenu.offcanvas-overlap-left, .right-submenu.offcanvas-overlap {
-  -ms-transform: translate(0%, 0);
-  -webkit-transform: translate3d(0%, 0, 0);
-  -moz-transform: translate3d(0%, 0, 0);
-  -ms-transform: translate3d(0%, 0, 0);
-  -o-transform: translate3d(0%, 0, 0);
-  transform: translate3d(0%, 0, 0);
+/* line 211, ../scss/_mindset.scss */
+.modal-header .close {
+  margin-top: 4px;
+  margin-right: 5px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color: #000000;
+  padding: 0 5px 0 5px;
+  font-size: 24px;
+  text-shadow: 0;
+  color: transparent;
 }
 
-/* line 508, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.left-off-canvas-menu ul.off-canvas-list li.has-submenu > a:after {
-  content: "\BB";
-  margin-left: 0.5rem;
-  display: inline;
+/* line 224, ../scss/_mindset.scss */
+.modal-title {
+  color: #ffffff;
 }
 
-/* line 511, ../../../components/foundation/scss/foundation/components/_offcanvas.scss */
-.right-off-canvas-menu ul.off-canvas-list li.has-submenu > a:before {
-  content: "\AB";
-  margin-right: 0.5rem;
-  display: inline;
+/* line 228, ../scss/_mindset.scss */
+.modal-desc {
+  border-bottom: 1px solid #E5E5E5;
+  color: #009696;
+  padding: 7px;
+}
+
+/* line 234, ../scss/_mindset.scss */
+.modal-contact {
+  padding: 7px;
+}
+
+/* line 238, ../scss/_mindset.scss */
+.modal-form {
+  border-top: 1px solid #E5E5E5;
+  padding: 7px;
+}
+
+/* line 243, ../scss/_mindset.scss */
+.modal-footer {
+  padding: 7px;
+}
+
+/* line 247, ../scss/_mindset.scss */
+.modal-footer .btn {
+  font-size: 16px;
 }

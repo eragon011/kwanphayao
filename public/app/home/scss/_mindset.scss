@@ -1,3 +1,4 @@
+// Font
 @font-face {
     font-family: 'KunlasatriBold';
     src: url('/fonts/KunlasatriBold.eot');
@@ -20,16 +21,229 @@
     font-style: normal;
 }
 
-/*
- * Button
- */
+.supermarket-font {
+  font-family: supermarketregular;
+}
+
+// Color
+$red           : #ff0000;
+$verydarkgray  : #343434;
+$strongcyan    : #009696;
+$mediumgray    : #B4B4B4;
+
+.verydarkgray {
+  color: $verydarkgray;
+}
+
+.strongcyan {
+  color: $strongcyan;
+}
+
+.mediumgray {
+  color: $mediumgray;
+}
+
+// Section in Body
+header {
+//    margin-top: 0.5rem;
+}
+
+#logo-search-profile-category {
+  padding-top: 1rem;
+}
+
+#search-profile-category {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#profile-frame {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.right-fix {
+  float: right;
+  order: 1;
+  display: flex;
+//  display: inline-block;
+//  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+//  -webkit-flex: 1 1 main-size;
+//  flex: 1 1 main-size;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  vertical-align: middle;
+  justify-content: flex-end;
+}
+
+#profile-icon {
+  text-align: right;
+  display: inline-block;
+  position:relative;
+}
+
+.profile-shelf {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  white-space: nowrap;
+  display: flex;
+//  display: inline-block;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.profile-book-first {
+  display: inline-block;
+  padding: 0 0 0 15px;
+  vertical-align: middle;
+  line-height: normal;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+//  flex: 0 0 auto;
+  text-align: left;
+}
+
+.profile-book-last {
+  flex: 0 1 auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  white-space: nowrap;
+  padding-left: 1rem;
+}
+
+.profilename {
+  flex: 0 1 auto;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  white-space: nowrap;
+  display: flex;
+  line-height: normal;
+  padding-right: 15px;
+}
+
+#profile {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1rem;
+  padding-right: 0;
+}
+
+#profile-setting {
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+#main-content {
+  padding: 1rem 0;
+}
+
+#main-category-header {
+  background-color: $strongcyan !important;
+  border-color: $verydarkgray !important;
+}
+
+#relate-content-header {
+  background-color: $strongcyan;
+}
+
+p + p {
+  text-indent: 1.5em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1919px) {
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+
+footer {
+  background-color: $verydarkgray;
+  padding: 1rem 2rem;
+}
+
+// Button
 .btn {
     font-family: KunlasatriBold;
 }
 
-/*
- * Header
- */
+// Header text
 h1,h2,h3,h4,h5,h6 {
-    font-family: supermarketregular;
+    font-family: supermarketregular !important;
+}
+
+// Model
+.modal-header {
+    background-color: #009696;
+    padding: 7px 7px 7px 15px;
+}
+
+.modal-header .close {
+    margin-top: 4px;
+    margin-right: 5px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #000000;
+    padding: 0 5px 0 5px;
+    font-size: 24px;
+    text-shadow: 0;
+    color: transparent;
+}
+
+.modal-title {
+    color: #ffffff;
+}
+
+.modal-desc {
+    border-bottom: 1px solid #E5E5E5;
+    color: #009696;
+    padding: 7px;
+}
+
+.modal-contact {
+  padding: 7px;
+}
+
+.modal-form {
+  border-top: 1px solid #E5E5E5;
+  padding: 7px;
+}
+
+.modal-footer {
+  padding: 7px;
+}
+
+.modal-footer .btn {
+    font-size: 16px;
 }
