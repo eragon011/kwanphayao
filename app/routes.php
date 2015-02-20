@@ -11,12 +11,25 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/hello', function()
 {
 	return View::make('hello');
 });
 
-Route::controller('/home',"HomeController");
+Route::controller('/',"HomeController");
+Route::get('/about', 'HomeController@getAbout');
+Route::get('/phayao', 'HomeController@getPhayao');
+Route::get('/ecology', 'HomeController@getEcology');
+Route::get('/economy', 'HomeController@getEconomy');
+Route::get('/nature', 'HomeController@getNature');
+Route::get('/history', 'HomeController@getHistory');
+Route::get('/register', 'HomeController@getRegister');
+
+Route::get('/test', 'HomeController@getTest');
+Route::get('/test2', 'HomeController@getTest2');
+Route::get('/test3', 'HomeController@getTest3');
+Route::get('/test5', 'HomeController@getTest5');
+Route::get('/test51', 'HomeController@getTest51');
 
 Route::group([],function(){
 
