@@ -26,10 +26,16 @@
 }
 
 // Color
+$black         : #000000;
+$white         : #ffffff;
 $red           : #ff0000;
 $verydarkgray  : #343434;
 $strongcyan    : #009696;
 $mediumgray    : #B4B4B4;
+
+.red-font {
+  color: $red;
+}
 
 .verydarkgray {
   color: $verydarkgray;
@@ -140,6 +146,34 @@ header {
   padding-left: 1rem;
 }
 
+#menu-main {
+  font-family: supermarketregular;
+  background-color: $strongcyan;
+  color: $white;
+  border-radius: 0.2857rem;
+  box-shadow: 0px 0px 0px 1px rgba(39, 41, 43, 0.15), 0px 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.9);
+}
+
+#menu-main .item {
+  font-size: 1.3rem;
+}
+
+#menu-main .active.item {
+  background-color: $black;
+  color: $white;
+//  box-shadow: 0em 2px 0em inset;
+  border-bottom: 5px solid rgba(255, 0, 0, 1);
+}
+
+#menu-main .item:first-child {
+  border-radius: 0.2857rem 0px 0px 0.2857rem;
+}
+
+#breadcrumb {
+  margin-top: 1rem;
+}
+
 #main-content {
   padding: 1rem 0;
 }
@@ -190,6 +224,10 @@ p + p {
 footer {
   background-color: $verydarkgray;
   padding: 1rem 2rem;
+}
+
+footer > div > div > h4 > a {
+  color: $white;
 }
 
 // Button

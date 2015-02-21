@@ -55,7 +55,7 @@
                         <img class="ui avatar image" src="/app/home/images/sample.png">
                         <div class="content">
                             <a href=""><h4 class="ui header">ข้อมูลจำเพาะกว๊านพะเยา</h4></a>
-                            <div class="description">สร้างทำนทกั้นน้ำ พ.ศ.2482..</div>
+                            <div class="description">สร้างทำนบกั้นน้ำ พ.ศ.2482..</div>
                         </div>
                     </div>
                     <div class="item">

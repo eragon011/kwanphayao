@@ -35,6 +35,39 @@ class HomeController extends BaseController {
         return View::make('test51');
     }
 
+    public function setupLayout() {
+        $this->getBreadcrumb();
+    }
+
+    public function getBreadcrumb() {
+        $activeSection = '';
+
+        if (Request::path() == 'about') {
+            $activeSection = "เกี่ยวกับสารานุกรมกว๊านพะเยา";
+        } elseif (Request::path() == 'phayao') {
+            $activeSection = "ข้อมูลทั่วไปกว๊านพะเยา";
+        } elseif (Request::path() == 'ecology') {
+            $activeSection = "นิเวศวิทยาและสิ่งแวดล้อม";
+        } elseif (Request::path() == 'economy') {
+            $activeSection = "เศรษฐกิจและการท่องเที่ยว";
+        } elseif (Request::path() == 'nature') {
+            $activeSection = "การจัดการทรัพยากรธรรมชาติ";
+        } elseif (Request::path() == 'history') {
+            $activeSection = "ประวัติศาสตร์และวัฒนธรรม";
+        } elseif (Request::path() == 'register') {
+            $activeSection = "ลงทะเบียน";
+        }
+
+        if($activeSection == '') {
+            $showBreadcrumb = false;
+        } else {
+            $showBreadcrumb = true;
+        }
+
+        View::share('activeSection',$activeSection);
+        View::share('showBreadcrumb',$showBreadcrumb);
+    }
+
     public function getIndex() {
         return View::make('home.index');
     }

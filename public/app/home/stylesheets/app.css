@@ -169,6 +169,69 @@ select {
   width: 100%;
 }
 
+/* line 232, ../../../components/foundation/scss/foundation/components/_grid.scss */
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 62.5rem;
+}
+/* line 172, ../../../components/foundation/scss/foundation/components/_global.scss */
+.row:before, .row:after {
+  content: " ";
+  display: table;
+}
+/* line 173, ../../../components/foundation/scss/foundation/components/_global.scss */
+.row:after {
+  clear: both;
+}
+/* line 236, ../../../components/foundation/scss/foundation/components/_grid.scss */
+.row.collapse > .column,
+.row.collapse > .columns {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 239, ../../../components/foundation/scss/foundation/components/_grid.scss */
+.row.collapse .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 242, ../../../components/foundation/scss/foundation/components/_grid.scss */
+.row .row {
+  width: auto;
+  margin-left: -0.9375rem;
+  margin-right: -0.9375rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: none;
+}
+/* line 172, ../../../components/foundation/scss/foundation/components/_global.scss */
+.row .row:before, .row .row:after {
+  content: " ";
+  display: table;
+}
+/* line 173, ../../../components/foundation/scss/foundation/components/_global.scss */
+.row .row:after {
+  clear: both;
+}
+/* line 243, ../../../components/foundation/scss/foundation/components/_grid.scss */
+.row .row.collapse {
+  width: auto;
+  margin: 0;
+  max-width: none;
+}
+/* line 172, ../../../components/foundation/scss/foundation/components/_global.scss */
+.row .row.collapse:before, .row .row.collapse:after {
+  content: " ";
+  display: table;
+}
+/* line 173, ../../../components/foundation/scss/foundation/components/_global.scss */
+.row .row.collapse:after {
+  clear: both;
+}
+
 /* line 247, ../../../components/foundation/scss/foundation/components/_grid.scss */
 .column,
 .columns {
@@ -176,6 +239,11 @@ select {
   padding-right: 0.9375rem;
   width: 100%;
   float: left;
+}
+
+/* line 250, ../../../components/foundation/scss/foundation/components/_grid.scss */
+[class*="column"] + [class*="column"]:last-child {
+  float: right;
 }
 
 /* line 251, ../../../components/foundation/scss/foundation/components/_grid.scss */
@@ -9099,39 +9167,44 @@ th.hide-for-touch {
   font-family: supermarketregular;
 }
 
-/* line 34, ../scss/_mindset.scss */
+/* line 36, ../scss/_mindset.scss */
+.red-font {
+  color: #ff0000;
+}
+
+/* line 40, ../scss/_mindset.scss */
 .verydarkgray {
   color: #343434;
 }
 
-/* line 38, ../scss/_mindset.scss */
+/* line 44, ../scss/_mindset.scss */
 .strongcyan {
   color: #009696;
 }
 
-/* line 42, ../scss/_mindset.scss */
+/* line 48, ../scss/_mindset.scss */
 .mediumgray {
   color: #B4B4B4;
 }
 
-/* line 51, ../scss/_mindset.scss */
+/* line 57, ../scss/_mindset.scss */
 #logo-search-profile-category {
   padding-top: 1rem;
 }
 
-/* line 55, ../scss/_mindset.scss */
+/* line 61, ../scss/_mindset.scss */
 #search-profile-category {
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 60, ../scss/_mindset.scss */
+/* line 66, ../scss/_mindset.scss */
 #profile-frame {
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 65, ../scss/_mindset.scss */
+/* line 71, ../scss/_mindset.scss */
 .right-fix {
   float: right;
   order: 1;
@@ -9146,14 +9219,14 @@ th.hide-for-touch {
   justify-content: flex-end;
 }
 
-/* line 83, ../scss/_mindset.scss */
+/* line 89, ../scss/_mindset.scss */
 #profile-icon {
   text-align: right;
   display: inline-block;
   position: relative;
 }
 
-/* line 89, ../scss/_mindset.scss */
+/* line 95, ../scss/_mindset.scss */
 .profile-shelf {
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -9164,7 +9237,7 @@ th.hide-for-touch {
   text-align: left;
 }
 
-/* line 100, ../scss/_mindset.scss */
+/* line 106, ../scss/_mindset.scss */
 .profile-book-first {
   display: inline-block;
   padding: 0 0 0 15px;
@@ -9175,7 +9248,7 @@ th.hide-for-touch {
   text-align: left;
 }
 
-/* line 111, ../scss/_mindset.scss */
+/* line 117, ../scss/_mindset.scss */
 .profile-book-last {
   flex: 0 1 auto;
   display: inline-block;
@@ -9186,7 +9259,7 @@ th.hide-for-touch {
   padding-left: 1rem;
 }
 
-/* line 121, ../scss/_mindset.scss */
+/* line 127, ../scss/_mindset.scss */
 .profilename {
   flex: 0 1 auto;
   margin-left: 0 !important;
@@ -9197,7 +9270,7 @@ th.hide-for-touch {
   padding-right: 15px;
 }
 
-/* line 131, ../scss/_mindset.scss */
+/* line 137, ../scss/_mindset.scss */
 #profile {
   margin-left: 0;
   margin-right: 0;
@@ -9205,29 +9278,61 @@ th.hide-for-touch {
   padding-right: 0;
 }
 
-/* line 138, ../scss/_mindset.scss */
+/* line 144, ../scss/_mindset.scss */
 #profile-setting {
   margin-left: 0;
   padding-left: 1rem;
 }
 
-/* line 143, ../scss/_mindset.scss */
+/* line 149, ../scss/_mindset.scss */
+#menu-main {
+  font-family: supermarketregular;
+  background-color: #009696;
+  color: #ffffff;
+  border-radius: 0.2857rem;
+  box-shadow: 0px 0px 0px 1px rgba(39, 41, 43, 0.15), 0px 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.9);
+}
+
+/* line 158, ../scss/_mindset.scss */
+#menu-main .item {
+  font-size: 1.3rem;
+}
+
+/* line 162, ../scss/_mindset.scss */
+#menu-main .active.item {
+  background-color: #000000;
+  color: #ffffff;
+  border-bottom: 5px solid red;
+}
+
+/* line 169, ../scss/_mindset.scss */
+#menu-main .item:first-child {
+  border-radius: 0.2857rem 0px 0px 0.2857rem;
+}
+
+/* line 173, ../scss/_mindset.scss */
+#breadcrumb {
+  margin-top: 1rem;
+}
+
+/* line 177, ../scss/_mindset.scss */
 #main-content {
   padding: 1rem 0;
 }
 
-/* line 147, ../scss/_mindset.scss */
+/* line 181, ../scss/_mindset.scss */
 #main-category-header {
   background-color: #009696 !important;
   border-color: #343434 !important;
 }
 
-/* line 152, ../scss/_mindset.scss */
+/* line 186, ../scss/_mindset.scss */
 #relate-content-header {
   background-color: #009696;
 }
 
-/* line 156, ../scss/_mindset.scss */
+/* line 190, ../scss/_mindset.scss */
 p + p {
   text-indent: 1.5em;
   margin-top: 0;
@@ -9235,52 +9340,57 @@ p + p {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 167, ../scss/_mindset.scss */
+  /* line 201, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
 @media only screen and (min-width: 992px) {
-  /* line 173, ../scss/_mindset.scss */
+  /* line 207, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
 @media only screen and (min-width: 1400px) and (max-width: 1919px) {
-  /* line 179, ../scss/_mindset.scss */
+  /* line 213, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
 @media only screen and (min-width: 1920px) {
-  /* line 185, ../scss/_mindset.scss */
+  /* line 219, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
-/* line 190, ../scss/_mindset.scss */
+/* line 224, ../scss/_mindset.scss */
 footer {
   background-color: #343434;
   padding: 1rem 2rem;
 }
 
-/* line 196, ../scss/_mindset.scss */
+/* line 229, ../scss/_mindset.scss */
+footer > div > div > h4 > a {
+  color: #ffffff;
+}
+
+/* line 234, ../scss/_mindset.scss */
 .btn {
   font-family: KunlasatriBold;
 }
 
-/* line 201, ../scss/_mindset.scss */
+/* line 239, ../scss/_mindset.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: supermarketregular !important;
 }
 
-/* line 206, ../scss/_mindset.scss */
+/* line 244, ../scss/_mindset.scss */
 .modal-header {
   background-color: #009696;
   padding: 7px 7px 7px 15px;
 }
 
-/* line 211, ../scss/_mindset.scss */
+/* line 249, ../scss/_mindset.scss */
 .modal-header .close {
   margin-top: 4px;
   margin-right: 5px;
@@ -9294,35 +9404,35 @@ h1, h2, h3, h4, h5, h6 {
   color: transparent;
 }
 
-/* line 224, ../scss/_mindset.scss */
+/* line 262, ../scss/_mindset.scss */
 .modal-title {
   color: #ffffff;
 }
 
-/* line 228, ../scss/_mindset.scss */
+/* line 266, ../scss/_mindset.scss */
 .modal-desc {
   border-bottom: 1px solid #E5E5E5;
   color: #009696;
   padding: 7px;
 }
 
-/* line 234, ../scss/_mindset.scss */
+/* line 272, ../scss/_mindset.scss */
 .modal-contact {
   padding: 7px;
 }
 
-/* line 238, ../scss/_mindset.scss */
+/* line 276, ../scss/_mindset.scss */
 .modal-form {
   border-top: 1px solid #E5E5E5;
   padding: 7px;
 }
 
-/* line 243, ../scss/_mindset.scss */
+/* line 281, ../scss/_mindset.scss */
 .modal-footer {
   padding: 7px;
 }
 
-/* line 247, ../scss/_mindset.scss */
+/* line 285, ../scss/_mindset.scss */
 .modal-footer .btn {
   font-size: 16px;
 }

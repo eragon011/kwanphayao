@@ -11,6 +11,7 @@
 
     <!-- Semantic -->
     {{--<link href="/components/semantic-ui/dist/semantic.min.css" rel="stylesheet" type="text/css">--}}
+    <link href="/components/semantic-ui/dist/components/breadcrumb.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/icon.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/image.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/input.min.css" rel="stylesheet" type="text/css">
@@ -103,7 +104,7 @@
 
         <header><!-- header & menu -->
             <nav>
-                <div >
+
                 <div id="logo-search-profile-category" class="ui page grid">
                     <div class="three wide colum">
                         <div class="ui centered grid">
@@ -236,17 +237,31 @@
                         </div>
                     </div>
                     <div class="sixteen wide colum">
-                        <div class="ui pointing inverted menu"> <!-- menu -->
-                            <a class="{{Request::path() == '/' ? 'active red ' : '';}}item" href="{{Request::path() == '/' ? '#' : '/';}}">
-                                <i class="home icon"></i>หน้าหลัก
+                        <div id="menu-main" class="ui secondary pointing menu"> <!-- secondary pointing menu inverted -->
+                            <a class="{{Request::path() == '/' ? 'active ' : '';}}item" href="{{Request::path() == '/' ? '#' : '/';}}">
+                                <i class="home icon"></i>หน้าแรก
                             </a>
-                            <a class="{{Request::path() == 'about' ? 'active red ' : '';}}item" href="{{Request::path() == 'about' ? '#' : '/about';}}">
+                            <a class="{{Request::path() == 'about' ? 'active ' : '';}}item" href="{{Request::path() == 'about' ? '#' : '/about';}}">
                                 <i class="book icon"></i>เกี่ยวกับสารานุกรมกว๊านพะเยา
                             </a>
                         </div> <!-- // menu -->
                     </div>
+
+                    <div class="sixteen wide colum">
+
+                    @if($showBreadcrumb)
+                        <div id="breadcrumb" class="ui huge breadcrumb supermarket-font">
+                            <span class="red-font">ขณะนี้คุณอยู่ที่ :</span>
+                            {{--<div class="active section">หน้าแรก</div>--}}
+                            <a href="/" class="section">หน้าแรก</a>
+                            <i class="black angle double right icon divider"></i>
+                            <div class="active section">{{$activeSection}}</div>
+                        </div>
+                    @endif
+
+                    </div>
                 </div>
-                </div>
+
             </nav>
         </header>
 
