@@ -21,8 +21,25 @@
     font-style: normal;
 }
 
+.kunlasatri-bold-font {
+  font-family: KunlasatriBold;
+}
+
 .supermarket-font {
   font-family: supermarketregular;
+}
+// Font Size
+// Use in  Main Category Button
+.big-font {
+  font-size: 1.2em;
+}
+
+// Use in Sign in/up Button
+.bigger-font {
+  font-size: 1.4em;
+}
+.huge-font {
+  font-size: 1.7em;
 }
 
 // Color
@@ -146,6 +163,26 @@ header {
   padding-left: 1rem;
 }
 
+.icon.menu > a.active > span {
+  color: $verydarkgray;
+}
+
+#category-general:hover > i:before {
+  content: "\e600";
+}
+#category-ecology:hover > i:before {
+  content: "\e602";
+}
+#category-travel:hover > i:before {
+  content: "\e604";
+}
+#category-water:hover > i:before {
+  content: "\e606";
+}
+#category-history:hover > i:before {
+  content: "\e608";
+}
+
 #menu-main {
   font-family: supermarketregular;
   background-color: $strongcyan;
@@ -230,17 +267,27 @@ footer > div > div > h4 > a {
   color: $white;
 }
 
-// Button
-.btn {
-    font-family: KunlasatriBold;
+// Modal Semantic
+#password-login {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-// Header text
-h1,h2,h3,h4,h5,h6 {
-    font-family: supermarketregular !important;
+#checkbox-label {
+  padding-left: 1.5em;
+  margin-left: 0;
 }
 
-// Model
+#modal-login-button {
+  margin-top: 0.95rem;
+  padding-bottom: 0.5rem;
+}
+
+#modal-register-button {
+  padding-bottom: 0.5rem;
+}
+
+// Modal Bootstrap
 .modal-header {
     background-color: #009696;
     padding: 7px 7px 7px 15px;
@@ -284,4 +331,14 @@ h1,h2,h3,h4,h5,h6 {
 
 .modal-footer .btn {
     font-size: 16px;
+}
+
+// Button
+.btn {
+  font-family: KunlasatriBold;
+}
+
+// Header text
+h1,h2,h3,h4,h5,h6 {
+  font-family: supermarketregular !important;
 }

@@ -12,11 +12,13 @@
     <!-- Semantic -->
     {{--<link href="/components/semantic-ui/dist/semantic.min.css" rel="stylesheet" type="text/css">--}}
     <link href="/components/semantic-ui/dist/components/breadcrumb.min.css" rel="stylesheet" type="text/css">
-    <link href="/components/semantic-ui/dist/components/icon.min.css" rel="stylesheet" type="text/css">
+    <link href="/components/semantic-ui/dist/components/checkbox.min.css" rel="stylesheet" type="text/css">
+    <link href="/components/semantic-ui/dist/components/form.min.css" rel="stylesheet" type="text/css">
+    <link href="/components/semantic-ui/dist/components/dimmer.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/image.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/input.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/item.min.css" rel="stylesheet" type="text/css">
-    <link href="/components/semantic-ui/dist/components/modal.min.css" rel="stylesheet" type="text/css">
+    <link href="/components/semantic-ui/dist/components/modal.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/popup.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/rail.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/search.min.css" rel="stylesheet" type="text/css">
@@ -29,6 +31,7 @@
     <link href="/app/home/css/semantic/dropdow.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/grid2low.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/header2.css" rel="stylesheet" type="text/css">
+    <link href="/app/home/css/semantic/icon2.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/labell.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/list2.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/menu2.css" rel="stylesheet" type="text/css">
@@ -140,6 +143,7 @@
                                             </div>
 
                                         </h3>
+
                                         <div class="profile-shelf">
                                             <div class="profile-book-first">
                                                 <a href="">
@@ -167,26 +171,28 @@
                                     <div class="ui grid"> <!-- main category -->
                                         <div class="computer only low">
                                             <div class="sixteen wide colum">
-                                                <div class="ui fluid labeled small icon menu">
-                                                    <a class="{{Request::path() == 'phayao' ? 'active ' : '';}}item" href="{{Request::path() == 'phayao' ? '#' : '/phayao';}}">
-                                                        <i class="circular inverted{{Request::path() == 'phayao' ? ' red ' : ' teal ';}}large dashboard icon"></i>
-                                                        <span>ข้อมูลทั่วไปกว๊านพะเยา</span>
+                                                <div class="ui labeled small icon menu">
+                                                    <a id="category-general" class="{{Request::path() == 'general' ? 'active ' : '';}}item" href="{{Request::path() == 'general' ? '#' : '/general';}}">
+                                                        {{--<i class="circular inverted{{Request::path() == 'general' ? ' red ' : ' teal ';}}large dashboard icon"></i>--}}
+                                                        <i class="{{Request::path() == 'general' ? 'red ' : 'teal outline ';}}huge general icon"></i>
+                                                        <span class="supermarket-font big-font">ข้อมูลทั่วไปกว๊านพะเยา</span>
                                                     </a>
-                                                    <a class="{{Request::path() == 'ecology' ? 'active ' : '';}}item" href="{{Request::path() == 'ecology' ? '#' : '/ecology';}}">
-                                                        <i class="circular inverted{{Request::path() == 'ecology' ? ' red ' : ' teal ';}}large pagelines icon"></i>
-                                                        <span>นิเวศวิทยาและสิ่งแวดล้อม</span>
+                                                    <a id="category-ecology" class="{{Request::path() == 'ecology' ? 'active ' : '';}}item" href="{{Request::path() == 'ecology' ? '#' : '/ecology';}}">
+                                                        {{--<i class="circular inverted{{Request::path() == 'ecology' ? ' red ' : ' teal ';}}large pagelines icon"></i>--}}
+                                                        <i class="{{Request::path() == 'ecology' ? 'red ' : 'teal outline ';}}huge ecology icon"></i>
+                                                        <span class="supermarket-font big-font">นิเวศวิทยาและสิ่งแวดล้อม</span>
                                                     </a>
-                                                    <a class="{{Request::path() == 'economy' ? 'active ' : '';}}item" href="{{Request::path() == 'economy' ? '#' : '/economy';}}">
-                                                        <i class="circular inverted{{Request::path() == 'economy' ? ' red ' : ' teal ';}}large plane icon"></i>
-                                                        <span>เศรษฐกิจและการท่องเที่ยว</span>
+                                                    <a id="category-travel" class="{{Request::path() == 'travel' ? 'active ' : '';}}item" href="{{Request::path() == 'travel' ? '#' : '/travel';}}">
+                                                        <i class="{{Request::path() == 'travel' ? 'red ' : 'teal outline ';}}huge travel phayao icon"></i>
+                                                        <span class="supermarket-font big-font">เศรษฐกิจและการท่องเที่ยว</span>
                                                     </a>
-                                                    <a class="{{Request::path() == 'nature' ? 'active ' : '';}}item" href="{{Request::path() == 'nature' ? '#' : '/nature';}}">
-                                                        <i class="circular inverted{{Request::path() == 'nature' ? ' red ' : ' teal ';}}large theme icon"></i>
-                                                        <span>การจัดการทรัพยากรธรรมชาติ</span>
+                                                    <a id="category-water" class="{{Request::path() == 'water-resources' ? 'active ' : '';}}item" href="{{Request::path() == 'water-resources' ? '#' : '/water-resources';}}">
+                                                        <i class="{{Request::path() == 'water-resources' ? 'red ' : 'teal outline ';}}huge water resources icon"></i>
+                                                        <span class="supermarket-font big-font">การจัดการทรัพยากรธรรมชาติ</span>
                                                     </a>
-                                                    <a class="{{Request::path() == 'history' ? 'active ' : '';}}item" href="{{Request::path() == 'history' ? '#' : '/history';}}">
-                                                        <i class="circular inverted{{Request::path() == 'history' ? ' red ' : ' teal ';}}large history icon"></i>
-                                                        <span>ประวัติศาสตร์และวัฒนธรรม</span>
+                                                    <a id="category-history" class="{{Request::path() == 'history' ? 'active ' : '';}}item" href="{{Request::path() == 'history' ? '#' : '/history';}}">
+                                                        <i class="{{Request::path() == 'history' ? 'red ' : 'teal outline ';}}huge history phayao icon"></i>
+                                                        <span class="supermarket-font big-font">ประวัติศาสตร์และวัฒนธรรม</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -194,17 +200,17 @@
 
                                         <div class="tablet only centered low">
                                             <div class="ui icon menu">
-                                                <a class="{{Request::path() == 'phayao' ? 'active ' : '';}}item" href="{{Request::path() == 'phayao' ? '#' : '/phayao';}}">
-                                                    <i class="circular inverted{{Request::path() == 'phayao' ? ' red ' : ' teal ';}}large dashboard icon"></i>
+                                                <a class="{{Request::path() == 'general' ? 'active ' : '';}}item" href="{{Request::path() == 'general' ? '#' : '/general';}}">
+                                                    <i class="circular inverted{{Request::path() == 'general' ? ' red ' : ' teal ';}}large dashboard icon"></i>
                                                 </a>
                                                 <a class="{{Request::path() == 'ecology' ? 'active ' : '';}}item" href="{{Request::path() == 'ecology' ? '#' : '/ecology';}}">
                                                     <i class="circular inverted{{Request::path() == 'ecology' ? ' red ' : ' teal ';}}large pagelines icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'economy' ? 'active ' : '';}}item" href="{{Request::path() == 'economy' ? '#' : '/economy';}}">
-                                                    <i class="circular inverted{{Request::path() == 'economy' ? ' red ' : ' teal ';}}large plane icon"></i>
+                                                <a class="{{Request::path() == 'travel' ? 'active ' : '';}}item" href="{{Request::path() == 'travel' ? '#' : '/travel';}}">
+                                                    <i class="circular inverted{{Request::path() == 'travel' ? ' red ' : ' teal ';}}large plane icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'nature' ? 'active ' : '';}}item" href="{{Request::path() == 'nature' ? '#' : '/nature';}}">
-                                                    <i class="circular inverted{{Request::path() == 'nature' ? ' red ' : ' teal ';}}large theme icon"></i>
+                                                <a class="{{Request::path() == 'water-resources' ? 'active ' : '';}}item" href="{{Request::path() == 'water-resources' ? '#' : '/water-resources';}}">
+                                                    <i class="circular inverted{{Request::path() == 'water-resources' ? ' red ' : ' teal ';}}large theme icon"></i>
                                                 </a>
                                                 <a class="{{Request::path() == 'history' ? 'active ' : '';}}item" href="{{Request::path() == 'history' ? '#' : '/history';}}">
                                                     <i class="circular inverted{{Request::path() == 'history' ? ' red ' : ' teal ';}}large history icon"></i>
@@ -214,17 +220,17 @@
 
                                         <div class="mobile only centered low">
                                             <div class="ui icon menu">
-                                                <a class="{{Request::path() == 'phayao' ? 'active ' : '';}}item" href="{{Request::path() == 'phayao' ? '#' : '/phayao';}}">
-                                                    <i class="circular inverted{{Request::path() == 'phayao' ? ' red ' : ' teal ';}}dashboard icon"></i>
+                                                <a class="{{Request::path() == 'general' ? 'active ' : '';}}item" href="{{Request::path() == 'general' ? '#' : '/general';}}">
+                                                    <i class="circular inverted{{Request::path() == 'general' ? ' red ' : ' teal ';}}dashboard icon"></i>
                                                 </a>
                                                 <a class="{{Request::path() == 'ecology' ? 'active ' : '';}}item" href="{{Request::path() == 'ecology' ? '#' : '/ecology';}}">
                                                     <i class="circular inverted{{Request::path() == 'ecology' ? ' red ' : ' teal ';}}pagelines icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'economy' ? 'active ' : '';}}item" href="{{Request::path() == 'economy' ? '#' : '/economy';}}">
-                                                    <i class="circular inverted{{Request::path() == 'economy' ? ' red ' : ' teal ';}}plane icon"></i>
+                                                <a class="{{Request::path() == 'travel' ? 'active ' : '';}}item" href="{{Request::path() == 'travel' ? '#' : '/travel';}}">
+                                                    <i class="circular inverted{{Request::path() == 'travel' ? ' red ' : ' teal ';}}plane icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'nature' ? 'active ' : '';}}item" href="{{Request::path() == 'nature' ? '#' : '/nature';}}">
-                                                    <i class="circular inverted{{Request::path() == 'nature' ? ' red ' : ' teal ';}}theme icon"></i>
+                                                <a class="{{Request::path() == 'water-resources' ? 'active ' : '';}}item" href="{{Request::path() == 'water-resources' ? '#' : '/water-resources';}}">
+                                                    <i class="circular inverted{{Request::path() == 'water-resources' ? ' red ' : ' teal ';}}theme icon"></i>
                                                 </a>
                                                 <a class="{{Request::path() == 'history' ? 'active ' : '';}}item" href="{{Request::path() == 'history' ? '#' : '/history';}}">
                                                     <i class="circular inverted{{Request::path() == 'history' ? ' red ' : ' teal ';}}history icon"></i>
@@ -329,21 +335,66 @@
         </footer>
 
         <!-- popup modal area -->
+        <div class="ui modal">
+            <i class="close icon"></i>
+            {{--<div class="header">--}}
+                {{--ลงชื่อเข้าใช้งาน หรือ ลงทะเบียน--}}
 
-        <a class="exit-off-canvas"></a> <!-- back to the main page -->
+            {{--</div>--}}
+            <div class="two colum middle aligned relaxed fitted ui grid">
+                <div class="colum">
+                    <div class="ui form segment">
+                        <div class="field">
+                            <label></label>
+                            <div class="ui left icon input">
+                                <input type="text" placeholder="ชื่อผู้ใช้ หรือ อีเมล">
+                                <i class="user icon"></i>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label> </label>
+                            <div id="password-login" class="ui left icon input">
+                                <input type="password" placeholder="รหัสผ่าน">
+                                <i class="lock icon"></i>
+                            </div>
+                        </div>
+                        <div class="inline field">
+                            <div class="ui checkbox">
+                                <input type="checkbox">
+                                <label class="checkbox-label">จดจำฉันไว้ในระบบ</label>
+                            </div>
+                        </div>
+                        <button id="modal-login-button" class="ui teal submit buttun">
+                            <span class="kunlasatri-bold-font bigger-font">ลงชื่อใช้งาน</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="ui vertical divider">หรือ</div>
+                <div class="center aligned colum">
+                    <a href="/register">
+                        <button class="huge red ui labeled icon buttun">
+                            <i class="signup icon"></i>
+                            <span class="kunlasatri-bold-font huge-font">ลงทะเบียน</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <a class="exit-off-canvas"></a> <!-- foundation.zurb back to the main page -->
     </div>
 </div>
-<!--requireJS help to require JavaScript modules-->
-{{--<script src="/app/home/js/config.js"></script>--}}
-{{--<script data-main="js/config" src="/app/home/js/lib/require.js"></script>--}}
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/components/jquery/dist/jquery.js"></script>
+{{--<script src="/components/jquery/dist/jquery.js"></script>--}}
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 
 <!-- Semantic -->
 {{--<script src="/components/semantic-ui/dist/components/semantic.js"></script>--}}
-{{--<script src="/components/semantic-ui/dist/components/dimmer.js"></script>--}}
-{{--<script src="/components/semantic-ui/dist/components/modal.min.js"></script>--}}
+<script src="/components/semantic-ui/dist/components/checkbox.js"></script>
+<script src="/components/semantic-ui/dist/components/dimmer.js"></script>
+<script src="/components/semantic-ui/dist/components/form.js"></script>
+<script src="/components/semantic-ui/dist/components/modal.min.js"></script>
 <script src="/components/semantic-ui/dist/components/popup.min.js"></script>
 <script src="/components/semantic-ui/dist/components/transition.js"></script>
 <script src="/components/semantic-ui/dist/components/search.min.js"></script>
@@ -353,7 +404,7 @@
 <script src="/app/home/js/search.js"></script>
 
 <!-- Foundation -->
-<script src="/components/foundation/js/foundation.min.js"></script>
+<script src="/components/foundation/js/foundation.js"></script>
 <script src="/components/foundation/js/foundation/foundation.offcanvas.js"></script>
 
 <!-- Bootstrap -->
@@ -361,7 +412,10 @@
 @yield('javascript')
 <script>
     $('.ui.dropdow').dropdow();
-//    $('.ui.search')
+    $('.ui.modal')
+            .modal('setting', 'closable', false)
+            .modal('hide');
+    //    $('.ui.search')
 //            .search({
 //                apiSettings: {
 //                    url: '//api.semantic-ui.com/search/{query}'
@@ -381,7 +435,7 @@
 //                    verbose: true
                 });
         });
-    $(document).foundation();
+//    $(document).foundation();
 </script>
 </body>
 </html>
