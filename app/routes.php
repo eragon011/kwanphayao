@@ -18,10 +18,10 @@ Route::get('/hello', function()
 
 Route::controller('/',"HomeController");
 Route::get('/about', 'HomeController@getAbout');
-Route::get('/phayao', 'HomeController@getPhayao');
+Route::get('/general', 'HomeController@getPhayao');
 Route::get('/ecology', 'HomeController@getEcology');
-Route::get('/economy', 'HomeController@getEconomy');
-Route::get('/nature', 'HomeController@getNature');
+Route::get('/travel', 'HomeController@getEconomy');
+Route::get('/water-resources', 'HomeController@getNature');
 Route::get('/history', 'HomeController@getHistory');
 Route::get('/register', 'HomeController@getRegister');
 

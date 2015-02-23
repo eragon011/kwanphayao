@@ -44,13 +44,13 @@ class HomeController extends BaseController {
 
         if (Request::path() == 'about') {
             $activeSection = "เกี่ยวกับสารานุกรมกว๊านพะเยา";
-        } elseif (Request::path() == 'phayao') {
+        } elseif (Request::path() == 'general') {
             $activeSection = "ข้อมูลทั่วไปกว๊านพะเยา";
         } elseif (Request::path() == 'ecology') {
             $activeSection = "นิเวศวิทยาและสิ่งแวดล้อม";
-        } elseif (Request::path() == 'economy') {
+        } elseif (Request::path() == 'travel') {
             $activeSection = "เศรษฐกิจและการท่องเที่ยว";
-        } elseif (Request::path() == 'nature') {
+        } elseif (Request::path() == 'water-resources') {
             $activeSection = "การจัดการทรัพยากรธรรมชาติ";
         } elseif (Request::path() == 'history') {
             $activeSection = "ประวัติศาสตร์และวัฒนธรรม";
@@ -80,20 +80,20 @@ class HomeController extends BaseController {
         return View::make('home.register');
     }
 
-    public function getPhayao() {
-        return View::make('home.phayao');
+    public function getGeneral() {
+        return View::make('home.general');
     }
 
     public function getEcology() {
         return View::make('home.ecology');
     }
 
-    public function getEconomy() {
-        return View::make('home.economy');
+    public function getTravel() {
+        return View::make('home.travel');
     }
 
-    public function getNature() {
-        return View::make('home.nature');
+    public function getWaterResources() {
+        return View::make('home.water-resources');
     }
 
     public function getHistory() {
