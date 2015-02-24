@@ -16,6 +16,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             resolve: {
                 contents: function (ContentService, $stateParams) {
                     return ContentService.list(1,"");
+                },
+                mainCategories : function(MainCategoryService){
+                    return MainCategoryService.all();
                 }
             }
         })

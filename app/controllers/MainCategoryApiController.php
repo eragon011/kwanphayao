@@ -3,7 +3,7 @@
 class MainCategoryApiController extends \BaseController
 {
 
-    public function __construct(MainCategorService $mainCategoryService, CategoryService $categoryService){
+    public function __construct(MainCategoryService $mainCategoryService, CategoryService $categoryService){
         $this->mainCategoryService = $mainCategoryService;
         $this->categoryService = $categoryService;
     }
