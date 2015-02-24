@@ -98,6 +98,5 @@ class BaseService {
         return $datatable = $this->myDataTable($model, $page, $take,$with, $filter,$relateFilter, $order);
 
     }
-
-
+    
 }
