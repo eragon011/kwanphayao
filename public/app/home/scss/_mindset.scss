@@ -1,3 +1,4 @@
+// Font
 @font-face {
     font-family: 'KunlasatriBold';
     src: url('/fonts/KunlasatriBold.eot');
@@ -20,16 +21,324 @@
     font-style: normal;
 }
 
-/*
- * Button
- */
-.btn {
-    font-family: KunlasatriBold;
+.kunlasatri-bold-font {
+  font-family: KunlasatriBold;
 }
 
-/*
- * Header
- */
+.supermarket-font {
+  font-family: supermarketregular;
+}
+// Font Size
+// Use in  Main Category Button
+.big-font {
+  font-size: 1.2em;
+}
+
+// Use in Sign in/up Button
+.bigger-font {
+  font-size: 1.4em;
+}
+.huge-font {
+  font-size: 1.7em;
+}
+
+// Color
+$black         : #000000;
+$white         : #ffffff;
+$red           : #ff0000;
+$verydarkgray  : #343434;
+$strongcyan    : #009696;
+$mediumgray    : #B4B4B4;
+
+.red-font {
+  color: $red;
+}
+
+.verydarkgray {
+  color: $verydarkgray;
+}
+
+.strongcyan {
+  color: $strongcyan;
+}
+
+.mediumgray {
+  color: $mediumgray;
+}
+
+// Section in Body
+header {
+//    margin-top: 0.5rem;
+}
+
+#logo-search-profile-category {
+  padding-top: 1rem;
+}
+
+#search-profile-category {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#profile-frame {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.right-fix {
+  float: right;
+  order: 1;
+  display: flex;
+//  display: inline-block;
+//  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+//  -webkit-flex: 1 1 main-size;
+//  flex: 1 1 main-size;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  vertical-align: middle;
+  justify-content: flex-end;
+}
+
+#profile-icon {
+  text-align: right;
+  display: inline-block;
+  position:relative;
+}
+
+.profile-shelf {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  white-space: nowrap;
+  display: flex;
+//  display: inline-block;
+  line-height: normal;
+  position: relative;
+  text-align: left;
+}
+
+.profile-book-first {
+  display: inline-block;
+  padding: 0 0 0 15px;
+  vertical-align: middle;
+  line-height: normal;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+//  flex: 0 0 auto;
+  text-align: left;
+}
+
+.profile-book-last {
+  flex: 0 1 auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  white-space: nowrap;
+  padding-left: 1rem;
+}
+
+.profilename {
+  flex: 0 1 auto;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  white-space: nowrap;
+  display: flex;
+  line-height: normal;
+  padding-right: 15px;
+}
+
+#profile {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1rem;
+  padding-right: 0;
+}
+
+#profile-setting {
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+.icon.menu > a.active > span {
+  color: $verydarkgray;
+}
+
+#category-general:hover > i:before {
+  content: "\e600";
+}
+#category-ecology:hover > i:before {
+  content: "\e602";
+}
+#category-travel:hover > i:before {
+  content: "\e604";
+}
+#category-water:hover > i:before {
+  content: "\e606";
+}
+#category-history:hover > i:before {
+  content: "\e608";
+}
+
+#menu-main {
+  font-family: supermarketregular;
+  background-color: $strongcyan;
+  color: $white;
+  border-radius: 0.2857rem;
+  box-shadow: 0px 0px 0px 1px rgba(39, 41, 43, 0.15), 0px 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.9);
+}
+
+#menu-main .item {
+  font-size: 1.3rem;
+}
+
+#menu-main .active.item {
+  background-color: $black;
+  color: $white;
+//  box-shadow: 0em 2px 0em inset;
+  border-bottom: 5px solid rgba(255, 0, 0, 1);
+}
+
+#menu-main .item:first-child {
+  border-radius: 0.2857rem 0px 0px 0.2857rem;
+}
+
+#breadcrumb {
+  margin-top: 1rem;
+}
+
+#main-content {
+  padding: 1rem 0;
+}
+
+#main-category-header {
+  background-color: $strongcyan !important;
+  border-color: $verydarkgray !important;
+}
+
+#relate-content-header {
+  background-color: $strongcyan;
+}
+
+p + p {
+  text-indent: 1.5em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1919px) {
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+
+footer {
+  background-color: $verydarkgray;
+  padding: 1rem 2rem;
+}
+
+footer > div > div > h4 > a {
+  color: $white;
+}
+
+// Modal Semantic
+#password-login {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#checkbox-label {
+  padding-left: 1.5em;
+  margin-left: 0;
+}
+
+#modal-login-button {
+  margin-top: 0.95rem;
+  padding-bottom: 0.5rem;
+}
+
+#modal-register-button {
+  padding-bottom: 0.5rem;
+}
+
+// Modal Bootstrap
+.modal-header {
+    background-color: #009696;
+    padding: 7px 7px 7px 15px;
+}
+
+.modal-header .close {
+    margin-top: 4px;
+    margin-right: 5px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #000000;
+    padding: 0 5px 0 5px;
+    font-size: 24px;
+    text-shadow: 0;
+    color: transparent;
+}
+
+.modal-title {
+    color: #ffffff;
+}
+
+.modal-desc {
+    border-bottom: 1px solid #E5E5E5;
+    color: #009696;
+    padding: 7px;
+}
+
+.modal-contact {
+  padding: 7px;
+}
+
+.modal-form {
+  border-top: 1px solid #E5E5E5;
+  padding: 7px;
+}
+
+.modal-footer {
+  padding: 7px;
+}
+
+.modal-footer .btn {
+    font-size: 16px;
+}
+
+// Button
+.btn {
+  font-family: KunlasatriBold;
+}
+
+// Header text
 h1,h2,h3,h4,h5,h6 {
-    font-family: supermarketregular;
+  font-family: supermarketregular !important;
 }

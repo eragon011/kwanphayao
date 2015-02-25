@@ -122,11 +122,24 @@ app.controller('CategoryListCtrl', function ($scope, $state, mainCategory, categ
 
 });
 
-app.controller('CategoryFormCtrl', function ($scope, $state, mainCategory, category, MainCategoryService) {
+app.controller('CategoryFormCtrl', function ($scope, $state,contentTypes, mainCategory, category, MainCategoryService) {
 
     $scope.mainCategory = mainCategory.data;
 
     $scope.category = category.data;
+
+    $scope.contentTypes = contentTypes.data;
+
+    if($scope.category.content_type){
+        $scope.contentTypes.forEach(function(obj,index){
+
+            if($scope.category.content_type == obj.id){
+                $scope.category.content_type = $scope.contentTypes[index];
+
+                console.log(index);
+            }
+        });
+    }
 
     $scope.save = function () {
         MainCategoryService.saveCategory($scope.mainCategory.id, $scope.category).success(function (response) {

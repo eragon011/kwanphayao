@@ -2,43 +2,55 @@
  * Created by chaow on 2/4/2015 AD.
  */
 
-app.controller('ListCtrl', function ($scope, contents,ContentService) {
+app.controller('ListCtrl', function ($scope, contents, mainCategories, ContentService, MainCategoryService) {
     console.log("ListCtrl Start...");
 
     $scope.dt = contents.data;
     $scope.contents = contents.data.data;
-    console.log($scope.dt);
+    $scope.mainCategories = mainCategories.data;
 
     $scope.currentPage;
-    $scope.filterWord= "";
+    $scope.filterWord = "";
 
     $scope.pageChange = function () {
-        ContentService.list($scope.currentPage,$scope.filterWord).success(function(response){
+        ContentService.list($scope.currentPage, $scope.filterWord).success(function (response) {
             $scope.contents = response.data;
             $scope.dt = response;
         })
     }
 
-    $scope.filterChange = function(){
+    $scope.filterChange = function () {
         $scope.currentPage = 1;
         $scope.pageChange();
     }
 
-    $scope.delete = function(content){
-        confirm_string = "Do you want to delete this Content id:"+content.id+" ?";
-        if(confirm(confirm_string)){
-            ContentService.delete(content).success(function(){
+    $scope.delete = function (content) {
+        confirm_string = "Do you want to delete this Content id:" + content.id + " ?";
+        if (confirm(confirm_string)) {
+            ContentService.delete(content).success(function () {
                 index = $scope.contents.indexOf(content);
-                $scope.contents.splice(index,1);
+                $scope.contents.splice(index, 1);
             });
         }
     }
 })
 
 
-app.controller('FormCtrl',function($scope,$state,content,mainCategories,MainCategoryService,CategoryService,ContentService){
+app.controller('FormCtrl', function ($scope, $state, content, category,contentType) {
 
-    function init(){
+    $scope.category = category.data;
+    $scope.contentType = contentType.data;
+    $scope.content = content.data;
+
+    $scope.save = function(){
+        console.log($scope.content);
+    }
+
+});
+
+app.controller('SelectCategoryController', function ($scope, $state,content, mainCategories, MainCategoryService, CategoryService, ContentService) {
+
+    function init() {
         $scope.content = content.data;
         $scope.mainCategories = mainCategories.data;
         $scope.categories = [];
@@ -46,19 +58,18 @@ app.controller('FormCtrl',function($scope,$state,content,mainCategories,MainCate
 
     }
 
-    function initCategory(response){
+    function initCategory(response) {
 
 
         $scope.categories = response;
 
-        if ($scope.content.category==null){
+        if ($scope.content.category == null) {
             $scope.content.category = $scope.categories[0];
-            console.log("test");
-        }else {
+        } else {
             // do nothing
             var index = 0;
-            $scope.categories.forEach(function(el,idx){
-                if (el.id == $scope.content.category.id){
+            $scope.categories.forEach(function (el, idx) {
+                if (el.id == $scope.content.category.id) {
                     index = idx;
                 }
             })
@@ -67,7 +78,7 @@ app.controller('FormCtrl',function($scope,$state,content,mainCategories,MainCate
     }
 
     function initMainCategory() {
-        if ($scope.content.category){
+        if ($scope.content.category) {
             $scope.content.mainCategory = $scope.content.category.parent;
         }
 
@@ -91,17 +102,15 @@ app.controller('FormCtrl',function($scope,$state,content,mainCategories,MainCate
 
     init();
 
-    $scope.selMainCategoryChanged = function(){
+    $scope.selMainCategoryChanged = function () {
         MainCategoryService.categories($scope.content.mainCategory.id)
             .success(initCategory);
     }
 
-    $scope.save = function(){
-        console.log($scope.content);
-
-        ContentService.save($scope.content).success(function (response) {
-            $state.go('list');
-        })
+    $scope.next = function(){
+        $state.go('create.type',{
+            category : $scope.content.category.id,
+            type : $scope.content.category.content_type
+        });
     }
-
 });

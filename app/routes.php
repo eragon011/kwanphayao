@@ -11,31 +11,43 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Route::get('/hello', function () {
+    return View::make('hello');
 });
 
-Route::controller('/home',"HomeController");
+Route::get('/about', 'HomeController@getAbout');
+Route::get('/general', 'HomeController@getPhayao');
+Route::get('/ecology', 'HomeController@getEcology');
+Route::get('/travel', 'HomeController@getEconomy');
+Route::get('/water-resources', 'HomeController@getNature');
+Route::get('/history', 'HomeController@getHistory');
+Route::get('/register', 'HomeController@getRegister');
 
-Route::group([],function(){
+Route::get('/test', 'HomeController@getTest');
+Route::get('/test2', 'HomeController@getTest2');
+Route::get('/test3', 'HomeController@getTest3');
+Route::get('/test5', 'HomeController@getTest5');
+Route::get('/test51', 'HomeController@getTest51');
 
-	Route::controller('/admin/api/v1/category','CategoryApiController');
+Route::group(["prefix"=>"/admin/api/v1"], function () {
 
-	Route::controller('/admin/api/v1/user','UserApiController');
-	Route::controller('/admin/api/v1/role','RoleApiController');
-	Route::controller('/admin/api/v1/content','ContentApiController');
+    Route::controller('/category', 'CategoryApiController');
 
-	Route::group([],function(){
+    Route::controller('/user', 'UserApiController');
+    Route::controller('/role', 'RoleApiController');
+    Route::controller('/content', 'ContentApiController');
+    Route::controller('/content-type', 'ContentTypeApiController');
 
-		Route::post('/admin/api/v1/main-category/{id}/categories/save','MainCategoryApiController@postCreateCategory');
-		Route::get('/admin/api/v1/main-category/{id}/categories','MainCategoryApiController@getCategories');
+    Route::post('/main-category/{id}/categories/save', 'MainCategoryApiController@postCreateCategory');
+    Route::get('/main-category/{id}/categories', 'MainCategoryApiController@getCategories');
 
-		Route::controller('/admin/api/v1/main-category','MainCategoryApiController');
-	});
+    Route::controller('/main-category', 'MainCategoryApiController');
 
 
 });
 
-Route::controller('/admin',"AdminController");
+Route::controller('/admin', "AdminController");
+
+
+Route::controller('/', "HomeController");
 

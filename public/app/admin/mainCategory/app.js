@@ -50,6 +50,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 },
                 category : function(CategoryService,$stateParams){
                     return CategoryService.edit($stateParams.cid);
+                },
+                contentTypes : function(ContentTypeService){
+                    return ContentTypeService.all();
                 }
             }
         })
@@ -65,6 +68,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 },
                 category : function(){
                     return { data : { }}
+                },
+                contentTypes : function(ContentTypeService){
+                    return ContentTypeService.all();
                 }
             }
         })

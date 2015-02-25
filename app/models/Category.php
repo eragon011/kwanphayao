@@ -14,7 +14,7 @@ class Category extends AbstrctIModel {
 
     protected $guarded = ['parent'];
 
-    protected $fillable = ['name','description'];
+    protected $fillable = ['name','description','content_type'];
 
     public function parent(){
         return $this->belongsTo('MainCategory','HAS_CATEGORY');

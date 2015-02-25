@@ -21,6 +21,14 @@
             </div>
 
             <div class="form-group">
+                <label>Map Content Type</label>
+                <select class="form-control" ng-model="category.content_type"
+                        ng-options="opt as opt.title for opt in contentTypes track by opt.id">
+                </select>
+            </div>
+
+
+            <div class="form-group">
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" ui-sref="category-list({id:mainCategory.id})" class="btn btn-default">Cancel</button>
             </div>

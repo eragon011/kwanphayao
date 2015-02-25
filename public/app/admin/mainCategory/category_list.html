@@ -35,14 +35,16 @@
                 <th></th>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Content Type ID</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tbody ui-sortable="sortableOptions" ng-model="categories">
-            <tr ng-repeat="c in categories">
+            <tr ng-repeat="c in categories" style="cursor:pointer;">
                 <td><span class="glyphicon glyphicon-move"></span></td>
                 <td>{{c.id}}</td>
                 <td>{{c.name}}</td>
+                <td>{{c.content_type}}</td>
                 <td>
                     <div class="btn-group btn-group-sm" role="group">
                         <button type="button" ui-sref="category-edit({id:mainCategory.id,cid:c.id})" class="btn">Edit</button>

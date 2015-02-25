@@ -22,7 +22,8 @@ class CategoryService extends BaseService {
             $id = $input['id'];
             /* @var $category Category */
             $category = Category::find($id);
-            $category->update($input);
+            $category->update(array_except($input,['content_type']));
+            $category->content_type = $input['content_type']['id'];
             $category->save();
 
             $mainCategoryId = $input['parent']['id'];
@@ -36,8 +37,8 @@ class CategoryService extends BaseService {
 
             $parent = $input['parent'];
 
-            $category = Category::firstOrNew(array_except($input,['parent']));
-            $category->save();
+            $category = Category::firstOrNew(array_except($input,['parent','content_type']));
+            $category->content_type = $input['content_type']['id'];
             $mainCategoryId = $parent['id'];
 
             $mainCategory = MainCategory::find($mainCategoryId);
