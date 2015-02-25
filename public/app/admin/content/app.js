@@ -23,10 +23,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
-        .state('create',{
-            url : "/create",
-            templateUrl : "/app/admin/content/form.html",
-            controller : "FormCtrl",
+        .state('select-category',{
+            url : "/select",
+            templateUrl : "/app/admin/content/select_category.html",
+            controller : "SelectCategoryController",
             resolve : {
                 content : function(ContentService){
                     return { data : {} };
@@ -34,6 +34,30 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 mainCategories : function(MainCategoryService){
                     return MainCategoryService.all();
                 }
+            }
+        })
+
+        .state('create',{
+            url : "/create/:category/:type",
+            templateUrl : "/app/admin/content/form.html",
+            controller : "FormCtrl",
+            resolve : {
+                content : function(ContentService){
+                    return { data : {} };
+                },
+                contentType : function(ContentTypeService,$stateParams){
+                    return ContentTypeService.get($stateParams.type)
+                },
+                category : function(CategoryService,$stateParams){
+                    return CategoryService.edit($stateParams.category)
+                }
+            }
+        })
+
+        .state('create.type',{
+            url : '/show',
+            templateUrl: function($stateParams){
+                return "/app/content/form/"+$stateParams.type+".html";
             }
         })
 

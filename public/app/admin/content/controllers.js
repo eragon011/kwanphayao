@@ -36,7 +36,19 @@ app.controller('ListCtrl', function ($scope, contents, mainCategories, ContentSe
 })
 
 
-app.controller('FormCtrl', function ($scope, $state, content, mainCategories, MainCategoryService, CategoryService, ContentService) {
+app.controller('FormCtrl', function ($scope, $state, content, category,contentType) {
+
+    $scope.category = category.data;
+    $scope.contentType = contentType.data;
+    $scope.content = content.data;
+
+    $scope.save = function(){
+        console.log($scope.content);
+    }
+
+});
+
+app.controller('SelectCategoryController', function ($scope, $state,content, mainCategories, MainCategoryService, CategoryService, ContentService) {
 
     function init() {
         $scope.content = content.data;
@@ -53,7 +65,6 @@ app.controller('FormCtrl', function ($scope, $state, content, mainCategories, Ma
 
         if ($scope.content.category == null) {
             $scope.content.category = $scope.categories[0];
-            console.log("test");
         } else {
             // do nothing
             var index = 0;
@@ -96,12 +107,10 @@ app.controller('FormCtrl', function ($scope, $state, content, mainCategories, Ma
             .success(initCategory);
     }
 
-    $scope.save = function () {
-        console.log($scope.content);
-
-        ContentService.save($scope.content).success(function (response) {
-            $state.go('list');
-        })
+    $scope.next = function(){
+        $state.go('create.type',{
+            category : $scope.content.category.id,
+            type : $scope.content.category.content_type
+        });
     }
-
 });

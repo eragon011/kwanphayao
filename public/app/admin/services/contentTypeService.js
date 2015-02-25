@@ -10,6 +10,13 @@ app.factory('ContentTypeService', function ($http) {
                 url : '/admin/api/v1/content-type/all',
                 header : 'application/json'
             })
+        },
+        get : function($id){
+            return $http({
+                method : 'get',
+                url : '/admin/api/v1/content-type/view/'+$id,
+                header : 'application/json'
+            })
         }
     }
 })
