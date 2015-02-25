@@ -1,15 +1,30 @@
 <?php
 
-class ContentTypeApiController extends \BaseController {
+class ContentTypeApiController extends \BaseController
+{
 
-    public function getAll(){
-        $types = [
-            ["id" => "content", "title" =>"Content"],
-            ["id" => "fist", "title" =>"Fist"],
-            ["id" => "history", "title" =>"History"],
-        ];
+    static $types = [
+        ["id" => "content", "title" => "ข้อมูลทั่วไป"],
+        ["id" => "fish", "title" => "พันธุ๋ลา"],
+    ];
 
-        return $types;
+    public function getAll()
+    {
+        return $this->types;
+    }
+
+    public static function getTypes(){
+        return ContentTypeApiController::$types;
+    }
+
+    public function getView($id){
+        foreach (ContentTypeApiController::$types as $type) {
+            if ($type['id'] == $id){
+                return $type;
+            }
+        }
+        return null;
+
     }
 
 }
