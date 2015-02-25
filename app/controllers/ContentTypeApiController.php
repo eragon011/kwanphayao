@@ -5,12 +5,12 @@ class ContentTypeApiController extends \BaseController
 
     static $types = [
         ["id" => "content", "title" => "ข้อมูลทั่วไป"],
-        ["id" => "fish", "title" => "พันธุ๋ลา"],
+        ["id" => "fish", "title" => "พันธุ์ปลา"],
     ];
 
     public function getAll()
     {
-        return $this->types;
+        return ContentTypeApiController::$types;
     }
 
     public static function getTypes(){
