@@ -22,6 +22,7 @@ class RoleService extends BaseService {
 
         if (isset($input['id'])) {
             $id = $input['id'];
+            /* @var $role Role */
             $role = Role::find($id);
             $role->update($input);
             $role->save();
@@ -39,6 +40,7 @@ class RoleService extends BaseService {
 
         if (isset($input['id'])) {
             $id = $input['id'];
+            /* @var $role Role */
             $role = Role::find($id);
             $role->delete();
             return [true];
