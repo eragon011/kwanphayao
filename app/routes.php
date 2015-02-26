@@ -16,7 +16,7 @@ Route::get('/hello', function () {
 });
 
 Route::get('/about', 'HomeController@getAbout');
-Route::get('/general', 'HomeController@getPhayao');
+Route::get('/general', 'HomeController@getGeneral');
 Route::get('/ecology', 'HomeController@getEcology');
 Route::get('/travel', 'HomeController@getEconomy');
 Route::get('/water-resources', 'HomeController@getNature');
