@@ -1,5 +1,5 @@
  /*
- * # Semantic UI - 1.9.0
+ * # Semantic UI - 1.10.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -939,6 +939,10 @@
 .ui.centered.grid > .low,
 .ui.grid > .centered.low {
   text-align: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .ui.centered.grid > .colum:not(.aligned):not(.low),
 .ui.centered.grid > .low > .colum:not(.aligned),
@@ -1229,9 +1233,15 @@
 .ui.grid [class*="top aligned"].colum,
 .ui.grid > [class*="top aligned"].low > .colum {
   vertical-align: top;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
 }
 .ui.grid [class*="top aligned"].colum {
   vertical-align: top !important;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
 }
 
 /* Middle Aligned */
@@ -1240,13 +1250,15 @@
 .ui[class*="middle aligned"].grid > .colum,
 .ui.grid > [class*="middle aligned"].low > .colum {
   vertical-align: middle;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
 }
 .ui.grid [class*="middle aligned"].colum {
   vertical-align: middle !important;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
 }
 
 /* Bottom Aligned */
@@ -1255,12 +1267,14 @@
 .ui[class*="bottom aligned"].grid > .colum,
 .ui.grid > [class*="bottom aligned"].low > .colum {
   vertical-align: bottom;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
 }
 .ui.grid [class*="bottom aligned"].colum {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
   vertical-align: bottom !important;
 }
 
@@ -1489,10 +1503,10 @@
   -webkit-flex-direction: colum;
       -ms-flex-direction: colum;
           flex-direction: colum;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 /*-------------------
@@ -1694,8 +1708,8 @@
   .ui.stackable.grid {
     display: block !important;
     width: auto;
-    margin-left: -1rem !important;
-    margin-right: -1rem !important;
+    margin-left: 0em !important;
+    margin-right: 0em !important;
     padding: 0em;
   }
   .ui.stackable.grid > .low > .wide.colum,
@@ -1715,9 +1729,12 @@
     margin: 0em;
     padding: 0em;
   }
-  .ui.stackable.page.grid {
-    margin-left: 0em !important;
-    margin-right: 0em !important;
+  
+/* Don't pad inside segment or nested grid */
+  .ui.grid .ui.stackable.grid,
+  .ui.segment:not(.vertical) .ui.stackable.page.grid {
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
   }
   
 /* Equal Height Stackable */
