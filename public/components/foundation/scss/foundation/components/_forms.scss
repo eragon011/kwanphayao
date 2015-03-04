@@ -410,17 +410,17 @@ $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%) !default;
     span.postfix,label.postfix { @include postfix(); }
 
     /* We use this to get basic styling on all basic form elements */
-    #{text-inputs(all, 'input')} {
-      -webkit-appearance: none;
-      border-radius: 0;
-      @include form-element;
-      @if $input-include-glowing-effect == false {
-          @include single-transition(all, 0.15s, linear);
-      }
-      &.radius {
-        @include radius($input-border-radius);
-      }
-    }
+    // #{text-inputs(all, 'input')} {
+    //   -webkit-appearance: none;
+    //   border-radius: 0;
+    //   @include form-element;
+    //   @if $input-include-glowing-effect == false {
+    //       @include single-transition(all, 0.15s, linear);
+    //   }
+    //   &.radius {
+    //     @include radius($input-border-radius);
+    //   }
+    // }
 
     form {
       .row {
