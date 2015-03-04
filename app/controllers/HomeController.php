@@ -80,6 +80,10 @@ class HomeController extends BaseController {
         return View::make('home.register');
     }
 
+    public function getForgotPassword() {
+        return View::make('home.forgot-password');
+    }
+
     public function getGeneral() {
         return View::make('home.general');
     }

@@ -22,6 +22,7 @@ Route::get('/travel', 'HomeController@getTravel');
 Route::get('/water-resources', 'HomeController@getWaterResources');
 Route::get('/history', 'HomeController@getHistory');
 Route::get('/register', 'HomeController@getRegister');
+Route::get('/forgot-password', 'HomeController@getForgotPassword');
 
 Route::get('/test', 'HomeController@getTest');
 Route::get('/test2', 'HomeController@getTest2');
