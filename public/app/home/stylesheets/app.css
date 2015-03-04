@@ -4101,49 +4101,6 @@ span.postfix, label.postfix {
 }
 
 /* We use this to get basic styling on all basic form elements */
-/* line 413, ../../../components/foundation/scss/foundation/components/_forms.scss */
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
-  -webkit-appearance: none;
-  border-radius: 0;
-  background-color: #FFFFFF;
-  font-family: inherit;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #cccccc;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.75);
-  display: block;
-  font-size: 0.875rem;
-  margin: 0 0 1rem 0;
-  padding: 0.5rem;
-  height: 2.3125rem;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  transition: all 0.15s linear;
-}
-/* line 133, ../../../components/foundation/scss/foundation/components/_forms.scss */
-input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
-  background: #fafafa;
-  border-color: #999999;
-  outline: none;
-}
-/* line 139, ../../../components/foundation/scss/foundation/components/_forms.scss */
-input[type="text"]:disabled, input[type="password"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="month"]:disabled, input[type="week"]:disabled, input[type="email"]:disabled, input[type="number"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="color"]:disabled, textarea:disabled {
-  background-color: #DDDDDD;
-  cursor: default;
-}
-/* line 145, ../../../components/foundation/scss/foundation/components/_forms.scss */
-input[type="text"][disabled], input[type="text"][readonly], fieldset[disabled] input[type="text"], input[type="password"][disabled], input[type="password"][readonly], fieldset[disabled] input[type="password"], input[type="date"][disabled], input[type="date"][readonly], fieldset[disabled] input[type="date"], input[type="datetime"][disabled], input[type="datetime"][readonly], fieldset[disabled] input[type="datetime"], input[type="datetime-local"][disabled], input[type="datetime-local"][readonly], fieldset[disabled] input[type="datetime-local"], input[type="month"][disabled], input[type="month"][readonly], fieldset[disabled] input[type="month"], input[type="week"][disabled], input[type="week"][readonly], fieldset[disabled] input[type="week"], input[type="email"][disabled], input[type="email"][readonly], fieldset[disabled] input[type="email"], input[type="number"][disabled], input[type="number"][readonly], fieldset[disabled] input[type="number"], input[type="search"][disabled], input[type="search"][readonly], fieldset[disabled] input[type="search"], input[type="tel"][disabled], input[type="tel"][readonly], fieldset[disabled] input[type="tel"], input[type="time"][disabled], input[type="time"][readonly], fieldset[disabled] input[type="time"], input[type="url"][disabled], input[type="url"][readonly], fieldset[disabled] input[type="url"], input[type="color"][disabled], input[type="color"][readonly], fieldset[disabled] input[type="color"], textarea[disabled], textarea[readonly], fieldset[disabled] textarea {
-  background-color: #DDDDDD;
-  cursor: default;
-}
-/* line 420, ../../../components/foundation/scss/foundation/components/_forms.scss */
-input[type="text"].radius, input[type="password"].radius, input[type="date"].radius, input[type="datetime"].radius, input[type="datetime-local"].radius, input[type="month"].radius, input[type="week"].radius, input[type="email"].radius, input[type="number"].radius, input[type="search"].radius, input[type="tel"].radius, input[type="time"].radius, input[type="url"].radius, input[type="color"].radius, textarea.radius {
-  border-radius: 3px;
-}
-
 /* line 428, ../../../components/foundation/scss/foundation/components/_forms.scss */
 form .row .prefix-radius.row.collapse input,
 form .row .prefix-radius.row.collapse textarea,
@@ -9167,67 +9124,89 @@ th.hide-for-touch {
 
 /* line 28, ../scss/_mindset.scss */
 .supermarket-font {
-  font-family: supermarketregular;
+  font-family: supermarketregular !important;
 }
 
-/* line 33, ../scss/_mindset.scss */
-.big-font {
-  font-size: 1.2em;
+/* line 35, ../scss/_mindset.scss */
+.bi-font {
+  font-size: 1.15em !important;
 }
 
 /* line 38, ../scss/_mindset.scss */
+.big-font {
+  font-size: 1.2em !important;
+}
+
+/* line 43, ../scss/_mindset.scss */
 .bigger-font {
   font-size: 1.4em;
 }
 
-/* line 41, ../scss/_mindset.scss */
+/* line 46, ../scss/_mindset.scss */
 .huge-font {
   font-size: 1.7em;
 }
 
-/* line 53, ../scss/_mindset.scss */
+/* line 58, ../scss/_mindset.scss */
 .red-font {
   color: #ff0000;
 }
 
-/* line 57, ../scss/_mindset.scss */
+/* line 62, ../scss/_mindset.scss */
 .verydarkgray {
   color: #343434;
 }
 
-/* line 61, ../scss/_mindset.scss */
+/* line 66, ../scss/_mindset.scss */
 .strongcyan {
   color: #009696;
 }
 
-/* line 65, ../scss/_mindset.scss */
+/* line 70, ../scss/_mindset.scss */
 .mediumgray {
   color: #B4B4B4;
 }
 
-/* line 74, ../scss/_mindset.scss */
+/* line 90, ../scss/_mindset.scss */
+.middle-line {
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 2.5em;
+  background-color: yellowgreen;
+}
+
+/* line 100, ../scss/_mindset.scss */
+.center-grid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 111, ../scss/_mindset.scss */
 #logo-search-profile-category {
   padding-top: 1rem;
 }
 
-/* line 78, ../scss/_mindset.scss */
+/* line 115, ../scss/_mindset.scss */
 #search-profile-category {
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 83, ../scss/_mindset.scss */
+/* line 120, ../scss/_mindset.scss */
 #profile-frame {
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 88, ../scss/_mindset.scss */
+/* line 125, ../scss/_mindset.scss */
 .right-fix {
   float: right;
   order: 1;
-  display: flex;
-  flex: 1 1 auto;
+  display: inline-block;
   position: relative;
   text-align: right;
   white-space: nowrap;
@@ -9237,25 +9216,25 @@ th.hide-for-touch {
   justify-content: flex-end;
 }
 
-/* line 106, ../scss/_mindset.scss */
+/* line 143, ../scss/_mindset.scss */
 #profile-icon {
   text-align: right;
   display: inline-block;
   position: relative;
 }
 
-/* line 112, ../scss/_mindset.scss */
+/* line 149, ../scss/_mindset.scss */
 .profile-shelf {
   margin-left: 0 !important;
   margin-right: 0 !important;
   white-space: nowrap;
-  display: flex;
+  display: inline-block;
   line-height: normal;
   position: relative;
   text-align: left;
 }
 
-/* line 123, ../scss/_mindset.scss */
+/* line 160, ../scss/_mindset.scss */
 .profile-book-first {
   display: inline-block;
   padding: 0 0 0 15px;
@@ -9266,7 +9245,7 @@ th.hide-for-touch {
   text-align: left;
 }
 
-/* line 134, ../scss/_mindset.scss */
+/* line 171, ../scss/_mindset.scss */
 .profile-book-last {
   flex: 0 1 auto;
   display: inline-block;
@@ -9277,7 +9256,7 @@ th.hide-for-touch {
   padding-left: 1rem;
 }
 
-/* line 144, ../scss/_mindset.scss */
+/* line 181, ../scss/_mindset.scss */
 .profilename {
   flex: 0 1 auto;
   margin-left: 0 !important;
@@ -9288,7 +9267,7 @@ th.hide-for-touch {
   padding-right: 15px;
 }
 
-/* line 154, ../scss/_mindset.scss */
+/* line 191, ../scss/_mindset.scss */
 #profile {
   margin-left: 0;
   margin-right: 0;
@@ -9296,43 +9275,59 @@ th.hide-for-touch {
   padding-right: 0;
 }
 
-/* line 161, ../scss/_mindset.scss */
+/* line 198, ../scss/_mindset.scss */
 #profile-setting {
   margin-left: 0;
   padding-left: 1rem;
 }
 
-/* line 166, ../scss/_mindset.scss */
+/* line 203, ../scss/_mindset.scss */
 .icon.menu > a.active > span {
   color: #343434;
 }
 
-/* line 170, ../scss/_mindset.scss */
+/* line 207, ../scss/_mindset.scss */
+#category-general-mobile:hover > i:before,
+#category-general-tablet:hover > i:before,
 #category-general:hover > i:before {
   content: "\e600";
 }
 
-/* line 173, ../scss/_mindset.scss */
+/* line 213, ../scss/_mindset.scss */
+#category-ecology-mobile:hover > i:before,
+#category-ecology-tablet:hover > i:before,
 #category-ecology:hover > i:before {
   content: "\e602";
 }
 
-/* line 176, ../scss/_mindset.scss */
+/* line 219, ../scss/_mindset.scss */
+#category-travel-mobile:hover > i:before,
+#category-travel-tablet:hover > i:before,
 #category-travel:hover > i:before {
   content: "\e604";
 }
 
-/* line 179, ../scss/_mindset.scss */
+/* line 225, ../scss/_mindset.scss */
+#category-water-mobile:hover > i:before,
+#category-water-tablet:hover > i:before,
 #category-water:hover > i:before {
   content: "\e606";
 }
 
-/* line 182, ../scss/_mindset.scss */
+/* line 231, ../scss/_mindset.scss */
+#category-history-mobile:hover > i:before,
+#category-history-tablet:hover > i:before,
 #category-history:hover > i:before {
   content: "\e608";
 }
 
-/* line 186, ../scss/_mindset.scss */
+/* line 238, ../scss/_mindset.scss */
+div .ui.popup > div {
+  font-family: supermarketregular !important;
+  font-size: 1.2em !important;
+}
+
+/* line 243, ../scss/_mindset.scss */
 #menu-main {
   font-family: supermarketregular;
   background-color: #009696;
@@ -9342,45 +9337,45 @@ th.hide-for-touch {
   border-bottom: 3px solid rgba(255, 255, 255, 0.9);
 }
 
-/* line 195, ../scss/_mindset.scss */
+/* line 252, ../scss/_mindset.scss */
 #menu-main .item {
   font-size: 1.3rem;
 }
 
-/* line 199, ../scss/_mindset.scss */
+/* line 256, ../scss/_mindset.scss */
 #menu-main .active.item {
   background-color: #000000;
   color: #ffffff;
   border-bottom: 5px solid red;
 }
 
-/* line 206, ../scss/_mindset.scss */
+/* line 263, ../scss/_mindset.scss */
 #menu-main .item:first-child {
   border-radius: 0.2857rem 0px 0px 0.2857rem;
 }
 
-/* line 210, ../scss/_mindset.scss */
+/* line 267, ../scss/_mindset.scss */
 #breadcrumb {
   margin-top: 1rem;
 }
 
-/* line 214, ../scss/_mindset.scss */
+/* line 271, ../scss/_mindset.scss */
 #main-content {
   padding: 1rem 0;
 }
 
-/* line 218, ../scss/_mindset.scss */
+/* line 275, ../scss/_mindset.scss */
 #main-category-header {
   background-color: #009696 !important;
   border-color: #343434 !important;
 }
 
-/* line 223, ../scss/_mindset.scss */
+/* line 280, ../scss/_mindset.scss */
 #relate-content-header {
   background-color: #009696;
 }
 
-/* line 227, ../scss/_mindset.scss */
+/* line 284, ../scss/_mindset.scss */
 p + p {
   text-indent: 1.5em;
   margin-top: 0;
@@ -9388,70 +9383,69 @@ p + p {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 238, ../scss/_mindset.scss */
+  /* line 295, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
 @media only screen and (min-width: 992px) {
-  /* line 244, ../scss/_mindset.scss */
+  /* line 301, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
 @media only screen and (min-width: 1400px) and (max-width: 1919px) {
-  /* line 250, ../scss/_mindset.scss */
+  /* line 307, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
 @media only screen and (min-width: 1920px) {
-  /* line 256, ../scss/_mindset.scss */
+  /* line 313, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
-/* line 261, ../scss/_mindset.scss */
+/* line 318, ../scss/_mindset.scss */
 footer {
   background-color: #343434;
   padding: 1rem 2rem;
 }
 
-/* line 266, ../scss/_mindset.scss */
+/* line 323, ../scss/_mindset.scss */
 footer > div > div > h4 > a {
   color: #ffffff;
 }
 
-/* line 271, ../scss/_mindset.scss */
+/* line 328, ../scss/_mindset.scss */
 #password-login {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-/* line 276, ../scss/_mindset.scss */
+/* line 333, ../scss/_mindset.scss */
 #checkbox-label {
   padding-left: 1.5em;
   margin-left: 0;
 }
 
-/* line 281, ../scss/_mindset.scss */
+/* line 338, ../scss/_mindset.scss */
 #modal-login-button {
-  margin-top: 0.95rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
 }
 
-/* line 286, ../scss/_mindset.scss */
+/* line 343, ../scss/_mindset.scss */
 #modal-register-button {
   padding-bottom: 0.5rem;
 }
 
-/* line 291, ../scss/_mindset.scss */
+/* line 348, ../scss/_mindset.scss */
 .modal-header {
   background-color: #009696;
   padding: 7px 7px 7px 15px;
 }
 
-/* line 296, ../scss/_mindset.scss */
+/* line 353, ../scss/_mindset.scss */
 .modal-header .close {
   margin-top: 4px;
   margin-right: 5px;
@@ -9465,45 +9459,45 @@ footer > div > div > h4 > a {
   color: transparent;
 }
 
-/* line 309, ../scss/_mindset.scss */
+/* line 366, ../scss/_mindset.scss */
 .modal-title {
   color: #ffffff;
 }
 
-/* line 313, ../scss/_mindset.scss */
+/* line 370, ../scss/_mindset.scss */
 .modal-desc {
   border-bottom: 1px solid #E5E5E5;
   color: #009696;
   padding: 7px;
 }
 
-/* line 319, ../scss/_mindset.scss */
+/* line 376, ../scss/_mindset.scss */
 .modal-contact {
   padding: 7px;
 }
 
-/* line 323, ../scss/_mindset.scss */
+/* line 380, ../scss/_mindset.scss */
 .modal-form {
   border-top: 1px solid #E5E5E5;
   padding: 7px;
 }
 
-/* line 328, ../scss/_mindset.scss */
+/* line 385, ../scss/_mindset.scss */
 .modal-footer {
   padding: 7px;
 }
 
-/* line 332, ../scss/_mindset.scss */
+/* line 389, ../scss/_mindset.scss */
 .modal-footer .btn {
   font-size: 16px;
 }
 
-/* line 337, ../scss/_mindset.scss */
+/* line 394, ../scss/_mindset.scss */
 .btn {
   font-family: KunlasatriBold;
 }
 
-/* line 342, ../scss/_mindset.scss */
+/* line 399, ../scss/_mindset.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: supermarketregular !important;
 }
