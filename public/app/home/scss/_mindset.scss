@@ -26,12 +26,17 @@
 }
 
 .supermarket-font {
-  font-family: supermarketregular;
+  font-family: supermarketregular !important;
 }
 // Font Size
-// Use in  Main Category Button
+// Use in  
+// - Main Category Button
+// - Step in register
+.bi-font {
+  font-size: 1.15em !important;
+}
 .big-font {
-  font-size: 1.2em;
+  font-size: 1.2em !important;
 }
 
 // Use in Sign in/up Button
@@ -66,6 +71,38 @@ $mediumgray    : #B4B4B4;
   color: $mediumgray;
 }
 
+// fix input form
+#{text-inputs(all, 'input')} {
+  // -webkit-appearance: none;
+  // border-radius: 0;
+  // height: 2.31rem;
+  // display: block;
+  // box-sizing: border-box;
+  // border-style: solid;
+  // border-width: 1px;
+  // border-color: #cccccc;
+}
+
+
+// Alignment
+// Use in
+// - Form in register
+.middle-line {
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 2.5em;
+  background-color: yellowgreen;
+}
+
+.center-grid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // Section in Body
 header {
 //    margin-top: 0.5rem;
@@ -88,10 +125,10 @@ header {
 .right-fix {
   float: right;
   order: 1;
-  display: flex;
-//  display: inline-block;
+//  display: flex;
+  display: inline-block;
 //  -webkit-flex: 1 1 auto;
-  flex: 1 1 auto;
+//  flex: 1 1 auto;
 //  -webkit-flex: 1 1 main-size;
 //  flex: 1 1 main-size;
   position: relative;
@@ -113,8 +150,8 @@ header {
   margin-left: 0 !important;
   margin-right: 0 !important;
   white-space: nowrap;
-  display: flex;
-//  display: inline-block;
+//  display: flex;
+  display: inline-block;
   line-height: normal;
   position: relative;
   text-align: left;
@@ -167,20 +204,40 @@ header {
   color: $verydarkgray;
 }
 
-#category-general:hover > i:before {
+#category-general-mobile:hover > i:before,
+#category-general-tablet:hover > i:before,
+#category-general:hover > i:before
+{
   content: "\e600";
 }
-#category-ecology:hover > i:before {
+#category-ecology-mobile:hover > i:before,
+#category-ecology-tablet:hover > i:before,
+#category-ecology:hover > i:before
+{
   content: "\e602";
 }
-#category-travel:hover > i:before {
+#category-travel-mobile:hover > i:before,
+#category-travel-tablet:hover > i:before,
+#category-travel:hover > i:before
+{
   content: "\e604";
 }
-#category-water:hover > i:before {
+#category-water-mobile:hover > i:before,
+#category-water-tablet:hover > i:before,
+#category-water:hover > i:before
+{
   content: "\e606";
 }
-#category-history:hover > i:before {
+#category-history-mobile:hover > i:before,
+#category-history-tablet:hover > i:before,
+#category-history:hover > i:before
+{
   content: "\e608";
+}
+
+div .ui.popup > div {
+  font-family: supermarketregular !important;
+  font-size: 1.2em !important;
 }
 
 #menu-main {
@@ -279,8 +336,8 @@ footer > div > div > h4 > a {
 }
 
 #modal-login-button {
-  margin-top: 0.95rem;
-  padding-bottom: 0.5rem;
+//  margin-top: 0.1rem;
+  padding-bottom: 0.3rem;
 }
 
 #modal-register-button {
