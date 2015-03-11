@@ -19,8 +19,6 @@
 
 @import (multiple) '../../theme.config';
 
-& {
-
 /*******************************
              Image
 *******************************/
@@ -49,7 +47,13 @@ img.ui.image {
             States
 *******************************/
 
+.ui.hidden.images,
+.ui.hidden.image {
+  display: none;
+}
 
+
+.ui.disabled.images,
 .ui.disabled.image {
   cursor: default;
   opacity: @disabledOpacity;
@@ -271,6 +275,7 @@ img.ui.bordered.image {
   font-size: @massive;
 }
 
+
 /*******************************
               Groups
 *******************************/
@@ -288,5 +293,3 @@ img.ui.bordered.image {
 }
 
 .loadUIOverrides();
-
-}

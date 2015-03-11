@@ -1,27 +1,102 @@
 ## RELEASE NOTES
 
+### Version 1.10.1-2 - February 24, 2015
+
+No changes, fixes stale pm component builds
+
+### Version 1.10.0 - February 23, 2015
+
+**New Features**
+- **Transition** - Transitions now have `interval` to allow grouped elements to animate one by one with a delay between each animation. Grouped animations determine order based on transition direction to avoid reflows, or can manually be reversed by using <code>reverse: true</code> [See Examples](http://www.semantic-ui.com/modules/transition.html#grouped-transitions) for more details.
+
+**Critical Fixes**
+- **Transition** - Webkit `failSafe` used for [Chromium Bug #437860](https://code.google.com/p/chromium/issues/detail?id=437860) now also works for queued animations
+
+**Enhancements**
+- **Form Validation** - Adds `containsExactly`, `notExactly`, `isExactly` case sensitive validation rules, make `contains`, `not`, `is` case insensitive.
+- **Form Validation** - `contains` rule is now case insensitive
+- **Form Validation** - Validation messages no longer increase field height on `inline fields` like checkboxes after error appears
+- **API** - Added `was cancelled` to determine whether request was cancelled by `beforeSend`
+- **Image* - Added `hidden image` state
+
+**Fixes**
+- **Build Tools** - Fixed issue with recursive merge for site themes in update scripts, [details here](https://github.com/Semantic-Org/Semantic-UI/pull/1845) Thanks @derekslife
+- **Cards** - Fix `.ui.cards > .ui.card` margins to match `.ui.cards > .card` margins
+- **Cards** - Fix consecutive card groups to preserve row flow (similar to consecutive grids)
+- **Sidebar** - Sidebar using `exclusive: true` now queue animations after hiding previous sidebar (unless `overlay`) to avoid rendering issues
+- **State** - Text states now handle `cancelled` API requests correctly
+- **Search** - Category search no longer displays unnecessary error message about maxResults
+- **Composer** - Composer.json should now read version from tags, adjusted some fields.
+- **Grid** - Stackable grid now has horizontal padding by default on mobile unless nested inside a `ui grid` or `ui segment` (not vertical)
+- **Menu** - Fixes pointing menu displaying under dropdown menu
+
+-**Docs**
+-**Transition** - `useFailSafe` was incorrectly shown as `false` by default
+
+### Version 1.9.3 - February 20, 2015
+
+**Bugs**
+- **RTL** - Fixes `rtl` tasks not running correctly on `gulp build` due to name typo, `build rtl` instead of `build-rtl`
+- **Tab** - Fixed bug when loading `remote` content with `tab` where current tab would not hide while another tab is loading
+- **Tab** - Tab with remote content and `auto: true` now removes duplicate slashes from url path
+- **API** - Simplified `api` debug output to console to more clearly label url and data sent
+
+**Docs**
+- **Tab** - Added new tab remote content example with stubbed AJAX using SinonJS
+
+### Version 1.9.2 - February 19, 2015
+
+Added new repositories for css and less only versions, can be installed with
+```bash
+npm install semantic-ui-less
+npm install semantic-ui-css
+```
+
+**Bug Fixes**
+
+- **Modal** - Fixes typo causing `middle aligned` image not to work correctly.
+- **Build** - `gulp watch` now compiles concatenated css (missing in `1.9.1` only)
+
+### Version 1.9.1 - February 18, 2015
+
+**LESS Changes**
+
+Importing individual components into other less files now requires scoping. This is to prevent issues with variable scope that cannot be resolved inside definitions.
+
+```less
+/* Import a specific component */
+& { @import 'src/definitions/elements/button'; }
+```
+
+Importing `semantic.less` still does not require any special syntax
+@import 'src/semantic';
+
+
+**Bugs**
+- Fixed issue directly importing `semantic.less` caused by variable scoping in `.loadOverrides()`.
+- Fix bug where `equal height` row could not be `centered`, or less than full width
+
 ### Version 1.9.0 - February 17, 2015
 
-**Major Changes**
+### Build Tools
 
-## NPM Install
+##### NPM Install
 
 - `npm install semantic-ui` is now the recommended path for getting Semantic UI
 - Added `npm` `post-install` scripts which automatically install or update semantic
 
-## Gulp Task Imports
+##### Gulp Task Imports
 
-- Semantic tasks are now each defined in their own file, and can be directly imported into external gulpfiles. Read more about [importing tasks here](https://github.com/Semantic-Org/Semantic-UI/blob/next/src/README.md)
+- Semantic tasks are now each defined [in their own file](https://github.com/Semantic-Org/Semantic-UI/tree/master/tasks), and can be directly imported into external gulpfiles. Read more about [importing tasks here](https://github.com/Semantic-Org/Semantic-UI/blob/next/src/README.md)
 - If you are using Grunt, you may be able to import these tasks using [Grunt-gulp](https://www.npmjs.com/package/grunt-gulp)
 
-## LESS Component Imports
+##### LESS Component Imports
 
 - Semantic LESS files can now be directly included in other LESS files.
 * You can import all UI with `@import 'src/semantic';`
 * You can also import individual definitions using `@import 'src/definitions/elements/button'`.
 
-**Even More**
-
+### UI Changes
 **Major Enhancements**
 - **Card** - Cards now equalize height by default using `display: flex`. No longer are card heights required to be specified manually to align
 - **Flag** - Reduced the file size of flag sprite to a measly 28kb (500%+ file size reduction)

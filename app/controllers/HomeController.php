@@ -15,6 +15,10 @@ class HomeController extends BaseController {
     |
     */
 
+    public function __construct() {
+//        $this->getBreadcrumb();
+    }
+
     public function getTest() {
         return View::make('home.test');
     }
@@ -54,7 +58,7 @@ class HomeController extends BaseController {
             $activeSection = "การจัดการทรัพยากรธรรมชาติ";
         } elseif (Request::path() == 'history') {
             $activeSection = "ประวัติศาสตร์และวัฒนธรรม";
-        } elseif (Request::path() == 'register') {
+        } elseif (Request::path() == 'register' || Request::path() == 'register/profile' || Request::path() == 'register/account') {
             $activeSection = "ลงทะเบียน";
         }
 
@@ -76,10 +80,6 @@ class HomeController extends BaseController {
         return View::make('home.about');
     }
 
-    public function getRegister() {
-        return View::make('home.register');
-    }
-
     public function getGeneral() {
         return View::make('home.general');
     }
@@ -98,6 +98,10 @@ class HomeController extends BaseController {
 
     public function getHistory() {
         return View::make('home.history');
+    }
+
+    public function getForgotPassword() {
+        return View::make('home.forgot-password');
     }
 
 }
