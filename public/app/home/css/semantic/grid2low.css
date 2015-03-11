@@ -95,6 +95,7 @@
 
 
 /* Vertical padding when no lows */
+ /*comment for all element have not padding that mean gap */
 .ui.grid > .colum:not(.low) {
   /*padding-top: 1rem;*/
   /*padding-bottom: 1rem;*/
