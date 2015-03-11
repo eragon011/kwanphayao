@@ -21,7 +21,6 @@ Route::get('/ecology', 'HomeController@getEcology');
 Route::get('/travel', 'HomeController@getTravel');
 Route::get('/water-resources', 'HomeController@getWaterResources');
 Route::get('/history', 'HomeController@getHistory');
-Route::get('/register', 'HomeController@getRegister');
 Route::get('/forgot-password', 'HomeController@getForgotPassword');
 
 Route::get('/test', 'HomeController@getTest');
@@ -29,6 +28,16 @@ Route::get('/test2', 'HomeController@getTest2');
 Route::get('/test3', 'HomeController@getTest3');
 Route::get('/test5', 'HomeController@getTest5');
 Route::get('/test51', 'HomeController@getTest51');
+
+Route::group(["prefix"=>"/register"], function () {
+    Route::get('/', 'RegisterController@getBasicRegister');
+    Route::get('/profile', 'RegisterController@getProfileRegister');
+    Route::get('/account', 'RegisterController@getAccountRegister');
+
+//    Route::post('/', 'RegisterController@doBasicRegister');
+    Route::post('/profile/save', 'RegisterController@doProfileRegister');
+    Route::post('/account/save', 'RegisterController@doAccountRegister');
+});
 
 Route::group(["prefix"=>"/admin/api/v1"], function () {
 
