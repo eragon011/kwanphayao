@@ -25,18 +25,6 @@
   text-decoration: inherit;
   text-transform: none;
 }
- /*@font-face {*/
-     /*font-family: 'icomoon';*/
-     /*src:url('/fonts/icomoon.eot?-rij3r0');*/
-     /*src:url('/fonts/icomoon.eot?#iefix-rij3r0') format('embedded-opentype'),*/
-     /*url('/fonts/icomoon.woff?-rij3r0') format('woff'),*/
-     /*url('/fonts/icomoon.svg?-rij3r0#icomoon') format('svg');*/
-     /*font-style: normal;*/
-     /*font-weight: normal;*/
-     /*font-variant: normal;*/
-     /*text-decoration: inherit;*/
-     /*text-transform: none;*/
- /*}*/
 
  @font-face {
      font-family: 'KwanPhayaoIcon';
@@ -367,8 +355,9 @@ i.massive.icon {
   font-size: 8em;
   vertical-align: middle;
 }
-i.massive2.icon {
-  font-size: 48em;
+ /*Use in icon in error page */
+i.max10.icon {
+  font-size: 10em;
   vertical-align: middle;
 }
 /*
