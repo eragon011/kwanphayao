@@ -13,7 +13,12 @@ class ContentService extends BaseService {
     }
 
     public function getById($id){
-        return Content::with(['category','category.parent'])->find($id);
+        $content = Content::with(['category','category.parent'])->find($id);
+        $category = $content->category;
+        $api = new ContentTypeApiController();
+        $content_type = $api->getView($category->content_type);
+        $content->content_type = $content_type;
+        return $content;
     }
 
     public function save(array $input){
@@ -21,7 +26,7 @@ class ContentService extends BaseService {
         if (isset($input['id'])) {
             $id = $input['id'];
             $content = Content::find($id);
-            $content->update(array_except($input,['category']));
+            $content->update(array_except($input,['category','content_type']));
             /* @var $content Content */
             $content->save();
 
@@ -32,7 +37,7 @@ class ContentService extends BaseService {
 
             return $content;
         } else {
-            $content = Content::updateOrCreate(array_except($input,['category']));
+            $content = Content::updateOrCreate(array_except($input,['category','content_type']));
 
             $categoryId = $input['category']['id'];
 
