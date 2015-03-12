@@ -19,8 +19,13 @@ class ContentApiController extends \BaseController {
                 'name'
             ]
         ];
+        $input = Input::all();
 
-        return  $this->contentService->getPagination("Content",Input::all(),$colFilter,$relateColFilter,$with);
+        $input['orderBy'] = 'created_at';
+        $input['orderType'] = 'DESC';
+
+
+        return  $this->contentService->getPagination("Content",$input,$colFilter,$relateColFilter,$with);
 
     }
 
