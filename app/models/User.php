@@ -22,7 +22,7 @@ class User extends AbstrctIModel implements UserInterface, RemindableInterface {
      *
      * @var array
      */
-    protected $fillable = ['username', 'password', 'avatar', 'email', 'title', 'firstname', 'lastname', 'organization'];
+    protected $fillable = ['username', 'password', 'avatar', 'email', 'title', 'firstname', 'lastname', 'biography', 'organization'];
 
     /**
      * The attributes should be guarded to mass-assignment used by the model.

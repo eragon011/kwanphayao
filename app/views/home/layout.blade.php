@@ -8,12 +8,13 @@
     <title><?php echo trans('text.encyclopaedia') ?> :: ยินดีต้อนรับ</title>
 
     <!-- Bootstrap -->
+    <!-- Bootstrap Grid only -->
+    <link href="/app/home/css/bootstrap.css" rel="stylesheet" type="text/css">
 
     <!-- Semantic -->
     {{--<link href="/components/semantic-ui/dist/semantic.min.css" rel="stylesheet" type="text/css">--}}
     <link href="/components/semantic-ui/dist/components/breadcrumb.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/checkbox.min.css" rel="stylesheet" type="text/css">
-    <link href="/components/semantic-ui/dist/components/form.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/dimmer.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/image.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/input.min.css" rel="stylesheet" type="text/css">
@@ -29,6 +30,7 @@
     <link href="/app/home/css/semantic/button2.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/divider2low.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/dropdow.css" rel="stylesheet" type="text/css">
+    <link href="/app/home/css/semantic/form2.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/grid2low.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/header2.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/icon2.css" rel="stylesheet" type="text/css">
@@ -178,7 +180,6 @@
                                                         <span class="supermarket-font big-font">ข้อมูลทั่วไปกว๊านพะเยา</span>
                                                     </a>
                                                     <a id="category-ecology" class="{{Request::path() == 'ecology' ? 'active ' : '';}}item" href="{{Request::path() == 'ecology' ? '#' : '/ecology';}}">
-                                                        {{--<i class="circular inverted{{Request::path() == 'ecology' ? ' red ' : ' teal ';}}large pagelines icon"></i>--}}
                                                         <i class="{{Request::path() == 'ecology' ? 'red ' : 'teal outline ';}}huge ecology icon"></i>
                                                         <span class="supermarket-font big-font">นิเวศวิทยาและสิ่งแวดล้อม</span>
                                                     </a>
@@ -200,40 +201,42 @@
 
                                         <div class="tablet only centered low">
                                             <div class="ui icon menu">
-                                                <a class="{{Request::path() == 'general' ? 'active ' : '';}}item" href="{{Request::path() == 'general' ? '#' : '/general';}}">
-                                                    <i class="circular inverted{{Request::path() == 'general' ? ' red ' : ' teal ';}}large dashboard icon"></i>
+                                                <a id="category-general-tablet" data-title="ข้อมูลทั่วไปกว๊านพะเยา" data-position="top left" class="{{Request::path() == 'general' ? 'active ' : '';}}item" href="{{Request::path() == 'general' ? '#' : '/general';}}">
+                                                    {{--<i class="circular inverted{{Request::path() == 'general' ? ' red ' : ' teal ';}}large dashboard icon"></i>--}}
+                                                    <i class="{{Request::path() == 'general' ? 'red ' : 'teal outline ';}}huge general icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'ecology' ? 'active ' : '';}}item" href="{{Request::path() == 'ecology' ? '#' : '/ecology';}}">
-                                                    <i class="circular inverted{{Request::path() == 'ecology' ? ' red ' : ' teal ';}}large pagelines icon"></i>
+                                                <a id="category-ecology-tablet" data-title="นิเวศวิทยาและสิ่งแวดล้อม" data-position="top center" class="{{Request::path() == 'ecology' ? 'active ' : '';}}item" href="{{Request::path() == 'ecology' ? '#' : '/ecology';}}">
+                                                    <i class="{{Request::path() == 'ecology' ? 'red ' : 'teal outline ';}}huge ecology icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'travel' ? 'active ' : '';}}item" href="{{Request::path() == 'travel' ? '#' : '/travel';}}">
-                                                    <i class="circular inverted{{Request::path() == 'travel' ? ' red ' : ' teal ';}}large plane icon"></i>
+                                                <a id="category-travel-tablet" data-title="เศรษฐกิจและการท่องเที่ยว" data-position="top center" class="{{Request::path() == 'travel' ? 'active ' : '';}}item" href="{{Request::path() == 'travel' ? '#' : '/travel';}}">
+                                                    <i class="{{Request::path() == 'travel' ? 'red ' : 'teal outline ';}}huge travel phayao icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'water-resources' ? 'active ' : '';}}item" href="{{Request::path() == 'water-resources' ? '#' : '/water-resources';}}">
-                                                    <i class="circular inverted{{Request::path() == 'water-resources' ? ' red ' : ' teal ';}}large theme icon"></i>
+                                                <a id="category-water-tablet" data-title="การจัดการทรัพยากรธรรมชาติ" data-position="top center" class="{{Request::path() == 'water-resources' ? 'active ' : '';}}item" href="{{Request::path() == 'water-resources' ? '#' : '/water-resources';}}">
+                                                    <i class="{{Request::path() == 'water-resources' ? 'red ' : 'teal outline ';}}huge water resources icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'history' ? 'active ' : '';}}item" href="{{Request::path() == 'history' ? '#' : '/history';}}">
-                                                    <i class="circular inverted{{Request::path() == 'history' ? ' red ' : ' teal ';}}large history icon"></i>
+                                                <a id="category-history-tablet" data-title="ประวัติศาสตร์และวัฒนธรรม" data-position="top right" class="{{Request::path() == 'history' ? 'active ' : '';}}item" href="{{Request::path() == 'history' ? '#' : '/history';}}">
+                                                    <i class="{{Request::path() == 'history' ? 'red ' : 'teal outline ';}}huge history phayao icon"></i>
                                                 </a>
                                             </div>
                                         </div>
 
                                         <div class="mobile only centered low">
                                             <div class="ui icon menu">
-                                                <a class="{{Request::path() == 'general' ? 'active ' : '';}}item" href="{{Request::path() == 'general' ? '#' : '/general';}}">
-                                                    <i class="circular inverted{{Request::path() == 'general' ? ' red ' : ' teal ';}}dashboard icon"></i>
+                                                <a id="category-general-mobile" data-title="ข้อมูลทั่วไปกว๊านพะเยา" data-position="top left" class="{{Request::path() == 'general' ? 'active ' : '';}}item" href="{{Request::path() == 'general' ? '#' : '/general';}}">
+                                                    {{--<i class="circular inverted{{Request::path() == 'general' ? ' red ' : ' teal ';}}dashboard icon"></i>--}}
+                                                    <i class="{{Request::path() == 'general' ? 'red ' : 'teal outline ';}}bigger general icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'ecology' ? 'active ' : '';}}item" href="{{Request::path() == 'ecology' ? '#' : '/ecology';}}">
-                                                    <i class="circular inverted{{Request::path() == 'ecology' ? ' red ' : ' teal ';}}pagelines icon"></i>
+                                                <a id="category-ecology-mobile" data-title="นิเวศวิทยาและสิ่งแวดล้อม" data-position="top center"class="{{Request::path() == 'ecology' ? 'active ' : '';}}item" href="{{Request::path() == 'ecology' ? '#' : '/ecology';}}">
+                                                    <i class="{{Request::path() == 'ecology' ? 'red ' : 'teal outline ';}}bigger ecology icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'travel' ? 'active ' : '';}}item" href="{{Request::path() == 'travel' ? '#' : '/travel';}}">
-                                                    <i class="circular inverted{{Request::path() == 'travel' ? ' red ' : ' teal ';}}plane icon"></i>
+                                                <a id="category-travel-mobile" data-title="เศรษฐกิจและการท่องเที่ยว" data-position="top center" class="{{Request::path() == 'travel' ? 'active ' : '';}}item" href="{{Request::path() == 'travel' ? '#' : '/travel';}}">
+                                                    <i class="{{Request::path() == 'travel' ? 'red ' : 'teal outline ';}}bigger travel phayao icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'water-resources' ? 'active ' : '';}}item" href="{{Request::path() == 'water-resources' ? '#' : '/water-resources';}}">
-                                                    <i class="circular inverted{{Request::path() == 'water-resources' ? ' red ' : ' teal ';}}theme icon"></i>
+                                                <a id="category-water-mobile" data-title="การจัดการทรัพยากรธรรมชาติ" data-position="top center" class="{{Request::path() == 'water-resources' ? 'active ' : '';}}item" href="{{Request::path() == 'water-resources' ? '#' : '/water-resources';}}">
+                                                    <i class="{{Request::path() == 'water-resources' ? 'red ' : 'teal outline ';}}bigger water resources icon"></i>
                                                 </a>
-                                                <a class="{{Request::path() == 'history' ? 'active ' : '';}}item" href="{{Request::path() == 'history' ? '#' : '/history';}}">
-                                                    <i class="circular inverted{{Request::path() == 'history' ? ' red ' : ' teal ';}}history icon"></i>
+                                                <a id="category-history-mobile" data-title="ประวัติศาสตร์และวัฒนธรรม" data-position="top right" class="{{Request::path() == 'history' ? 'active ' : '';}}item" href="{{Request::path() == 'history' ? '#' : '/history';}}">
+                                                    <i class="{{Request::path() == 'history' ? 'red ' : 'teal outline ';}}bigger history phayao icon"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -287,9 +290,9 @@
 
         <footer>
             <div class="ui grid">
-                {{--<div class="ui four colum centered grid">--}}
-                    {{--<div class="equal height divided low">--}}
-                        <div class="eight wide mobile eight wide tablet four wide computer colum">
+                <div class="computer tablet only low">
+                    <div class="ui page grid">
+                        <div class="eight wide tablet four wide computer colum">
                             <h4 class="ui header">
                                 <a href="">
                                     <i class="send outline icon"></i>
@@ -299,7 +302,7 @@
                                 </a>
                             </h4>
                         </div>
-                        <div class="eight wide mobile eight wide tablet four wide computer colum">
+                        <div class="eight wide tablet four wide computer colum">
                             <h4 class="ui header">
                                 <a href="">
                                     <i class="comments outline icon"></i>
@@ -309,7 +312,7 @@
                                 </a>
                             </h4>
                         </div>
-                        <div class="eight wide mobile eight wide tablet four wide computer colum">
+                        <div class="eight wide tablet four wide computer colum">
                             <h4 class="ui header">
                                 <a href="">
                                     <i class="pie chart icon"></i>
@@ -319,9 +322,9 @@
                                 </a>
                             </h4>
                         </div>
-                        <div class="eight wide mobile eight wide tablet four wide computer colum">
-                            <h4 class="ui header">
-                                <a href="">
+                        <div class="eight wide tablet four wide computer colum">
+                            <h4 class="ui header call-register-modal">
+                                <a>
                                     <i class="write icon"></i>
                                     <div class="content">
                                         เพิ่ม/แก้ไขเนื้อหา
@@ -329,30 +332,71 @@
                                 </a>
                             </h4>
                         </div>
-                    {{--</div>--}}
-                {{--</div>--}}
+                    </div>
+                </div>
+                <div class="mobile only low">
+                    <div class="ui grid">
+                        <div class="eight wide mobile colum">
+                            <h4 class="ui header">
+                                <a href="">
+                                    <i class="send outline icon"></i>
+                                    <div class="content">
+                                        ติดต่อสอบถาม
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="eight wide mobile colum">
+                            <h4 class="ui header">
+                                <a href="">
+                                    <i class="comments outline icon"></i>
+                                    <div class="content">
+                                        ข้อเสนอแนะ
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="eight wide mobile colum">
+                            <h4 class="ui header">
+                                <a href="">
+                                    <i class="pie chart icon"></i>
+                                    <div class="content">
+                                        แบบสอบถาม
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="eight wide mobile colum">
+                            <h4 class="ui header call-register-modal">
+                                <a>
+                                    <i class="write icon"></i>
+                                    <div class="content">
+                                        เพิ่ม/แก้ไขเนื้อหา
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </footer>
 
         <!-- popup modal area -->
-        <div class="ui modal">
+        <div class="ui modal" id="register-modal">
             <i class="close icon"></i>
             {{--<div class="header">--}}
                 {{--ลงชื่อเข้าใช้งาน หรือ ลงทะเบียน--}}
-
             {{--</div>--}}
-            <div class="two colum middle aligned relaxed fitted ui grid">
-                <div class="colum">
+            <div id="modal-editor-box" class="two colum middle aligned relaxed fitted ui stackable grid">
+                <div id="modal-login-box" class="colum">
                     <div class="ui form segment">
                         <div class="field">
-                            <label></label>
                             <div class="ui left icon input">
                                 <input type="text" placeholder="ชื่อผู้ใช้ หรือ อีเมล">
                                 <i class="user icon"></i>
                             </div>
                         </div>
                         <div class="field">
-                            <label> </label>
                             <div id="password-login" class="ui left icon input">
                                 <input type="password" placeholder="รหัสผ่าน">
                                 <i class="lock icon"></i>
@@ -364,13 +408,20 @@
                                 <label class="checkbox-label">จดจำฉันไว้ในระบบ</label>
                             </div>
                         </div>
-                        <button id="modal-login-button" class="ui teal submit buttun">
-                            <span class="kunlasatri-bold-font bigger-font">ลงชื่อใช้งาน</span>
-                        </button>
+                        <div class="ui two colum middle aligned grid">
+                            <div class="center aligned colum">
+                            <button id="modal-login-button" class="ui teal submit buttun">
+                                <span class="kunlasatri-bold-font bigger-font">ลงชื่อใช้งาน</span>
+                            </button>
+                            </div>
+                            <div class="colum">
+                                หรือ <a href="/forgot-password">ลืมรหัสผ่าน?</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="ui vertical divider">หรือ</div>
-                <div class="center aligned colum">
+                <div id="modal-register-box" class="center aligned colum">
                     <a href="/register">
                         <button class="huge red ui labeled icon buttun">
                             <i class="signup icon"></i>
@@ -409,12 +460,28 @@
 
 <!-- Bootstrap -->
 
-@yield('javascript')
 <script>
     $('.ui.dropdow').dropdow();
-    $('.ui.modal')
-            .modal('setting', 'closable', false)
-            .modal('hide');
+    $('.call-register-modal').click(function() {
+        $('#register-modal')
+                .modal('setting', 'closable', false)
+                .modal('show');
+    });
+    $('.ui.checkbox')
+            .checkbox();
+
+    $('#category-general-tablet').popup({inline:true}).popup('show');
+    $('#category-ecology-tablet').popup({inline:true});
+    $('#category-travel-tablet').popup({inline:true});
+    $('#category-water-tablet').popup({inline:true});
+    $('#category-history-tablet').popup({inline:true});
+
+    $('#category-general-mobile').popup({inline:true}).popup('show');
+    $('#category-ecology-mobile').popup({inline:true});
+    $('#category-travel-mobile').popup({inline:true});
+    $('#category-water-mobile').popup({inline:true});
+    $('#category-history-mobile').popup({inline:true});
+
     //    $('.ui.search')
 //            .search({
 //                apiSettings: {
@@ -434,8 +501,18 @@
 //                    debug: true
 //                    verbose: true
                 });
+
+//            $('.mobile.only.centered.low')
+//                    .popup({
+//                        popup : $('.fluid.popup')
+//                    })
+//                    .popup('show')
+//            ;
         });
 //    $(document).foundation();
 </script>
+
+@yield('javascript')
+
 </body>
 </html>
