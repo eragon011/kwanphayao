@@ -2,12 +2,11 @@
  * Created by chaow on 2/4/2015 AD.
  */
 
-app.controller('ListCtrl', function ($scope, contents, mainCategories, ContentService, MainCategoryService) {
+app.controller('ListCtrl', function ($scope, contents, ContentService, MainCategoryService) {
     console.log("ListCtrl Start...");
 
     $scope.dt = contents.data;
     $scope.contents = contents.data.data;
-    $scope.mainCategories = mainCategories.data;
 
     $scope.currentPage;
     $scope.filterWord = "";
@@ -43,7 +42,7 @@ app.controller('FormCtrl', function ($scope, $state,$stateParams, content, categ
         $scope.content = content.data;
         $scope.category = $scope.content.category;
         $scope.content_type = $scope.content.content_type;
-
+        console.log($scope.content_type);
         $state.go('edit.type',{ type : $scope.content_type.id})
     }else {
         $scope.category = category.data;

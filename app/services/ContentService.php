@@ -8,6 +8,10 @@
 
 class ContentService extends BaseService {
 
+    public function __construct(ContentTypeService $contentTypeService){
+        $this->contentTypeService = $contentTypeService;
+    }
+
     public function all(){
         return Content::all();
     }
@@ -15,29 +19,29 @@ class ContentService extends BaseService {
     public function getById($id){
         $content = Content::with(['category','category.parent'])->find($id);
         $category = $content->category;
-        $api = new ContentTypeApiController();
-        $content_type = $api->getView($category->content_type);
+        $content_type = $this->contentTypeService->getView($category->content_type);
         $content->content_type = $content_type;
         return $content;
     }
 
     public function save(array $input){
 
+        $contentTypeId = $input["content_type"]["id"];
+        $contentType = $this->contentTypeService->getView($contentTypeId);
+        $class=$contentType["class"];
+
         if (isset($input['id'])) {
             $id = $input['id'];
-            $content = Content::find($id);
+
+            $content = $class::find($id);
             $content->update(array_except($input,['category','content_type']));
+
             /* @var $content Content */
             $content->save();
 
-            $categoryId = $input['category']['id'];
-            $category = Category::find($categoryId);
-
-            $content->category()->associate($category)->save();
-
             return $content;
         } else {
-            $content = Content::updateOrCreate(array_except($input,['category','content_type']));
+            $content = $class::updateOrCreate(array_except($input,['category','content_type']));
 
             $categoryId = $input['category']['id'];
 
