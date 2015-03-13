@@ -2,7 +2,15 @@
  * Created by chaow on 2/15/2015 AD.
  */
 
-var app = angular.module('ContentApp', ['ui.router', 'ngResource', 'ui.bootstrap']);
+var app = angular.module('ContentApp', ['froala','ui.router', 'ngResource', 'ui.bootstrap']);
+
+app.value('froalaConfig', {
+    inlineMode: false,
+    placeholder: 'Enter Text Here',
+    height: 300
+
+});
+
 app.config(function ($stateProvider, $urlRouterProvider) {
     ////
     //// For any unmatched url, redirect to /state1
@@ -16,9 +24,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             resolve: {
                 contents: function (ContentService, $stateParams) {
                     return ContentService.list(1,"");
-                },
-                mainCategories : function(MainCategoryService){
-                    return MainCategoryService.all();
                 }
             }
         })
@@ -45,7 +50,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 content : function(ContentService){
                     return { data : {} };
                 },
-                contentType : function(ContentTypeService,$stateParams){
+                content_type : function(ContentTypeService,$stateParams){
                     return ContentTypeService.get($stateParams.type)
                 },
                 category : function(CategoryService,$stateParams){
@@ -55,7 +60,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
         .state('create.type',{
-            url : '/show',
+            url : '/type',
             templateUrl: function($stateParams){
                 return "/app/content/form/"+$stateParams.type+".html";
             }
@@ -69,9 +74,19 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 content : function(ContentService,$stateParams){
                     return ContentService.edit($stateParams.id);
                 },
-                mainCategories : function(MainCategoryService){
-                    return MainCategoryService.all();
+                content_type : function(ContentTypeService,$stateParams){
+                    return {}
+                },
+                category : function(CategoryService,$stateParams){
+                    return {}
                 }
+            }
+        })
+
+        .state('edit.type',{
+            url : "/type/:type",
+            templateUrl: function($stateParams){
+                return "/app/content/form/"+$stateParams.type+".html";
             }
         })
 

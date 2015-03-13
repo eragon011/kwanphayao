@@ -2,12 +2,11 @@
  * Created by chaow on 2/4/2015 AD.
  */
 
-app.controller('ListCtrl', function ($scope, contents, mainCategories, ContentService, MainCategoryService) {
+app.controller('ListCtrl', function ($scope, contents, ContentService, MainCategoryService) {
     console.log("ListCtrl Start...");
 
     $scope.dt = contents.data;
     $scope.contents = contents.data.data;
-    $scope.mainCategories = mainCategories.data;
 
     $scope.currentPage;
     $scope.filterWord = "";
@@ -36,14 +35,33 @@ app.controller('ListCtrl', function ($scope, contents, mainCategories, ContentSe
 })
 
 
-app.controller('FormCtrl', function ($scope, $state, content, category,contentType) {
+app.controller('FormCtrl', function ($scope, $state,$stateParams, content, category,content_type,ContentService) {
 
-    $scope.category = category.data;
-    $scope.contentType = contentType.data;
-    $scope.content = content.data;
+
+    if ($state.current.name == 'edit' || $state.current.name == 'edit.type'){
+        $scope.content = content.data;
+        $scope.category = $scope.content.category;
+        $scope.content_type = $scope.content.content_type;
+        console.log($scope.content_type);
+
+        if ($state.current.name == 'edit'){
+            $state.go('edit.type',{ type : $scope.content_type.id})
+        }
+
+    }else {
+        $scope.category = category.data;
+        $scope.content_type = content_type.data;
+        $scope.content = content.data;
+    }
+
 
     $scope.save = function(){
         console.log($scope.content);
+        $scope.content.category = $scope.category;
+        $scope.content.content_type = $scope.content_type;
+        ContentService.save($scope.content).success(function(){
+            $state.go("list");
+        });
     }
 
 });

@@ -3,28 +3,16 @@
 class ContentTypeApiController extends \BaseController
 {
 
-    static $types = [
-        ["id" => "content", "title" => "ข้อมูลทั่วไป"],
-        ["id" => "fish", "title" => "พันธุ๋ลา"],
-    ];
+    public function __construct(ContentTypeService $contentTypeService) {
+        $this->contentTypeService = $contentTypeService;
+    }
 
     public function getAll()
     {
-        return $this->types;
-    }
-
-    public static function getTypes(){
-        return ContentTypeApiController::$types;
+        return $this->contentTypeService->getAll();
     }
 
     public function getView($id){
-        foreach (ContentTypeApiController::$types as $type) {
-            if ($type['id'] == $id){
-                return $type;
-            }
-        }
-        return null;
-
+        return $this->contentTypeService->getView($id);
     }
-
 }
