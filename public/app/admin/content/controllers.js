@@ -38,12 +38,16 @@ app.controller('ListCtrl', function ($scope, contents, ContentService, MainCateg
 app.controller('FormCtrl', function ($scope, $state,$stateParams, content, category,content_type,ContentService) {
 
 
-    if ($state.current.name == 'edit'){
+    if ($state.current.name == 'edit' || $state.current.name == 'edit.type'){
         $scope.content = content.data;
         $scope.category = $scope.content.category;
         $scope.content_type = $scope.content.content_type;
         console.log($scope.content_type);
-        $state.go('edit.type',{ type : $scope.content_type.id})
+
+        if ($state.current.name == 'edit'){
+            $state.go('edit.type',{ type : $scope.content_type.id})
+        }
+
     }else {
         $scope.category = category.data;
         $scope.content_type = content_type.data;
