@@ -321,21 +321,21 @@ footer > div > div > div > div > h4 > a {
 
 // register page
 // define format for placeholder
-.register-form > input::-webkit-input-placeholder {
+.fill-form > input::-webkit-input-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
   line-height: 1.6;
   //line-height: 1;
 }
-.register-form > input:-ms-input-placeholder {
+.fill-form > input:-ms-input-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
 }
-.register-form > input::-moz-placeholder {
+.fill-form > input::-moz-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
 }
-.register-form > input:-moz-placeholder {
+.fill-form > input:-moz-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
 }
@@ -349,8 +349,8 @@ input:-ms-input-placeholder {
   color: $mediumgray !important;
 }
 
-.register-form > input[type="text"],
-.register-form > input[type="password"]
+.fill-form > input[type="text"],
+.fill-form > input[type="password"]
 {
   height: 2.3rem;
   font-family: supermarketregular;
@@ -358,6 +358,21 @@ input:-ms-input-placeholder {
   vertical-align: middle !important;
   padding-top: 0.3em !important;
   padding-bottom: 0.3em !important;
+}
+
+.fill-form > textarea
+{
+  font-family: supermarketregular;
+  font-size: 1.1em !important;
+  padding-top: 0.3em !important;
+  padding-bottom: 0.3em !important;
+}
+
+#biography,
+#mysuggestion
+{
+  height: 6em !important;
+  min-height: 6em !important;
 }
 
 .register-button {
@@ -389,7 +404,7 @@ input:-ms-input-placeholder {
   text-shadow: none;
 }
 
-.register-leading {
+.field-leading {
   margin-top: 1rem;
 }
 
@@ -418,9 +433,20 @@ div.call-cancel-account:hover
   color: $white !important;
 }
 
+//Thai word segmentation in confirm-cancel-account-modal
+.break-mobile {
+  display: none !important;
+}
+
 .suggestionoff {
   margin-top: -2px !important;
   padding-top: 0px !important;
+}
+
+.accepttruth {
+  margin-top: -5px !important;
+  padding-top: 0px !important;
+  padding-left: 1em !important;
 }
 
 // Modal Semantic : login/logup
@@ -462,25 +488,28 @@ div.call-cancel-account:hover
 
 // Error Page
 
-
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .heading-register > div {
     text-align: left;
   }
-  .register-form > input[type="text"]
+  .fill-form > input[type="text"]
   {
     line-height: 1.7 !important;
     padding-top: 0.6em !important;
   }
 
-  .register-label {
+  .field-label {
     padding-top: 1em;
     text-align: left !important;
     line-height: 1.4em;
   }
 
-  .break {
+  .break-computer {
     display: none !important;
+  }
+
+  .break-mobile {
+    display: inline !important;
   }
 }
 
@@ -488,17 +517,29 @@ div.call-cancel-account:hover
   #modal-register-box {
     //    position: relative;
   }
+
+  .break-computer {
+    display: none !important;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   #relate-content {
     margin-left: -1rem;
   }
+
+  .break-computer {
+    display: none !important;
+  }
 }
 
 @media only screen and (min-width: 992px) {
   #relate-content {
     margin-left: -1rem;
+  }
+
+  .break-computer {
+    display: none !important;
   }
 }
 
