@@ -15,18 +15,6 @@ class HomeController extends BaseController {
     |
     */
 
-    public function __construct() {
-//        $this->getBreadcrumb();
-    }
-
-    public function getTest() {
-        return View::make('home.test');
-    }
-
-    public function getTest2() {
-        return View::make('test2');
-    }
-
     public function getTest3() {
         return View::make('test3');
     }

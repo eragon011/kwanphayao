@@ -1,3 +1,4 @@
+<?php require_once(app_path().'/recaptchainc.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
-    <title><?php echo trans('text.encyclopaedia') ?> :: ยินดีต้อนรับ</title>
+    <title>@lang('text.encyclopaedia', array(), 'th') :: ยินดีต้อนรับ</title>
 
     <!-- Bootstrap -->
     <!-- Bootstrap Grid only -->
     <link href="/app/home/css/bootstrap.css" rel="stylesheet" type="text/css">
 
     <!-- Semantic -->
-    {{--<link href="/components/semantic-ui/dist/semantic.min.css" rel="stylesheet" type="text/css">--}}
     <link href="/components/semantic-ui/dist/components/breadcrumb.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/checkbox.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/dimmer.min.css" rel="stylesheet" type="text/css">
@@ -64,6 +64,7 @@
     <script src="/css/history.min.js"></script>
     <script src="/css/tablesort.min.js"></script>
 
+    {{--work for search fn call--}}
     <script src="/components/semantic-ui/dist/semantic.js"></script>
 
     {{--<script src="/css/docs.js"></script>--}}
@@ -303,8 +304,8 @@
                             </h4>
                         </div>
                         <div class="eight wide tablet four wide computer colum">
-                            <h4 class="ui header">
-                                <a href="">
+                            <h4 class="ui header call-suggestion-modal">
+                                <a>
                                     <i class="comments outline icon"></i>
                                     <div class="content">
                                         ข้อเสนอแนะ
@@ -334,6 +335,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="mobile only low">
                     <div class="ui grid">
                         <div class="eight wide mobile colum">
@@ -347,8 +349,8 @@
                             </h4>
                         </div>
                         <div class="eight wide mobile colum">
-                            <h4 class="ui header">
-                                <a href="">
+                            <h4 class="ui header call-suggestion-modal">
+                                <a>
                                     <i class="comments outline icon"></i>
                                     <div class="content">
                                         ข้อเสนอแนะ
@@ -381,7 +383,7 @@
             </div>
         </footer>
 
-        <!-- popup modal area -->
+        <!-- popup register modal area -->
         <div class="ui modal" id="register-modal">
             <i class="close icon"></i>
             {{--<div class="header">--}}
@@ -432,9 +434,174 @@
             </div>
         </div>
 
+        <!-- popup suggestion modal area -->
+        <div class="ui modal scrolling" id="suggestion-modal">
+            <i class="close icon"></i>
+            <div class="header">
+                <span class="supermarket-font">ข้อเสนอแนะสำหรับสารานุกรมกว๊านพะเยา</span>
+            </div>
+            <form class="ui form">
+                <div class="ui padded grid">
+                    <div class="low field-leading">
+                        <div class="fourteen wide mobile fourteen wide tablet thirteen wide computer centered colum">
+                            <div class="supermarket-font big-font">
+                                เรายินดีรับฟังข้อเสนอแนะจากคุณ เพื่อปรับปรุงการทำงานให้ดียิ่งขึ้น <br class="break-mobile">กรุณากรอกข้อมูลด้านล่าง เพื่อเป็นข้อมูล และเป็นประโยชน์ในภายภาคหน้า
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui divider"></div>
+
+                    <div class="low field-leading">
+                        <div class="fifteen wide mobile fifteen wide tablet fifteen wide computer centered colum">
+                            <div class="supermarket-font big-font bold-font">
+                                ข้อมูลทั่วไป
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide mobile three wide tablet three wide computer right aligned colum">
+                        <div class="required field">
+                            <label class="height-line field-label">
+                                <span class="supermarket-font large-font">ชื่อ-นามสกุล</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sixteen wide mobile three wide tablet three wide computer colum">
+                        <div class="required field fill-form">
+                            <input name="title" type="text" placeholder="คำนำหน้านาม">
+                        </div>
+                    </div>
+                    <div class="sixteen wide mobile five wide tablet five wide computer colum">
+                        <div class="required field fill-form">
+                            <input name="firstname" type="text" placeholder="ชื่อ">
+                        </div>
+                    </div>
+                    <div class="sixteen wide mobile five wide tablet five wide computer colum">
+                        <div class="required field fill-form">
+                            <input name="lastname" type="text" placeholder="นามสกุล">
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide mobile four wide tablet three wide computer right aligned colum">
+                        <div class="required field">
+                            <label class="height-line field-label">
+                                <span class="supermarket-font large-font">เลขประจำตัวประชาชน</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sixteen wide mobile five wide tablet five wide computer colum">
+                        <div class="required field fill-form">
+                            <input name="idnumber" type="text" placeholder="1234567890123 เป็นต้น">
+                        </div>
+                    </div>
+                    <div class="sixteen wide mobile two wide tablet three wide computer right aligned colum">
+                        <div class="required field">
+                            <label class="height-line field-label">
+                                <span class="supermarket-font large-font">อีเมล</span>
+                        </div>
+                    </div>
+                    <div class="sixteen wide mobile five wide tablet five wide computer colum">
+                        <div class="required field fill-form">
+                            <input name="email" type="text" placeholder="อีเมลสำหรับติดต่อกลับ">
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide mobile three wide tablet three wide computer right aligned colum">
+                        <div class="required field">
+                            <label class="height-line field-label">
+                                <span class="supermarket-font large-font">เบอร์โทรศัพท์</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="sixteen wide mobile five wide tablet five wide computer colum">
+                        <div class="required field fill-form">
+                            <input name="phonenumber" type="text" placeholder="0xxxxxxxxx เป็นต้น">
+                        </div>
+                    </div>
+
+                    <div class="ui divider"></div>
+
+                    <div class="fifteen wide mobile fifteen wide tablet fifteen wide computer centered colum">
+                        <div class="supermarket-font big-font bold-font">
+                            สอบถามข้อมูล / ข้อเสนอแนะ
+                        </div>
+                    </div>
+
+                    <div class="low field-leading">
+                        <div class="sixteen wide mobile three wide tablet three wide computer right aligned colum">
+                            <div class="required field">
+                                <label class="height-line field-label">
+                                    <span class="supermarket-font large-font">เรื่อง</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sixteen wide mobile five wide tablet five wide computer colum">
+                            <div class="required field fill-form">
+                                <input name="subject" type="text" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="low field-leading">
+                        <div class="sixteen wide mobile three wide tablet three wide computer right aligned colum">
+                            <div class="required field">
+                                <label class="height-line field-label">
+                                    <span class="supermarket-font large-font">ข้าพเจ้าขอเสนอแนะดังนี้</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer colum">
+                            <div class="required field fill-form">
+                                <textarea name="mysuggestion" id="mysuggestion"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="low field-leading">
+                        <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer right floated colum">
+                            <div class="inline field">
+                                <div class="ui checkbox">
+                                    <input type="checkbox" name="accepttruth" id="accepttruth"/>
+                                    <label class="supermarket-font large-font accepttruth" for="accepttruth">ข้าพเจ้าขอรับรองว่าข้อความข้างต้นเป็นจริงทุกประการ</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="low field-leading">
+                        <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer right floated colum">
+                            <div class="required field">
+                                <div class="g-recaptcha" data-sitekey="{{$siteKey;}}"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui center aligned grid">
+                        <div class="sixteen wide colum register-button">
+                            <button class="ui teal buttun">
+                                <span>ยกเลิก</span>
+                            </button>
+                            <button class="ui submit buttun">
+                                <span>ส่งข้อเสนอแนะ</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="low field-leading"><div class="colum"></div></div>
+
+                </div>
+            </form>
+        </div>
+
         <a class="exit-off-canvas"></a> <!-- foundation.zurb back to the main page -->
     </div>
 </div>
+
+<!-- JavaScript Section -->
+<script type="text/javascript"
+        src="https://www.google.com/recaptcha/api.js?hl=<?php echo $lang;?>">
+</script>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 {{--<script src="/components/jquery/dist/jquery.js"></script>--}}
@@ -445,7 +612,7 @@
 <script src="/components/semantic-ui/dist/components/checkbox.js"></script>
 <script src="/components/semantic-ui/dist/components/dimmer.js"></script>
 <script src="/components/semantic-ui/dist/components/form.js"></script>
-<script src="/components/semantic-ui/dist/components/modal.min.js"></script>
+<script src="/components/semantic-ui/dist/components/modal.js"></script>
 <script src="/components/semantic-ui/dist/components/popup.min.js"></script>
 <script src="/components/semantic-ui/dist/components/transition.js"></script>
 <script src="/components/semantic-ui/dist/components/search.min.js"></script>
@@ -462,11 +629,24 @@
 
 <script>
     $('.ui.dropdow').dropdow();
-    $('.call-register-modal').click(function() {
-        $('#register-modal')
-                .modal('setting', 'closable', false)
-                .modal('show');
+
+    $('#register-modal')
+            .modal('setting', 'closable', false)
+            .modal('attach events', '.call-register-modal', 'show');
+
+    $('#suggestion-modal')
+            .modal('setting', 'closable', false)
+            .modal('attach events', '.call-suggestion-modal', 'show');
+
+    $('#suggestion-modal')
+            .modal('setting', 'closable', false)
+            .modal('show');
+
+    // fix problem for long modal when resize window, the scrolling is disappear
+    $(window).resize(function() {
+        $('#suggestion-modal').modal('initialize');
     });
+
     $('.ui.checkbox')
             .checkbox();
 

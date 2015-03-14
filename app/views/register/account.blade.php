@@ -13,21 +13,21 @@
 
                 <div class="sixteen wide mobile five wide tablet five wide computer right aligned colum">
                     <div class="required field">
-                        <label class="height-line register-label">
+                        <label class="height-line field-label">
                             <span class="supermarket-font big-font">อีเมล (ถ้าต้องการเปลี่ยน)</span>
                         </label>
                     </div>
                 </div>
                 <div class="sixteen wide mobile eleven wide tablet eleven wide computer colum">
-                    <div class="required field register-form">
+                    <div class="required field fill-form">
                         <input class="" name="email" type="text" placeholder="อีเมล">
                     </div>
                 </div>
 
-                <div class="low register-leading">
+                <div class="low field-leading">
                     <div class="sixteen wide mobile five wide tablet five wide computer right aligned colum">
                         <div class="field">
-                            <label class="height-line register-label">
+                            <label class="height-line field-label">
                                 <span class="supermarket-font big-font">รหัสผ่าน</span>
                             </label>
                         </div>
@@ -41,10 +41,10 @@
                     </div>
                 </div>
 
-                <div class="low register-leading">
+                <div class="low field-leading">
                     <div class="sixteen wide mobile five wide tablet five wide computer right aligned colum">
                         <div class="field">
-                            <label class="height-line register-label">
+                            <label class="height-line field-label">
                                 <span class="supermarket-font big-font">การแจ้งเตือน</span>
                             </label>
                         </div>
@@ -54,7 +54,6 @@
                             <div class="ui toggle checkbox">
                                 <input type="checkbox" name="suggestionoff" id="suggestionoff"/>
                                 <label class="supermarket-font large-font suggestionoff" for="suggestionoff">ปิด/เปิดการแจ้งเตือนข้อเสนอแนะ</label>
-
                             </div>
                         </div>
                     </div>
@@ -62,7 +61,7 @@
 
                 <div class="sixteen wide mobile five wide tablet five wide computer right aligned colum">
                     <div class="field">
-                        <label class="height-line register-label">
+                        <label class="height-line field-label">
                             <span class="supermarket-font big-font">บัญชี</span>
                         </label>
                     </div>
@@ -97,31 +96,31 @@
     <form class="ui form">
         <div class="ui center aligned grid">
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="fourteen wide mobile fourteen wide tablet fourteen wide computer colum">
-                    <div class="required field register-form">
+                    <div class="required field fill-form">
                         <input type="password" name="" id="" placeholder="รหัสผ่านเดิม"/>
                     </div>
                 </div>
             </div>
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="fourteen wide mobile fourteen wide tablet fourteen wide computer colum">
-                    <div class="field register-form">
+                    <div class="field fill-form">
                         <input type="password" name="" id="" placeholder="พิมพ์รหัสผ่านใหม่อีกครั้ง"/>
                     </div>
                 </div>
             </div>
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="fourteen wide mobile fourteen wide tablet fourteen wide computer colum">
-                    <div class="field register-form">
+                    <div class="field fill-form">
                         <input type="password" name="" id="" placeholder="รหัสผ่านใหม่"/>
                     </div>
                 </div>
             </div>
 
-            <div class="low register-leading warn-old-password-wrong">
+            <div class="low field-leading warn-old-password-wrong">
                 <div class="fourteen wide mobile fourteen wide tablet fourteen wide computer colum">
                     <div class="field">
                         <span class="supermarket-font large-font">
@@ -149,17 +148,17 @@
     <form class="ui form">
         <div class="ui center aligned grid">
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="fifteen wide colum">
                     <span class="supermarket-font bigger-font">ข้อมูลการเปลี่ยนแปลงรหัสผ่านของคุณได้รับการบันทึกเรียบร้อยแล้ว</span>
                 </div>
             </div>
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="colum"></div>
             </div>
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="sixteen wide colum register-button">
                     <button class="ui submit buttun">
                         <span>ตกลง</span>
@@ -180,17 +179,17 @@
     <form class="ui form">
         <div class="ui center aligned grid">
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="colum">
                     <span class="supermarket-font bigger-font">คุณแน่ใจไหมว่าต้องการยกเลิกการใช้งานบัญชีอย่างถาวร</span>
                 </div>
             </div>
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="colum"></div>
             </div>
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="sixteen wide colum register-button">
                     <button class="ui teal buttun">
                         <span>ยกเลิก</span>
@@ -213,17 +212,17 @@
     <form class="ui form">
         <div class="ui padded grid">
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="fifteen wide mobile fourteen wide tablet fourteen wide computer centered colum">
-                    <span class="supermarket-font big-font">ตอนนี้คุณไม่สามารถเพิ่ม/แก้ไขเนื้อหาสารานุกรมได้ คุณสามารถ<a href="">ลงทะเบียนใหม่</a>ได้<br class="break"/> เมื่อคุณต้องการ เราหวังว่าคุณจะกลับมาเยี่ยมชมเว็บไซต์ของเราอีก เรายินดีรับฟัง <br class="break"/><a href="">คำแนะนำ/ติชม</a> เสมอ</span>
+                    <span class="supermarket-font big-font">ตอนนี้คุณไม่สามารถเพิ่ม/แก้ไขเนื้อหาสารานุกรมได้ <br class="break-mobile"/>คุณสามารถ<a href="">ลงทะเบียนใหม่</a>ได้<br class="break-computer"/> เมื่อคุณต้องการ <br class="break-mobile"/>เราหวังว่าคุณจะกลับมาเยี่ยมชมเว็บไซต์ของเราอีก <br class="break-mobile"/>เรายินดีรับฟัง <br class="break-computer"/><a href="">คำแนะนำ/ติชม</a> เสมอ</span>
                 </div>
             </div>
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="colum"></div>
             </div>
 
-            <div class="low register-leading">
+            <div class="low field-leading">
                 <div class="sixteen wide center aligned colum register-button">
                     <button class="ui submit buttun">
                         <span>ตกลง</span>
@@ -252,6 +251,6 @@
 
     $('#confirm-cancel-account-modal')
             .modal('setting', 'closable', false)
-            .modal('show');
+            .modal('hide');
 </script>
 @stop

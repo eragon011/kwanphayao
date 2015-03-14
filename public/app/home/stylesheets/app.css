@@ -9422,26 +9422,26 @@ footer > div > div > div > div > h4 > a {
 }
 
 /* line 324, ../scss/_mindset.scss */
-.register-form > input::-webkit-input-placeholder {
+.fill-form > input::-webkit-input-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
   line-height: 1.6;
 }
 
 /* line 330, ../scss/_mindset.scss */
-.register-form > input:-ms-input-placeholder {
+.fill-form > input:-ms-input-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
 }
 
 /* line 334, ../scss/_mindset.scss */
-.register-form > input::-moz-placeholder {
+.fill-form > input::-moz-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
 }
 
 /* line 338, ../scss/_mindset.scss */
-.register-form > input:-moz-placeholder {
+.fill-form > input:-moz-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
 }
@@ -9462,8 +9462,8 @@ input:-ms-input-placeholder {
 }
 
 /* line 352, ../scss/_mindset.scss */
-.register-form > input[type="text"],
-.register-form > input[type="password"] {
+.fill-form > input[type="text"],
+.fill-form > input[type="password"] {
   height: 2.3rem;
   font-family: supermarketregular;
   font-size: 1.1em !important;
@@ -9473,55 +9473,70 @@ input:-ms-input-placeholder {
 }
 
 /* line 363, ../scss/_mindset.scss */
+.fill-form > textarea {
+  font-family: supermarketregular;
+  font-size: 1.1em !important;
+  padding-top: 0.3em !important;
+  padding-bottom: 0.3em !important;
+}
+
+/* line 371, ../scss/_mindset.scss */
+#biography,
+#mysuggestion {
+  height: 6em !important;
+  min-height: 6em !important;
+}
+
+/* line 378, ../scss/_mindset.scss */
 .register-button {
   margin-top: 1em;
 }
 
-/* line 367, ../scss/_mindset.scss */
+/* line 382, ../scss/_mindset.scss */
 .register-button > button {
   padding-top: 0.7em !important;
   padding-bottom: 0.66em !important;
 }
 
-/* line 376, ../scss/_mindset.scss */
+/* line 391, ../scss/_mindset.scss */
 .register-button > button > span {
   font-family: KunlasatriBold !important;
   font-size: 1.2rem !important;
 }
 
-/* line 380, ../scss/_mindset.scss */
+/* line 395, ../scss/_mindset.scss */
 .register-button > button.submit {
   width: 15em !important;
   background-color: #009696 !important;
   color: #ffffff !important;
 }
 
-/* line 386, ../scss/_mindset.scss */
+/* line 401, ../scss/_mindset.scss */
 .register-button > button.submit:hover {
   background-color: #008282 !important;
   color: #ffffff;
   text-shadow: none;
 }
 
-/* line 392, ../scss/_mindset.scss */
-.register-leading {
+/* line 407, ../scss/_mindset.scss */
+.field-leading {
   margin-top: 1rem;
 }
 
-/* line 400, ../scss/_mindset.scss */
+/* line 415, ../scss/_mindset.scss */
 div.call-change-password,
 div.call-cancel-account {
   background-color: #009696 !important;
 }
 
-/* line 406, ../scss/_mindset.scss */
+/* line 421, ../scss/_mindset.scss */
 div.call-change-password:hover,
 div.call-cancel-account:hover {
   background-color: #008282 !important;
   text-shadow: none;
 }
 
-/* line 413, ../scss/_mindset.scss */
+/* line 428, ../scss/_mindset.scss */
 .call-change-password > span,
 .call-cancel-account > span {
   font-family: KunlasatriBold !important;
@@ -9529,95 +9544,128 @@ div.call-cancel-account:hover {
   color: #ffffff !important;
 }
 
-/* line 421, ../scss/_mindset.scss */
+/* line 437, ../scss/_mindset.scss */
+.break-mobile {
+  display: none !important;
+}
+
+/* line 441, ../scss/_mindset.scss */
 .suggestionoff {
   margin-top: -2px !important;
   padding-top: 0px !important;
 }
 
-/* line 427, ../scss/_mindset.scss */
+/* line 446, ../scss/_mindset.scss */
+.accepttruth {
+  margin-top: -5px !important;
+  padding-top: 0px !important;
+  padding-left: 1em !important;
+}
+
+/* line 453, ../scss/_mindset.scss */
 #password-login {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-/* line 432, ../scss/_mindset.scss */
+/* line 458, ../scss/_mindset.scss */
 #checkbox-label {
   padding-left: 1.5em;
   margin-left: 0;
 }
 
-/* line 437, ../scss/_mindset.scss */
+/* line 463, ../scss/_mindset.scss */
 #modal-editor-box {
   position: relative;
   padding: 1rem;
 }
 
-/* line 455, ../scss/_mindset.scss */
+/* line 481, ../scss/_mindset.scss */
 #modal-register-button {
   padding-bottom: 0.5rem;
 }
 
-/* line 459, ../scss/_mindset.scss */
+/* line 485, ../scss/_mindset.scss */
 .warn-old-password-wrong {
   display: none !important;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  /* line 467, ../scss/_mindset.scss */
+  /* line 492, ../scss/_mindset.scss */
   .heading-register > div {
     text-align: left;
   }
 
-  /* line 470, ../scss/_mindset.scss */
-  .register-form > input[type="text"] {
+  /* line 495, ../scss/_mindset.scss */
+  .fill-form > input[type="text"] {
     line-height: 1.7 !important;
     padding-top: 0.6em !important;
   }
 
-  /* line 476, ../scss/_mindset.scss */
-  .register-label {
+  /* line 501, ../scss/_mindset.scss */
+  .field-label {
     padding-top: 1em;
     text-align: left !important;
     line-height: 1.4em;
   }
 
-  /* line 482, ../scss/_mindset.scss */
-  .break {
+  /* line 507, ../scss/_mindset.scss */
+  .break-computer {
+    display: none !important;
+  }
+
+  /* line 511, ../scss/_mindset.scss */
+  .break-mobile {
+    display: inline !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* line 521, ../scss/_mindset.scss */
+  .break-computer {
     display: none !important;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 494, ../scss/_mindset.scss */
+  /* line 527, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
+  }
+
+  /* line 531, ../scss/_mindset.scss */
+  .break-computer {
+    display: none !important;
   }
 }
 @media only screen and (min-width: 992px) {
-  /* line 500, ../scss/_mindset.scss */
+  /* line 537, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
+
+  /* line 541, ../scss/_mindset.scss */
+  .break-computer {
+    display: none !important;
+  }
 }
 @media only screen and (min-width: 1400px) and (max-width: 1919px) {
-  /* line 506, ../scss/_mindset.scss */
+  /* line 547, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
 @media only screen and (min-width: 1920px) {
-  /* line 512, ../scss/_mindset.scss */
+  /* line 553, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
-/* line 518, ../scss/_mindset.scss */
+/* line 559, ../scss/_mindset.scss */
 .modal-header {
   background-color: #009696;
   padding: 7px 7px 7px 15px;
 }
 
-/* line 523, ../scss/_mindset.scss */
+/* line 564, ../scss/_mindset.scss */
 .modal-header .close {
   margin-top: 4px;
   margin-right: 5px;
@@ -9631,45 +9679,45 @@ div.call-cancel-account:hover {
   color: transparent;
 }
 
-/* line 536, ../scss/_mindset.scss */
+/* line 577, ../scss/_mindset.scss */
 .modal-title {
   color: #ffffff;
 }
 
-/* line 540, ../scss/_mindset.scss */
+/* line 581, ../scss/_mindset.scss */
 .modal-desc {
   border-bottom: 1px solid #E5E5E5;
   color: #009696;
   padding: 7px;
 }
 
-/* line 546, ../scss/_mindset.scss */
+/* line 587, ../scss/_mindset.scss */
 .modal-contact {
   padding: 7px;
 }
 
-/* line 550, ../scss/_mindset.scss */
+/* line 591, ../scss/_mindset.scss */
 .modal-form {
   border-top: 1px solid #E5E5E5;
   padding: 7px;
 }
 
-/* line 555, ../scss/_mindset.scss */
+/* line 596, ../scss/_mindset.scss */
 .modal-footer {
   padding: 7px;
 }
 
-/* line 559, ../scss/_mindset.scss */
+/* line 600, ../scss/_mindset.scss */
 .modal-footer .btn {
   font-size: 16px;
 }
 
-/* line 564, ../scss/_mindset.scss */
+/* line 605, ../scss/_mindset.scss */
 .btn {
   font-family: KunlasatriBold;
 }
 
-/* line 569, ../scss/_mindset.scss */
+/* line 610, ../scss/_mindset.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: supermarketregular !important;
 }
