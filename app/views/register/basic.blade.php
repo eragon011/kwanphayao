@@ -1,11 +1,4 @@
 <?php
-require_once(app_path().'/recaptchalib.php');
-
-// Register API keys at https://www.google.com/recaptcha/admin
-$secret = "6LcEDQITAAAAAJP6Qf9w7RpMVq5B3PI1TiZ3xDuG";
-$siteKey = "6LcEDQITAAAAANUzJ_JsV0xeWWFZ3zVTIzw1llbx";
-// reCAPTCHA supported 40+ languages listed here: https://developers.google.com/recaptcha/docs/language
-$lang = "th";
 
 // The response from reCAPTCHA
 $resp = null;
@@ -45,55 +38,55 @@ if ($_POST["g-recaptcha-response"]) {
 
                 <div class="sixteen wide mobile five wide tablet five wide computer right aligned colum">
                     <div class="required field">
-                        <label class="height-line register-label">
+                        <label class="height-line field-label">
                             <span class="supermarket-font big-font">ชื่อผู้ใช้</span>
                         </label>
                     </div>
                 </div>
                 <div class="sixteen wide mobile eleven wide tablet eleven wide computer colum">
-                    <div class="required field register-form">
+                    <div class="required field fill-form">
                         <input name="username" type="text" placeholder="ชื่อผู้ใช้">
                     </div>
                 </div>
                 <div class="sixteen wide mobile five wide tablet five wide computer right aligned colum">
                     <div class="required field">
-                        <label class="height-line register-label">
+                        <label class="height-line field-label">
                             <span class="supermarket-font big-font">อีเมล</span>
                         </label>
                     </div>
                 </div>
                 <div class="sixteen wide mobile eleven wide tablet eleven wide computer colum">
-                    <div class="required field register-form">
+                    <div class="required field fill-form">
                         <input class="" name="email" type="text" placeholder="อีเมล">
                     </div>
                 </div>
                 <div class="sixteen wide mobile five wide tablet five wide computer right aligned colum">
                     <div class="required field">
-                        <label class="height-line register-label">
+                        <label class="height-line field-label">
                             <span class="supermarket-font big-font">รหัสผ่าน</span>
                         </label>
                     </div>
                 </div>
                 <div class="sixteen wide mobile eleven wide tablet eleven wide computer colum">
-                    <div class="required field register-form">
+                    <div class="required field fill-form">
                         <input class="" name="password" type="password" placeholder="รหัสผ่าน">
                     </div>
                 </div>
                 <div class="sixteen wide mobile five wide tablet five wide computer right aligned colum">
                     <div class="required field">
-                        <label class="height-line register-label">
+                        <label class="height-line field-label">
                             <span class="supermarket-font big-font">ยืนยันรหัสผ่าน</span>
                         </label>
                     </div>
                 </div>
                 <div class="sixteen wide mobile eleven wide tablet eleven wide computer colum">
-                    <div class="required field register-form">
+                    <div class="required field fill-form">
                         <input class="" name="repassword" type="password" placeholder="ป้อนรหัสผ่านอีกครั้ง">
                     </div>
                 </div>
                 <div class="sixteen wide mobile five wide tablet five wide computer right aligned colum">
                     <div class="required field">
-                        <label class="height-line register-label">
+                        <label class="height-line field-label">
                             <span class="supermarket-font big-font">ทำเครื่องหมายในช่องว่าง</span>
                         </label>
                     </div>
@@ -127,21 +120,18 @@ if ($_POST["g-recaptcha-response"]) {
 
 @section('javascriptRegister')
 <script>
-    $('.ui.form')
-            .form({
-                username: {
-                    identifier: 'username',
-                    rules: [
-                        {
-                            type: 'empty',
-                            prompt: 'กรุณากรอกชื่อผู้ใช้ของคุณ'
-                        }
-                    ]
-                }
-            });
+$('.ui.form')
+        .form({
+            username: {
+                identifier: 'username',
+                rules: [
+                    {
+                        type: 'empty',
+                        prompt: 'กรุณากรอกชื่อผู้ใช้ของคุณ'
+                    }
+                ]
+            }
+        });
 
-</script>
-<script type="text/javascript"
-        src="https://www.google.com/recaptcha/api.js?hl=<?php echo $lang;?>">
 </script>
 @stop
