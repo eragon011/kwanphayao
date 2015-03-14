@@ -23,8 +23,6 @@ Route::get('/water-resources', 'HomeController@getWaterResources');
 Route::get('/history', 'HomeController@getHistory');
 Route::get('/forgot-password', 'HomeController@getForgotPassword');
 
-Route::get('/test', 'HomeController@getTest');
-Route::get('/test2', 'HomeController@getTest2');
 Route::get('/test3', 'HomeController@getTest3');
 Route::get('/test5', 'HomeController@getTest5');
 Route::get('/test51', 'HomeController@getTest51');
