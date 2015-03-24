@@ -145,27 +145,9 @@ header {
   padding-left: 0;
 }
 
-.right-fix {
-  float: right;
-  order: 1;
-//  display: flex;
-  display: inline-block;
-//  -webkit-flex: 1 1 auto;
-//  flex: 1 1 auto;
-//  -webkit-flex: 1 1 main-size;
-//  flex: 1 1 main-size;
-  position: relative;
-  text-align: right;
-  white-space: nowrap;
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-  vertical-align: middle;
-  justify-content: flex-end;
-}
-
 #profile-icon {
   text-align: right;
-  display: inline-block;
+  //display: inline-block;
   position:relative;
 }
 
@@ -192,7 +174,7 @@ header {
 }
 
 .profile-book-last {
-  flex: 0 1 auto;
+  //flex: 0 1 auto;
   display: inline-block;
   vertical-align: middle;
   margin-left: 0 !important;
@@ -202,12 +184,13 @@ header {
 }
 
 .profilename {
-  flex: 0 1 auto;
+  //flex: 0 1 auto;
   margin-left: 0 !important;
   margin-right: 0 !important;
   white-space: nowrap;
-  display: flex;
-  line-height: normal;
+  //display: flex;
+  display: inline-block;
+  //line-height: normal;
   padding-right: 15px;
 }
 
@@ -317,6 +300,19 @@ footer {
 
 footer > div > div > div > div > h4 > a {
   color: $white;
+}
+
+// home page
+.pin-share {
+  border-color: transparent !important;
+}
+.pin-icon {
+  font-size: 2em !important;
+  top: 0.2em !important;
+  left: 0.1em !important;
+}
+.dawning {
+  background: rgba(255, 255, 255, 0.15) !important;
 }
 
 // register page

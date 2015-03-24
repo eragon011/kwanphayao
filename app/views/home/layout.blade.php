@@ -1,6 +1,6 @@
 <?php require_once(app_path().'/recaptchainc.php');?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -137,17 +137,16 @@
                                     </div> <!-- // search -->
                                 </div>
 
-                                <div id="profile-frame" class="ten wide colum">
-                                    <div class="right-fix"> <!-- profile -->
-                                        <h3 class="ui header">
+                                <div id="profile-frame" class="ten wide colum"> <!-- profile -->
+                                    <div class="ui right aligned grid">
+                                        <div class="right floated sixteen wide colum">
                                             <div class="profile-shelf">
+                                                <h3 class="ui header">
                                                     <div class="profile-book-first"><img src="/app/home/images/manow.jpg" class="ui avatar image"></div>
                                                     <div class="profilename">Ratanapat</div>
+                                                </h3>
                                             </div>
 
-                                        </h3>
-
-                                        <div class="profile-shelf">
                                             <div class="profile-book-first">
                                                 <a href="">
                                                     <div class="ui red circular labell">27</div>
@@ -164,9 +163,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> <!-- // profile -->
+                                        </div>
                                     </div>
-                                </div>
+                                </div> <!-- // profile -->
 
                             </div>
                             <div class="low">
@@ -638,9 +637,9 @@
             .modal('setting', 'closable', false)
             .modal('attach events', '.call-suggestion-modal', 'show');
 
-    $('#suggestion-modal')
-            .modal('setting', 'closable', false)
-            .modal('show');
+//    $('#suggestion-modal')
+//            .modal('setting', 'closable', false)
+//            .modal('show');
 
     // fix problem for long modal when resize window, the scrolling is disappear
     $(window).resize(function() {
