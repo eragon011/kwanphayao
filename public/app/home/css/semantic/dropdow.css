@@ -1,14 +1,12 @@
- /*
- * # Semantic UI - 1.9.0
- * https://github.com/Semantic-Org/Semantic-UI
- * http://www.semantic-ui.com/
+/*!
+ * # Semantic UI 1.11.5 - Dropdown
+ * http://github.com/semantic-org/semantic-ui/
  *
  * Copyright 2014 Contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
  */
-
 
 
 /*******************************
@@ -107,9 +105,9 @@
   border: none;
   height: auto;
   border-top: none;
-  line-height: 1.2em;
+  line-height: 1em;
   color: rgba(0, 0, 0, 0.8);
-  padding: 0.65rem 1.25rem !important;
+  padding: 0.71428571em 1.14285714em !important;
   font-size: 1rem;
   text-transform: none;
   font-weight: normal;
@@ -140,7 +138,7 @@
 .ui.dropdow .menu .item > .flag.floated,
 .ui.dropdow .menu .item > .image.floated,
 .ui.dropdow .menu .item > img.floated {
-  margin-top: 0.2em;
+  margin-top: 0em;
 }
 
 /*--------------
@@ -161,7 +159,7 @@
   margin: 0.5em 0em;
 }
 .ui.dropdow .menu > .input {
-  margin: 0.75rem 1.25rem;
+  margin: 0.75rem 1.14285714em;
   min-width: 200px;
 }
 .ui.dropdow .menu > .header + .input {
@@ -229,7 +227,7 @@
 .ui.dropdow .menu > .item > .flag,
 .ui.dropdow .menu > .item > .image,
 .ui.dropdow .menu > .item > img {
-  margin-top: 0.2em;
+  margin-top: 0em;
 }
 .ui.dropdow > .text > .icon,
 .ui.dropdow > .text > .label,
@@ -242,6 +240,7 @@
 .ui.dropdow .menu > .item > .image,
 .ui.dropdow .menu > .item > img {
   margin-left: 0em;
+  float: none;
   margin-right: 0.75em;
 }
 
@@ -334,9 +333,9 @@
 }
 select.ui.dropdow {
   height: 38px;
-  padding: 0em;
-  margin: 0em;
-  visibility: hidden;
+  padding: 0.5em;
+  border: 1px solid rgba(39, 41, 43, 0.15);
+  visibility: visible;
 }
 .ui.selection.dropdow > .text {
   margin-right: 2em;
@@ -382,24 +381,32 @@ select.ui.dropdow {
 .ui.selection.dropdow .menu:before {
   display: none;
 }
+
+/* Scrollbar in IE */
+@media all and (-ms-high-contrast: none) {
+  .ui.selection.dropdown .menu {
+    min-width: -webkit-calc(100% -  15px );
+    min-width: calc(100% -  15px );
+  }
+}
 @media only screen and (max-width: 767px) {
   .ui.selection.dropdow .menu {
-    max-height: 7.7142rem;
+    max-height: 7.49991429em;
   }
 }
 @media only screen and (min-width: 768px) {
   .ui.selection.dropdow .menu {
-    max-height: 10.2856rem;
+    max-height: 9.99988571em;
   }
 }
 @media only screen and (min-width: 992px) {
   .ui.selection.dropdow .menu {
-    max-height: 15.4284rem;
+    max-height: 14.99982857em;
   }
 }
 @media only screen and (min-width: 1920px) {
   .ui.selection.dropdow .menu {
-    max-height: 20.5712rem;
+    max-height: 19.99977143em;
   }
 }
 
@@ -409,8 +416,8 @@ select.ui.dropdow {
   padding-left: 1.1em !important;
   
 /* Add in spacing for scroll bar */
-  padding-right: -webkit-calc(2.1em) !important;
-  padding-right: calc(2.1em) !important;
+  padding-right: -webkit-calc( 1.1em  + 1em) !important~;
+  padding-right: calc( 1.1em  + 1em) !important~;
   white-space: normal;
   word-wrap: normal;
 }
@@ -431,20 +438,24 @@ select.ui.dropdow {
   opacity: 0.3 !important;
 }
 
+/* Visible */
+.ui.selection.dropdow.visible {
+  border-color: rgba(39, 41, 43, 0.3);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08);
+}
+.ui.selection.visible.dropdow .menu {
+  border-color: rgba(39, 41, 43, 0.3);
+  box-shadow: 0px 2px 6px 0px rgba(39, 41, 43, 0.15);
+}
+
 /* Visible Hover */
 .ui.selection.visible.dropdow:hover {
   border-color: rgba(39, 41, 43, 0.3);
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08);
 }
-.ui.selection.visible.dropdow:hover .menu {
-  border: 1px solid rgba(39, 41, 43, 0.3);
-  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
-}
-
-/* Visible */
-.ui.selection.dropdow.visible {
-  border-color: rgba(39, 41, 43, 0.15);
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.08);
+.ui.selection.visible.dropdow .menu {
+  border-color: rgba(39, 41, 43, 0.3);
+  box-shadow: 0px 2px 6px 0px rgba(39, 41, 43, 0.15);
 }
 
 /* Active Item */
@@ -533,22 +544,22 @@ select.ui.dropdow {
 }
 @media only screen and (max-width: 767px) {
   .ui.search.dropdow .menu {
-    max-height: 7.7142rem;
+    max-height: 7.49991429em;
   }
 }
 @media only screen and (min-width: 768px) {
   .ui.search.dropdow .menu {
-    max-height: 10.2856rem;
+    max-height: 9.99988571em;
   }
 }
 @media only screen and (min-width: 992px) {
   .ui.search.dropdow .menu {
-    max-height: 15.4284rem;
+    max-height: 14.99982857em;
   }
 }
 @media only screen and (min-width: 1920px) {
   .ui.search.dropdow .menu {
-    max-height: 20.5712rem;
+    max-height: 19.99977143em;
   }
 }
 
@@ -589,7 +600,7 @@ select.ui.dropdow {
 .ui.dropdow .menu > .item:hover {
   background: rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.8);
-  z-index: 12;
+  z-index: 13;
 }
 
 /*--------------------
@@ -655,7 +666,7 @@ select.ui.dropdow {
   visibility: hidden;
 }
 .ui.dropdow .filtered.item {
-  display: none;
+  display: none !important;
 }
 
 /*--------------------
@@ -737,13 +748,13 @@ select.ui.dropdow {
 .ui.dropdow .left.menu .item .dropdow.icon {
   width: auto;
   float: left;
-  margin: 0.2em 0.75em 0em 0em;
+  margin: 0em 0.75em 0em 0em;
 }
 .ui.dropdow .item .left.dropdow.icon,
 .ui.dropdow .left.menu .item .dropdow.icon {
   width: auto;
   float: left;
-  margin: 0.2em 0.75em 0em 0em;
+  margin: 0em 0.75em 0em 0em;
 }
 .ui.dropdow .item .left.dropdow.icon + .text,
 .ui.dropdow .left.menu .item .dropdow.icon + .text {

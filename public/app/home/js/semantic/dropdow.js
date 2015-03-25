@@ -1,9 +1,9 @@
-/*
- * # Semantic - Dropdow
+/*!
+ * # Semantic UI 1.11.5 - Dropdown
  * http://github.com/semantic-org/semantic-ui/
  *
  *
- * Copyright 2014 Contributor
+ * Copyright 2014 Contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
  *
@@ -72,14 +72,13 @@ $.fn.dropdow = function(parameters) {
       module = {
 
         initialize: function() {
-          module.debug('Initializing dropdow', settings);
+          module.debug('Initializing dropdown', settings);
 
           if( module.is.alreadySetup() ) {
-            module.error(error.alreadySetup);
+            module.setup.reference();
           }
           else {
             module.setup.layout();
-          }
 
           module.save.defaults();
           module.set.selected();
@@ -94,10 +93,11 @@ $.fn.dropdow = function(parameters) {
 
           module.observeChanges();
           module.instantiate();
+          }
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of dropdow', module);
+          module.verbose('Storing instance of dropdown', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -105,7 +105,7 @@ $.fn.dropdow = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous dropdow for', $module);
+          module.verbose('Destroying previous dropdown for', $module);
           module.remove.tabbable();
           $module
             .off(eventNamespace)
@@ -141,9 +141,9 @@ $.fn.dropdow = function(parameters) {
 
         create: {
           id: function() {
-            module.verbose('Creating unique id for element');
-            id = module.get.uniqueID();
+            id = (Math.random().toString(16) + '000000000').substr(2,8);
             elementNamespace = '.' + id;
+            module.verbose('Creating unique id for element', id);
           }
         },
 
@@ -161,7 +161,6 @@ $.fn.dropdow = function(parameters) {
         },
 
         setup: {
-
           layout: function() {
             if( $module.is('select') ) {
               module.setup.select();
@@ -180,13 +179,13 @@ $.fn.dropdow = function(parameters) {
             var
               selectValues  = module.get.selectValues()
             ;
-            module.debug('Dropdow initialized on a select', selectValues);
+            module.debug('Dropdown initialized on a select', selectValues);
             if( $module.is('select') ) {
               $input = $module;
             }
             // see if select is placed correctly already
             if($input.parent(selector.dropdow).length > 0) {
-              module.debug('UI dropdow already exists. Creating dropdow menu only');
+              module.debug('UI dropdown already exists. Creating dropdown menu only');
               $module = $input.closest(selector.dropdow);
               $menu   = $module.children(selector.menu);
               if($menu.length === 0) {
@@ -198,7 +197,7 @@ $.fn.dropdow = function(parameters) {
               $menu.html( settings.templates.menu( selectValues ));
             }
             else {
-              module.debug('Creating entire dropdow from select');
+              module.debug('Creating entire dropdown from select');
               $module = $('<div />')
                 .attr('class', $input.attr('class') )
                 .addClass(className.selection)
@@ -212,6 +211,21 @@ $.fn.dropdow = function(parameters) {
               ;
             }
             module.refresh();
+          },
+          reference: function() {
+            var
+              index = $allModules.index($module),
+              $firstModules,
+              $lastModules
+            ;
+            module.debug('Dropdown behavior was called on select, replacing with closest dropdown');
+            // replace module reference
+            $module = $module.parent(selector.dropdown);
+            module.refresh();
+            // adjust all modules
+            $firstModules = $allModules.slice(0, index);
+            $lastModules = $allModules.slice(index + 1);
+            $allModules = $firstModules.add($module).add($lastModules);
           }
         },
 
@@ -247,7 +261,7 @@ $.fn.dropdow = function(parameters) {
             return;
           }
           if( module.can.show() && !module.is.active() ) {
-            module.debug('Showing dropdow');
+            module.debug('Showing dropdown');
             module.animate.show(function() {
               if( module.can.click() ) {
                 module.bind.intent();
@@ -265,7 +279,7 @@ $.fn.dropdow = function(parameters) {
             : function(){}
           ;
           if( module.is.active() ) {
-            module.debug('Hiding dropdow');
+            module.debug('Hiding dropdown');
             module.animate.hide(function() {
               module.remove.visible();
               callback.call(element);
@@ -275,7 +289,7 @@ $.fn.dropdow = function(parameters) {
         },
 
         hideOthers: function() {
-          module.verbose('Finding other dropdows to hide');
+          module.verbose('Finding other dropdowns to hide');
           $allModules
             .not($module)
               .has(selector.menu + ':visible:not(.' + className.animating + ')')
@@ -429,7 +443,7 @@ $.fn.dropdow = function(parameters) {
               .addClass(className.selected)
           ;
           if( module.is.allFiltered() ) {
-            module.debug('All items filtered, hiding dropdow', searchTerm);
+            module.debug('All items filtered, hiding dropdown', searchTerm);
             if(module.is.searchSelection()) {
               module.hide();
             }
@@ -456,6 +470,10 @@ $.fn.dropdow = function(parameters) {
           ;
           if(hasSelected) {
             module.event.item.click.call($selectedItem);
+            module.remove.filteredItem();
+          }
+          else {
+            module.hide();
           }
         },
 
@@ -628,17 +646,17 @@ $.fn.dropdow = function(parameters) {
             else {
               // enter (open menu)
               if(pressedKey == keys.enter) {
-                module.verbose('Enter key pressed, showing dropdow');
+                module.verbose('Enter key pressed, showing dropdown');
                 module.show();
               }
               // escape (close menu)
               if(pressedKey == keys.escape) {
-                module.verbose('Escape key pressed, closing dropdow');
+                module.verbose('Escape key pressed, closing dropdown');
                 module.hide();
               }
               // down arrow (open menu)
               if(pressedKey == keys.downArrow) {
-                module.verbose('Down key pressed, showing dropdow');
+                module.verbose('Down key pressed, showing dropdown');
                 module.show();
               }
             }
@@ -755,7 +773,7 @@ $.fn.dropdow = function(parameters) {
               return true;
             }
             else {
-              module.verbose('Event occurred in dropdow, canceling callback');
+              module.verbose('Event occurred in dropdown, canceling callback');
               return false;
             }
           },
@@ -770,7 +788,7 @@ $.fn.dropdow = function(parameters) {
               return true;
             }
             else {
-              module.verbose('Event occurred in dropdow menu, canceling callback');
+              module.verbose('Event occurred in dropdown menu, canceling callback');
               return false;
             }
           }
@@ -822,6 +840,9 @@ $.fn.dropdow = function(parameters) {
         },
 
         get: {
+          id: function() {
+            return id;
+          },
           text: function() {
             return $text.text();
           },
@@ -944,22 +965,26 @@ $.fn.dropdow = function(parameters) {
                     optionValue   = module.get.choiceValue($choice, optionText)
                   ;
                   if(strict) {
-                    module.verbose('Ambiguous dropdow value using strict type check', $choice, value);
+                    module.verbose('Ambiguous dropdown value using strict type check', $choice, value);
                     if( optionValue === value ) {
                       $selectedItem = $(this);
+                      return true;
                     }
                     else if( !$selectedItem && optionText === value ) {
                       $selectedItem = $(this);
+                      return true;
                     }
                   }
                   else {
                     if( optionValue == value ) {
                       module.verbose('Found select item by value', optionValue, value);
                       $selectedItem = $(this);
+                      return true;
                     }
                     else if( !$selectedItem && optionText == value ) {
                       module.verbose('Found select item by text', optionText, value);
                       $selectedItem = $(this);
+                      return true;
                     }
                   }
                 })
@@ -969,9 +994,6 @@ $.fn.dropdow = function(parameters) {
               value = module.get.text();
             }
             return $selectedItem || false;
-          },
-          uniqueID: function() {
-            return (Math.random().toString(16) + '000000000').substr(2,8);
           }
         },
 
@@ -1050,7 +1072,7 @@ $.fn.dropdow = function(parameters) {
           },
           tabbable: function() {
             if( module.is.searchable() ) {
-              module.debug('Searchable dropdow initialized');
+              module.debug('Searchable dropdown initialized');
               $search
                 .val('')
                 .attr('tabindex', 0)
@@ -1060,7 +1082,7 @@ $.fn.dropdow = function(parameters) {
               ;
             }
             else {
-              module.debug('Simple selection dropdow initialized');
+              module.debug('Simple selection dropdown initialized');
               if(!$module.attr('tabindex') ) {
                 $module
                   .attr('tabindex', 0)
@@ -1165,7 +1187,7 @@ $.fn.dropdow = function(parameters) {
               selectedText,
               selectedValue
             ;
-            if($selectedItem) {
+            if($selectedItem && !$selectedItem.hasClass(className.active) ) {
               module.debug('Setting selected menu item to', $selectedItem);
               module.remove.activeItem();
               module.remove.selectedItem();
@@ -1203,7 +1225,7 @@ $.fn.dropdow = function(parameters) {
           },
           tabbable: function() {
             if( module.is.searchable() ) {
-              module.debug('Searchable dropdow initialized');
+              module.debug('Searchable dropdown initialized');
               $search
                 .attr('tabindex', '-1')
               ;
@@ -1212,7 +1234,7 @@ $.fn.dropdow = function(parameters) {
               ;
             }
             else {
-              module.debug('Simple selection dropdow initialized');
+              module.debug('Simple selection dropdown initialized');
               $module
                 .attr('tabindex', '-1')
               ;
@@ -1646,10 +1668,9 @@ $.fn.dropdow = function(parameters) {
       }
     })
   ;
-
   return (returnedValue !== undefined)
     ? returnedValue
-    : this
+    : $allModules
   ;
 };
 
@@ -1693,8 +1714,8 @@ $.fn.dropdow.settings = {
   namespace      : 'dropdow',
 
   error   : {
-    action       : 'You called a dropdow action that was not defined',
-    alreadySetup : 'Once a select has been initialized behaviors must be called on the created ui dropdow',
+    action       : 'You called a dropdown action that was not defined',
+    alreadySetup : 'Once a select has been initialized behaviors must be called on the created ui dropdown',
     method       : 'The method you called is not defined.',
     transition   : 'The requested transition was not found'
   },
