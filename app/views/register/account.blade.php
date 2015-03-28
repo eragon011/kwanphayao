@@ -213,7 +213,7 @@
         <div class="ui padded grid">
 
             <div class="low field-leading">
-                <div class="fifteen wide mobile fourteen wide tablet fourteen wide computer centered colum">
+                <div class="fourteen wide mobile fourteen wide tablet fourteen wide computer centered colum">
                     <span class="supermarket-font big-font">ตอนนี้คุณไม่สามารถเพิ่ม/แก้ไขเนื้อหาสารานุกรมได้ <br class="break-mobile"/>คุณสามารถ<a href="">ลงทะเบียนใหม่</a>ได้<br class="break-computer"/> เมื่อคุณต้องการ <br class="break-mobile"/>เราหวังว่าคุณจะกลับมาเยี่ยมชมเว็บไซต์ของเราอีก <br class="break-mobile"/>เรายินดีรับฟัง <br class="break-computer"/><a href="">คำแนะนำ/ติชม</a> เสมอ</span>
                 </div>
             </div>
@@ -225,7 +225,7 @@
             <div class="low field-leading">
                 <div class="sixteen wide center aligned colum register-button">
                     <button class="ui submit buttun">
-                        <span>ตกลง</span>
+                        <span>ออกจากระบบ</span>
                     </button>
                 </div>
             </div>
@@ -249,6 +249,7 @@
             .modal('setting', 'closable', false)
             .modal('attach events', '.call-cancel-account', 'show');
 
+    // after canceled account show this modal
     $('#confirm-cancel-account-modal')
             .modal('setting', 'closable', false)
             .modal('hide');
