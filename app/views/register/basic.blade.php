@@ -1,4 +1,5 @@
 <?php
+require_once(app_path().'/recaptchainc.php');
 
 // The response from reCAPTCHA
 $resp = null;
