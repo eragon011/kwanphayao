@@ -47,35 +47,35 @@
                     <img class="ui avatar image" src="/app/home/images/sample.png">
                     <div class="content">
                         <a href="" ><h4 class="ui header">ผลิตภัณฑ์ OTOP จ.พะเยา</h4></a>
-                        <div class="description">โครงการพัฒนาศักยภาพกลุ่ม..</div>
+                        <div class="description supermarket-font">โครงการพัฒนาศักยภาพ..</div>
                     </div>
                 </div>
                 <div class="item">
                     <img class="ui avatar image" src="/app/home/images/sample.png">
                     <div class="content">
                         <a href=""><h4 class="ui header">ข้อมูลจำเพาะกว๊านพะเยา</h4></a>
-                        <div class="description">สร้างทำนบกั้นน้ำ พ.ศ.2482..</div>
+                        <div class="description supermarket-font">สร้างทำนบกั้นน้ำ พ.ศ.2482..</div>
                     </div>
                 </div>
                 <div class="item">
                     <img class="ui avatar image" src="/app/home/images/sample.png">
                     <div class="content">
                         <a href=""><h4 class="ui header">แหล่งต้นน้ำกว๊านพะเยา</h4></a>
-                        <div class="description">น้ำที่ไหลลงสู่กว๊านพะเยา..</div>
+                        <div class="description supermarket-font">น้ำที่ไหลลงสู่กว๊านพะเยา..</div>
                     </div>
                 </div>
                 <div class="item">
                     <img class="ui avatar image" src="/app/home/images/sample.png">
                     <div class="content">
                         <a href=""><h4 class="ui header">สถานภาพกว๊านพะเยาในปัจจุบัน</h4></a>
-                        <div class="description">กว๊านพะเยา อยู่ในเขตอำเภอ..</div>
+                        <div class="description supermarket-font">กว๊านพะเยา อยู่ในเขตอำเภอ..</div>
                     </div>
                 </div>
                 <div class="item">
                     <img class="ui avatar image" src="/app/home/images/sample.png">
                     <div class="content">
                         <a href=""><h4 class="ui header">การใช้ประโยชน์จากกว๊าน..</h4></a>
-                        <div class="description">ภายหลังปี พ.ศ.2484 เมือง..</div>
+                        <div class="description supermarket-font">ภายหลังปี พ.ศ.2484 เมือง..</div>
                     </div>
                 </div>
             </div>
