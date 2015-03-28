@@ -49,14 +49,14 @@
 
 // Use in Sign in/up Button
 .bigger-font {
-  font-size: 1.4em;
+  font-size: 1.4em !important;
 }
 .huge-font {
-  font-size: 1.7em;
+  font-size: 1.7em !important;
 }
 // Use in error code in error page
 .max-font {
-  font-size: 4em;
+  font-size: 4em !important;
 }
 
 // Font Weight
@@ -72,18 +72,18 @@ $verydarkgray  : #343434;
 $strongcyan    : #009696;
 $mediumgray    : #B4B4B4;
 
+.black-font {
+  color: $black;
+}
 .red-font {
   color: $red;
 }
-
 .verydarkgray {
   color: $verydarkgray;
 }
-
 .strongcyan {
   color: $strongcyan;
 }
-
 .mediumgray {
   color: $mediumgray;
 }
@@ -135,9 +135,31 @@ header {
   padding-top: 1rem;
 }
 
+//fix logo size
+.smallp120 {
+  width: 120px;
+}
+
 #search-profile-category {
   margin-left: 0;
   padding-left: 0;
+}
+
+.search-form > input::-webkit-input-placeholder {
+  font-family: supermarketregular;
+  font-size: 1.3em;
+}
+.search-form > input:-ms-input-placeholder {
+  font-family: supermarketregular;
+  font-size: 1.3em;
+}
+.search-form > input::-moz-placeholder {
+  font-family: supermarketregular;
+  font-size: 1.3em;
+}
+.search-form > input:-moz-placeholder {
+  font-family: supermarketregular;
+  font-size: 1.3em;
 }
 
 #profile-frame {
@@ -312,8 +334,14 @@ footer > div > div > div > div > h4 > a {
   left: 0.1em !important;
 }
 .dawning {
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
 }
+
+.dark-border {
+  border-top: 1px solid $mediumgray !important;
+}
+
+
 
 // register page
 // define format for placeholder
@@ -338,7 +366,7 @@ footer > div > div > div > div > h4 > a {
 input::-moz-placeholder {
   color: $strongcyan !important;
 }
-input::-moz-placeholder {
+input:-moz-placeholder {
   color: $strongcyan !important;
 }
 input:-ms-input-placeholder {
@@ -484,6 +512,7 @@ div.call-cancel-account:hover
 
 // Error Page
 
+/* Mobile Sizing Combinations */
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .heading-register > div {
     text-align: left;
@@ -509,16 +538,7 @@ div.call-cancel-account:hover
   }
 }
 
-@media only screen and (max-width: 767px) {
-  #modal-register-box {
-    //    position: relative;
-  }
-
-  .break-computer {
-    display: none !important;
-  }
-}
-
+/* Tablet Sizing Combinations */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   #relate-content {
     margin-left: -1rem;
@@ -528,7 +548,7 @@ div.call-cancel-account:hover
     display: none !important;
   }
 }
-
+/* Computer/Desktop Sizing Combinations */
 @media only screen and (min-width: 992px) {
   #relate-content {
     margin-left: -1rem;
@@ -538,13 +558,13 @@ div.call-cancel-account:hover
     display: none !important;
   }
 }
-
+/* Large Monitor Sizing Combinations */
 @media only screen and (min-width: 1400px) and (max-width: 1919px) {
   #relate-content {
     margin-left: -1rem;
   }
 }
-
+/* Widescreen Sizing Combinations */
 @media only screen and (min-width: 1920px) {
   #relate-content {
     margin-left: -1rem;

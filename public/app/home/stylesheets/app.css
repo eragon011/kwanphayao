@@ -9148,17 +9148,17 @@ th.hide-for-touch {
 
 /* line 51, ../scss/_mindset.scss */
 .bigger-font {
-  font-size: 1.4em;
+  font-size: 1.4em !important;
 }
 
 /* line 54, ../scss/_mindset.scss */
 .huge-font {
-  font-size: 1.7em;
+  font-size: 1.7em !important;
 }
 
 /* line 58, ../scss/_mindset.scss */
 .max-font {
-  font-size: 4em;
+  font-size: 4em !important;
 }
 
 /* line 63, ../scss/_mindset.scss */
@@ -9167,16 +9167,21 @@ th.hide-for-touch {
 }
 
 /* line 75, ../scss/_mindset.scss */
+.black-font {
+  color: #000000;
+}
+
+/* line 78, ../scss/_mindset.scss */
 .red-font {
   color: #ff0000;
 }
 
-/* line 79, ../scss/_mindset.scss */
+/* line 81, ../scss/_mindset.scss */
 .verydarkgray {
   color: #343434;
 }
 
-/* line 83, ../scss/_mindset.scss */
+/* line 84, ../scss/_mindset.scss */
 .strongcyan {
   color: #009696;
 }
@@ -9218,25 +9223,54 @@ th.hide-for-touch {
   padding-top: 1rem;
 }
 
-/* line 138, ../scss/_mindset.scss */
+/* line 139, ../scss/_mindset.scss */
+.smallp120 {
+  width: 120px;
+}
+
+/* line 143, ../scss/_mindset.scss */
 #search-profile-category {
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 143, ../scss/_mindset.scss */
+/* line 148, ../scss/_mindset.scss */
+.search-form > input::-webkit-input-placeholder {
+  font-family: supermarketregular;
+  font-size: 1.3em;
+}
+
+/* line 152, ../scss/_mindset.scss */
+.search-form > input:-ms-input-placeholder {
+  font-family: supermarketregular;
+  font-size: 1.3em;
+}
+
+/* line 156, ../scss/_mindset.scss */
+.search-form > input::-moz-placeholder {
+  font-family: supermarketregular;
+  font-size: 1.3em;
+}
+
+/* line 160, ../scss/_mindset.scss */
+.search-form > input:-moz-placeholder {
+  font-family: supermarketregular;
+  font-size: 1.3em;
+}
+
+/* line 165, ../scss/_mindset.scss */
 #profile-frame {
   margin-left: 0;
   padding-left: 0;
 }
 
-/* line 148, ../scss/_mindset.scss */
+/* line 170, ../scss/_mindset.scss */
 #profile-icon {
   text-align: right;
   position: relative;
 }
 
-/* line 154, ../scss/_mindset.scss */
+/* line 176, ../scss/_mindset.scss */
 .profile-shelf {
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -9247,7 +9281,7 @@ th.hide-for-touch {
   text-align: left;
 }
 
-/* line 165, ../scss/_mindset.scss */
+/* line 187, ../scss/_mindset.scss */
 .profile-book-first {
   display: inline-block;
   padding: 0 0 0 15px;
@@ -9258,7 +9292,7 @@ th.hide-for-touch {
   text-align: left;
 }
 
-/* line 176, ../scss/_mindset.scss */
+/* line 198, ../scss/_mindset.scss */
 .profile-book-last {
   display: inline-block;
   vertical-align: middle;
@@ -9268,7 +9302,7 @@ th.hide-for-touch {
   padding-left: 1rem;
 }
 
-/* line 186, ../scss/_mindset.scss */
+/* line 208, ../scss/_mindset.scss */
 .profilename {
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -9277,7 +9311,7 @@ th.hide-for-touch {
   padding-right: 15px;
 }
 
-/* line 197, ../scss/_mindset.scss */
+/* line 219, ../scss/_mindset.scss */
 #profile {
   margin-left: 0;
   margin-right: 0;
@@ -9285,59 +9319,59 @@ th.hide-for-touch {
   padding-right: 0;
 }
 
-/* line 204, ../scss/_mindset.scss */
+/* line 226, ../scss/_mindset.scss */
 #profile-setting {
   margin-left: 0;
   padding-left: 1rem;
 }
 
-/* line 209, ../scss/_mindset.scss */
+/* line 231, ../scss/_mindset.scss */
 .icon.menu > a.active > span {
   color: #343434;
 }
 
-/* line 213, ../scss/_mindset.scss */
+/* line 235, ../scss/_mindset.scss */
 #category-general-mobile:hover > i:before,
 #category-general-tablet:hover > i:before,
 #category-general:hover > i:before {
   content: "\e600";
 }
 
-/* line 219, ../scss/_mindset.scss */
+/* line 241, ../scss/_mindset.scss */
 #category-ecology-mobile:hover > i:before,
 #category-ecology-tablet:hover > i:before,
 #category-ecology:hover > i:before {
   content: "\e602";
 }
 
-/* line 225, ../scss/_mindset.scss */
+/* line 247, ../scss/_mindset.scss */
 #category-travel-mobile:hover > i:before,
 #category-travel-tablet:hover > i:before,
 #category-travel:hover > i:before {
   content: "\e604";
 }
 
-/* line 231, ../scss/_mindset.scss */
+/* line 253, ../scss/_mindset.scss */
 #category-water-mobile:hover > i:before,
 #category-water-tablet:hover > i:before,
 #category-water:hover > i:before {
   content: "\e606";
 }
 
-/* line 237, ../scss/_mindset.scss */
+/* line 259, ../scss/_mindset.scss */
 #category-history-mobile:hover > i:before,
 #category-history-tablet:hover > i:before,
 #category-history:hover > i:before {
   content: "\e608";
 }
 
-/* line 244, ../scss/_mindset.scss */
+/* line 266, ../scss/_mindset.scss */
 div .ui.popup > div {
   font-family: supermarketregular !important;
   font-size: 1.2em !important;
 }
 
-/* line 249, ../scss/_mindset.scss */
+/* line 271, ../scss/_mindset.scss */
 #menu-main {
   font-family: supermarketregular;
   background-color: #009696;
@@ -9347,120 +9381,125 @@ div .ui.popup > div {
   border-bottom: 3px solid rgba(255, 255, 255, 0.9);
 }
 
-/* line 258, ../scss/_mindset.scss */
+/* line 280, ../scss/_mindset.scss */
 #menu-main .item {
   font-size: 1.3rem;
 }
 
-/* line 262, ../scss/_mindset.scss */
+/* line 284, ../scss/_mindset.scss */
 #menu-main .active.item {
   background-color: #000000;
   color: #ffffff;
   border-bottom: 5px solid red;
 }
 
-/* line 269, ../scss/_mindset.scss */
+/* line 291, ../scss/_mindset.scss */
 #menu-main .item:first-child {
   border-radius: 0.2857rem 0px 0px 0.2857rem;
 }
 
-/* line 273, ../scss/_mindset.scss */
+/* line 295, ../scss/_mindset.scss */
 #breadcrumb {
   margin-top: 1rem;
 }
 
-/* line 277, ../scss/_mindset.scss */
+/* line 299, ../scss/_mindset.scss */
 #main-content {
   padding: 1rem 0;
 }
 
-/* line 281, ../scss/_mindset.scss */
+/* line 303, ../scss/_mindset.scss */
 #main-category-header {
   background-color: #009696 !important;
   border-color: #343434 !important;
 }
 
-/* line 286, ../scss/_mindset.scss */
+/* line 308, ../scss/_mindset.scss */
 #relate-content-header {
   background-color: #009696;
 }
 
-/* line 290, ../scss/_mindset.scss */
+/* line 312, ../scss/_mindset.scss */
 p + p {
   text-indent: 1.5em;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-/* line 296, ../scss/_mindset.scss */
+/* line 318, ../scss/_mindset.scss */
 footer {
   background-color: #343434;
   padding: 1rem 2rem;
 }
 
-/* line 301, ../scss/_mindset.scss */
+/* line 323, ../scss/_mindset.scss */
 footer > div > div > div > div > h4 > a {
   color: #ffffff;
 }
 
-/* line 306, ../scss/_mindset.scss */
+/* line 328, ../scss/_mindset.scss */
 .pin-share {
   border-color: transparent !important;
 }
 
-/* line 309, ../scss/_mindset.scss */
+/* line 331, ../scss/_mindset.scss */
 .pin-icon {
   font-size: 2em !important;
   top: 0.2em !important;
   left: 0.1em !important;
 }
 
-/* line 314, ../scss/_mindset.scss */
+/* line 336, ../scss/_mindset.scss */
 .dawning {
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
 }
 
-/* line 320, ../scss/_mindset.scss */
+/* line 340, ../scss/_mindset.scss */
+.dark-border {
+  border-top: 1px solid #B4B4B4 !important;
+}
+
+/* line 348, ../scss/_mindset.scss */
 .fill-form > input::-webkit-input-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
   line-height: 1.6;
 }
 
-/* line 326, ../scss/_mindset.scss */
+/* line 354, ../scss/_mindset.scss */
 .fill-form > input:-ms-input-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
 }
 
-/* line 330, ../scss/_mindset.scss */
+/* line 358, ../scss/_mindset.scss */
 .fill-form > input::-moz-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
 }
 
-/* line 334, ../scss/_mindset.scss */
+/* line 362, ../scss/_mindset.scss */
 .fill-form > input:-moz-placeholder {
   font-family: supermarketregular;
   font-size: 1.05em;
 }
 
-/* line 338, ../scss/_mindset.scss */
+/* line 366, ../scss/_mindset.scss */
 input::-moz-placeholder {
   color: #009696 !important;
 }
 
-/* line 341, ../scss/_mindset.scss */
-input::-moz-placeholder {
+/* line 369, ../scss/_mindset.scss */
+input:-moz-placeholder {
   color: #009696 !important;
 }
 
-/* line 344, ../scss/_mindset.scss */
+/* line 372, ../scss/_mindset.scss */
 input:-ms-input-placeholder {
   color: #B4B4B4 !important;
 }
 
-/* line 348, ../scss/_mindset.scss */
+/* line 376, ../scss/_mindset.scss */
 .fill-form > input[type="text"],
 .fill-form > input[type="password"] {
   height: 2.3rem;
@@ -9471,7 +9510,7 @@ input:-ms-input-placeholder {
   padding-bottom: 0.3em !important;
 }
 
-/* line 359, ../scss/_mindset.scss */
+/* line 387, ../scss/_mindset.scss */
 .fill-form > textarea {
   font-family: supermarketregular;
   font-size: 1.1em !important;
@@ -9479,63 +9518,63 @@ input:-ms-input-placeholder {
   padding-bottom: 0.3em !important;
 }
 
-/* line 367, ../scss/_mindset.scss */
+/* line 395, ../scss/_mindset.scss */
 #biography,
 #mysuggestion {
   height: 6em !important;
   min-height: 6em !important;
 }
 
-/* line 374, ../scss/_mindset.scss */
+/* line 402, ../scss/_mindset.scss */
 .register-button {
   margin-top: 1em;
 }
 
-/* line 378, ../scss/_mindset.scss */
+/* line 406, ../scss/_mindset.scss */
 .register-button > button {
   padding-top: 0.7em !important;
   padding-bottom: 0.66em !important;
 }
 
-/* line 387, ../scss/_mindset.scss */
+/* line 415, ../scss/_mindset.scss */
 .register-button > button > span {
   font-family: KunlasatriBold !important;
   font-size: 1.2rem !important;
 }
 
-/* line 391, ../scss/_mindset.scss */
+/* line 419, ../scss/_mindset.scss */
 .register-button > button.submit {
   width: 15em !important;
   background-color: #009696 !important;
   color: #ffffff !important;
 }
 
-/* line 397, ../scss/_mindset.scss */
+/* line 425, ../scss/_mindset.scss */
 .register-button > button.submit:hover {
   background-color: #008282 !important;
   color: #ffffff;
   text-shadow: none;
 }
 
-/* line 403, ../scss/_mindset.scss */
+/* line 431, ../scss/_mindset.scss */
 .field-leading {
   margin-top: 1rem;
 }
 
-/* line 411, ../scss/_mindset.scss */
+/* line 439, ../scss/_mindset.scss */
 div.call-change-password,
 div.call-cancel-account {
   background-color: #009696 !important;
 }
 
-/* line 417, ../scss/_mindset.scss */
+/* line 445, ../scss/_mindset.scss */
 div.call-change-password:hover,
 div.call-cancel-account:hover {
   background-color: #008282 !important;
   text-shadow: none;
 }
 
-/* line 424, ../scss/_mindset.scss */
+/* line 452, ../scss/_mindset.scss */
 .call-change-password > span,
 .call-cancel-account > span {
   font-family: KunlasatriBold !important;
@@ -9543,128 +9582,127 @@ div.call-cancel-account:hover {
   color: #ffffff !important;
 }
 
-/* line 433, ../scss/_mindset.scss */
+/* line 461, ../scss/_mindset.scss */
 .break-mobile {
   display: none !important;
 }
 
-/* line 437, ../scss/_mindset.scss */
+/* line 465, ../scss/_mindset.scss */
 .suggestionoff {
   margin-top: -2px !important;
   padding-top: 0px !important;
 }
 
-/* line 442, ../scss/_mindset.scss */
+/* line 470, ../scss/_mindset.scss */
 .accepttruth {
   margin-top: -5px !important;
   padding-top: 0px !important;
   padding-left: 1em !important;
 }
 
-/* line 449, ../scss/_mindset.scss */
+/* line 477, ../scss/_mindset.scss */
 #password-login {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-/* line 454, ../scss/_mindset.scss */
+/* line 482, ../scss/_mindset.scss */
 #checkbox-label {
   padding-left: 1.5em;
   margin-left: 0;
 }
 
-/* line 459, ../scss/_mindset.scss */
+/* line 487, ../scss/_mindset.scss */
 #modal-editor-box {
   position: relative;
   padding: 1rem;
 }
 
-/* line 477, ../scss/_mindset.scss */
+/* line 505, ../scss/_mindset.scss */
 #modal-register-button {
   padding-bottom: 0.5rem;
 }
 
-/* line 481, ../scss/_mindset.scss */
+/* line 509, ../scss/_mindset.scss */
 .warn-old-password-wrong {
   display: none !important;
 }
 
+/* Mobile Sizing Combinations */
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  /* line 488, ../scss/_mindset.scss */
+  /* line 517, ../scss/_mindset.scss */
   .heading-register > div {
     text-align: left;
   }
 
-  /* line 491, ../scss/_mindset.scss */
+  /* line 520, ../scss/_mindset.scss */
   .fill-form > input[type="text"] {
     line-height: 1.7 !important;
     padding-top: 0.6em !important;
   }
 
-  /* line 497, ../scss/_mindset.scss */
+  /* line 526, ../scss/_mindset.scss */
   .field-label {
     padding-top: 1em;
     text-align: left !important;
     line-height: 1.4em;
   }
 
-  /* line 503, ../scss/_mindset.scss */
+  /* line 532, ../scss/_mindset.scss */
   .break-computer {
     display: none !important;
   }
 
-  /* line 507, ../scss/_mindset.scss */
+  /* line 536, ../scss/_mindset.scss */
   .break-mobile {
     display: inline !important;
   }
 }
-@media only screen and (max-width: 767px) {
-  /* line 517, ../scss/_mindset.scss */
-  .break-computer {
-    display: none !important;
-  }
-}
+/* Tablet Sizing Combinations */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* line 523, ../scss/_mindset.scss */
-  #relate-content {
-    margin-left: -1rem;
-  }
-
-  /* line 527, ../scss/_mindset.scss */
-  .break-computer {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 992px) {
-  /* line 533, ../scss/_mindset.scss */
-  #relate-content {
-    margin-left: -1rem;
-  }
-
-  /* line 537, ../scss/_mindset.scss */
-  .break-computer {
-    display: none !important;
-  }
-}
-@media only screen and (min-width: 1400px) and (max-width: 1919px) {
   /* line 543, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
+
+  /* line 547, ../scss/_mindset.scss */
+  .break-computer {
+    display: none !important;
+  }
 }
-@media only screen and (min-width: 1920px) {
-  /* line 549, ../scss/_mindset.scss */
+/* Computer/Desktop Sizing Combinations */
+@media only screen and (min-width: 992px) {
+  /* line 553, ../scss/_mindset.scss */
+  #relate-content {
+    margin-left: -1rem;
+  }
+
+  /* line 557, ../scss/_mindset.scss */
+  .break-computer {
+    display: none !important;
+  }
+}
+/* Large Monitor Sizing Combinations */
+@media only screen and (min-width: 1400px) and (max-width: 1919px) {
+  /* line 563, ../scss/_mindset.scss */
   #relate-content {
     margin-left: -1rem;
   }
 }
-/* line 555, ../scss/_mindset.scss */
+/* Widescreen Sizing Combinations */
+@media only screen and (min-width: 1920px) {
+  /* line 569, ../scss/_mindset.scss */
+  #relate-content {
+    margin-left: -1rem;
+  }
+}
+/* line 575, ../scss/_mindset.scss */
 .modal-header {
   background-color: #009696;
   padding: 7px 7px 7px 15px;
 }
 
-/* line 560, ../scss/_mindset.scss */
+/* line 580, ../scss/_mindset.scss */
 .modal-header .close {
   margin-top: 4px;
   margin-right: 5px;
@@ -9678,45 +9716,45 @@ div.call-cancel-account:hover {
   color: transparent;
 }
 
-/* line 573, ../scss/_mindset.scss */
+/* line 593, ../scss/_mindset.scss */
 .modal-title {
   color: #ffffff;
 }
 
-/* line 577, ../scss/_mindset.scss */
+/* line 597, ../scss/_mindset.scss */
 .modal-desc {
   border-bottom: 1px solid #E5E5E5;
   color: #009696;
   padding: 7px;
 }
 
-/* line 583, ../scss/_mindset.scss */
+/* line 603, ../scss/_mindset.scss */
 .modal-contact {
   padding: 7px;
 }
 
-/* line 587, ../scss/_mindset.scss */
+/* line 607, ../scss/_mindset.scss */
 .modal-form {
   border-top: 1px solid #E5E5E5;
   padding: 7px;
 }
 
-/* line 592, ../scss/_mindset.scss */
+/* line 612, ../scss/_mindset.scss */
 .modal-footer {
   padding: 7px;
 }
 
-/* line 596, ../scss/_mindset.scss */
+/* line 616, ../scss/_mindset.scss */
 .modal-footer .btn {
   font-size: 16px;
 }
 
-/* line 601, ../scss/_mindset.scss */
+/* line 621, ../scss/_mindset.scss */
 .btn {
   font-family: KunlasatriBold;
 }
 
-/* line 606, ../scss/_mindset.scss */
+/* line 626, ../scss/_mindset.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: supermarketregular !important;
 }
