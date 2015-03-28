@@ -15,7 +15,6 @@
     <!-- Semantic -->
     <link href="/components/semantic-ui/dist/components/breadcrumb.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/checkbox.min.css" rel="stylesheet" type="text/css">
-    <link href="/components/semantic-ui/dist/components/dimmer.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/image.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/input.min.css" rel="stylesheet" type="text/css">
     <link href="/components/semantic-ui/dist/components/item.min.css" rel="stylesheet" type="text/css">
@@ -28,6 +27,7 @@
     <link href="/components/semantic-ui/dist/components/transition.min.css" rel="stylesheet" type="text/css">
 
     <link href="/app/home/css/semantic/button2.css" rel="stylesheet" type="text/css">
+    <link href="/app/home/css/semantic/dimmer2.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/divider2low.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/dropdow.css" rel="stylesheet" type="text/css">
     <link href="/app/home/css/semantic/form2.css" rel="stylesheet" type="text/css">
@@ -97,7 +97,7 @@
         <aside class="left-off-canvas-menu">
             <div>
                 <a href="/">
-                    <img src="/app/home/images/sample.png" width="50%">
+                    <img src="/images/KwanEncyclopaedia.png" width="50%">
                 </a>
             </div>
             <ul class="off-canvas-list">
@@ -115,8 +115,8 @@
                     <div class="three wide colum">
                         <div class="ui centered grid">
                         <div class="ui statistic"> <!-- logo -->
-                            <img class="ui tiny circular centered image" src="/app/home/images/sample.png">
-                            <div class="labell">สารานุกรมกว๊านพะเยา</div>
+                            <img class="ui smallp120 centered image" src="/images/KwanEncyclopaedia.png">
+                            <div class="labell"><span class="supermarket-font big-font black-font">สารานุกรมกว๊านพะเยา</span></div>
                         </div> <!-- // logo -->
                         </div>
                     </div>
@@ -126,12 +126,12 @@
                             <div class="low">
                                 <div class="six wide colum">
                                     <div class="ui search"> <!-- search -->
-                                        <div class="ui icon input">
+                                        <div class="ui icon input search-form">
                                             <input class="prompt" type="text" placeholder="ค้นหา">
                                             <i class="search icon"></i>
                                         </div>
                                         <div>
-                                            <p>เรียงตาม : <a href="#">โพสต์ล่าสุด</a> | <a href="#">เป็นที่นิยม</a></p>
+                                            <p class="supermarket-font large-font">เรียงตาม : <a href="#">โพสต์ล่าสุด</a> | <a href="#">เป็นที่นิยม</a></p>
                                         </div>
                                         <div class="results"></div>
                                     </div> <!-- // search -->
