@@ -97,11 +97,39 @@
         <aside class="left-off-canvas-menu">
             <div>
                 <a href="/">
-                    <img src="/images/KwanEncyclopaedia.png" width="50%">
+                    <img class="ui centered image" src="/images/KwanEncyclopaedia.png" width="30%">
                 </a>
             </div>
             <ul class="off-canvas-list">
                 <li><label><?php echo trans('text.encyclopaedia') ?></label></li>
+                <li><a class="supermarket-font big-font" href="/">หน้าแรก</a></li>
+                <li><label class="supermarket-font">หมวดต่างๆ</label></li>
+                <br/>
+                <li><h3 class="ui header">
+                        <i class="plug icon"></i>
+                        <div class="content">
+                            ข้อมูลทั่วไปกว๊านพะเยา
+                        </div>
+                    </h3></li>
+                <li><h3 class="ui header">
+                        <i class="plug icon"></i>
+                        <div class="content">
+                            นิเวศวิทยาและสิ่งแวดล้อม
+                        </div>
+                    </h3></li>
+                <li></li>
+                <li><h3 class="ui header">
+                        <i class="plug icon"></i>
+                        <div class="content">
+                            เศรษฐกิจและการท่องเที่ยว
+                        </div>
+                    </h3></li>
+                <li><h3 class="ui header">
+                        <i class="plug icon"></i>
+                        <div class="content">
+                            เศรษฐกิจและการท่องเที่ยว
+                        </div>
+                    </h3></li>
                 <li></li>
             </ul>
         </aside>
@@ -688,7 +716,7 @@
 //                    .popup('show')
 //            ;
         });
-//    $(document).foundation();
+    $(document).foundation();
 </script>
 
 @yield('javascript')
